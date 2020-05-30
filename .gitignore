@@ -1,0 +1,11 @@
+.gradle
+/local.properties
+.idea/
+!.idea/codeStyleSettings.xml
+.DS_Store
+build/
+out/
+/captures
+*.iml
+node_modules/
+xcuserdata/

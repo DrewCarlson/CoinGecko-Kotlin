@@ -1,0 +1,8 @@
+package drewcarlson.coingecko.domain.rates
+
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class ExchangeRates(
+        val rates: Map<String, Rate>
+)
