@@ -1,11 +1,11 @@
-![](https://static.coingecko.com/s/coingecko-logo-d13d6bcceddbb003f146b33c2f7e8193d72b93bb343d38e392897c3df3e78bdd.png)
+[![](https://static.coingecko.com/s/coingecko-logo-d13d6bcceddbb003f146b33c2f7e8193d72b93bb343d38e392897c3df3e78bdd.png)](https://coingecko.com)
 
 # CoinGecko Kotlin
 
 ![](https://github.com/DrewCarlson/CoinGecko-Kotlin/workflows/All%20Tests/badge.svg)
 [ ![Download](https://api.bintray.com/packages/drewcarlson/CoinGecko-Kotlin/CoinGecko-Kotlin/images/download.svg) ](https://bintray.com/drewcarlson/CoinGecko-Kotlin/CoinGecko-Kotlin/_latestVersion)
 
-Kotlin wrapper for the CoinGecko API.
+Kotlin wrapper for the [CoinGecko API](https://www.coingecko.com/en/api).
 
 ## About
 
