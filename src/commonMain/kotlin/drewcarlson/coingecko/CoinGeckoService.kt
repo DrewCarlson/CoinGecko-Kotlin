@@ -79,7 +79,7 @@ class CoinGeckoService(
         include24hrVol: Boolean,
         include24hrChange: Boolean,
         includeLastUpdatedAt: Boolean
-    ): Map<String, Map<String, Double>> =
+    ): Map<String, Map<String, Double?>> =
         httpClient.get("simple/price") {
             parameter(IDS, ids)
             parameter(VS_CURRENCIES, vsCurrencies)

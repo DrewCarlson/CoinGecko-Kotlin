@@ -23,7 +23,7 @@ interface CoinGeckoClient {
         include24hrVol: Boolean = false,
         include24hrChange: Boolean = false,
         includeLastUpdatedAt: Boolean = false
-    ): Map<String, Map<String, Double>>
+    ): Map<String, Map<String, Double?>>
 
     suspend fun getTokenPrice(
         id: String,
