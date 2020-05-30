@@ -1,4 +1,4 @@
-rootProject.name = 'CoinGecko'
+rootProject.name = 'coingecko'
 
 
 enableFeaturePreview('GRADLE_METADATA')
