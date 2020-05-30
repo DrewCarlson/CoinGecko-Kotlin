@@ -2,7 +2,7 @@
 
 # CoinGecko Kotlin
 
-![](https://github.com/DrewCarlson/CoinGecko-Kotlin/workflows/All%20Tests/badge.svg)
+![](https://github.com/DrewCarlson/CoinGecko-Kotlin/workflows/Tests/badge.svg)
 [ ![Download](https://api.bintray.com/packages/drewcarlson/CoinGecko-Kotlin/CoinGecko-Kotlin/images/download.svg) ](https://bintray.com/drewcarlson/CoinGecko-Kotlin/CoinGecko-Kotlin/_latestVersion)
 
 Kotlin wrapper for the [CoinGecko API](https://www.coingecko.com/en/api).
