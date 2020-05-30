@@ -9,33 +9,15 @@ Kotlin wrapper for the [CoinGecko API](https://www.coingecko.com/en/api).
 
 ## About
 
-CoinGecko-Kotlin is written in common Kotlin to support multiplatform development.
-
-[Kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization) provides multiplatform json (de)serialization and [Ktor](https://ktor.io) provides a multiplatform HTTP API.
- 
-Note: you are required to specify a Ktor client engine implementation.
-([Documentation](https://ktor.io/clients/http-client/multiplatform.html))
-
-```groovy
-dependencies {
-  // Jvm/Android
-  implementation("io.ktor:ktor-client-okhttp:$ktor_version")
-  implementation("io.ktor:ktor-client-android:$ktor_version")
-  // iOS
-  implementation("io.ktor:ktor-client-ios:$ktor_version")
-  // macOS/Windows/Linux
-  implementation("io.ktor:ktor-client-curl:$ktor_version")
-  // Javascript/NodeJS
-  implementation("io.ktor:ktor-client-js:$ktor_version")
-}
-``` 
+CoinGecko-Kotlin is written in common Kotlin to support multiplatform development.  [Kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization) provides json (de)serialization and [Ktor](https://ktor.io) the HTTP API.
 
 ## Usage
 
 For a comprehensive list of available endpoints and to understand the returned data, see [coingecko.com/en/api](https://www.coingecko.com/en/api).
 
 ```kotlin
-val coinGecko = CoinGeckService(HttpClient(OkHttp))
+val httpClient = HttpClient(OkHttp) // ktor + okhttp (jvm)
+val coinGecko = CoinGeckService(httpClient)
 
 println(coinGecko.getCoinById("ethereum"))
 // CoinFullData(id=ethereum, symbol=eth, name=Ethereum, ...)
@@ -54,6 +36,24 @@ dependencies {
   implementation "drewcarlson.coingecko:coingecko-jvm:$coingecko_version"
 }
 ```
+
+
+Note: it is required to specify a Ktor client engine implementation.
+([Documentation](https://ktor.io/clients/http-client/multiplatform.html))
+
+```groovy
+dependencies {
+  // Jvm/Android
+  implementation("io.ktor:ktor-client-okhttp:$ktor_version")
+  implementation("io.ktor:ktor-client-android:$ktor_version")
+  // iOS
+  implementation("io.ktor:ktor-client-ios:$ktor_version")
+  // macOS/Windows/Linux
+  implementation("io.ktor:ktor-client-curl:$ktor_version")
+  // Javascript/NodeJS
+  implementation("io.ktor:ktor-client-js:$ktor_version")
+}
+``` 
 
 ## License
 ```
