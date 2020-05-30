@@ -28,7 +28,7 @@ private const val INCLUDE_MARKET_CAP = "include_market_cap"
 private const val INCLUDE_24HR_VOL = "include_24hr_vol"
 private const val INCLUDE_24HR_CHANGE = "include_24hr_change"
 private const val INCLUDE_LAST_UPDATED_AT = "include_last_updated_at"
-private const val CONTRACT_ADDRESS = "contract_addresses"
+private const val CONTRACT_ADDRESS = "contract_address"
 private const val PRICE_CHANGE_PERCENTAGE = "price_change_percentage"
 private const val SPARKLINE = "sparkline"
 private const val MARKET_DATA = "market_data"
@@ -74,15 +74,6 @@ class CoinGeckoService(
 
     override suspend fun getPrice(
         ids: String,
-        vsCurrencies: String
-    ): Map<String, Map<String, Double>> =
-        httpClient.get("simple/price") {
-            parameter(IDS, ids)
-            parameter(VS_CURRENCIES, vsCurrencies)
-        }
-
-    override suspend fun getPrice(
-        ids: String,
         vsCurrencies: String,
         includeMarketCap: Boolean,
         include24hrVol: Boolean,
@@ -101,16 +92,6 @@ class CoinGeckoService(
     override suspend fun getTokenPrice(
         id: String,
         contractAddress: String,
-        vsCurrencies: String
-    ): Map<String, Map<String, Double>> =
-        httpClient.get("simple/token_price/$id") {
-            parameter(CONTRACT_ADDRESS, contractAddress)
-            parameter(VS_CURRENCIES, vsCurrencies)
-        }
-
-    override suspend fun getTokenPrice(
-        id: String,
-        contractAddress: String,
         vsCurrencies: String,
         includeMarketCap: Boolean,
         include24hrVol: Boolean,
@@ -119,6 +100,7 @@ class CoinGeckoService(
     ): Map<String, Map<String, Double>> =
         httpClient.get("simple/token_price/$id") {
             parameter(VS_CURRENCIES, vsCurrencies)
+            parameter(CONTRACT_ADDRESS, contractAddress)
             parameter(INCLUDE_MARKET_CAP, includeMarketCap)
             parameter(INCLUDE_24HR_VOL, include24hrVol)
             parameter(INCLUDE_24HR_CHANGE, include24hrChange)
@@ -130,11 +112,6 @@ class CoinGeckoService(
 
     override suspend fun getCoinList(): List<CoinList> =
         httpClient.get("coins/list")
-
-    override suspend fun getCoinMarkets(vsCurrency: String): List<CoinMarkets> =
-        httpClient.get("coins/markets") {
-            parameter(VS_CURRENCY, vsCurrency)
-        }
 
     override suspend fun getCoinMarkets(
         vsCurrency: String,
@@ -155,9 +132,6 @@ class CoinGeckoService(
             parameter(PRICE_CHANGE_PERCENTAGE, priceChangePercentage)
         }
 
-    override suspend fun getCoinById(id: String): CoinFullData =
-        httpClient.get("coins/$id")
-
     override suspend fun getCoinById(
         id: String,
         localization: Boolean,
@@ -176,9 +150,6 @@ class CoinGeckoService(
             parameter(SPARKLINE, sparkline)
         }
 
-    override suspend fun getCoinTickerById(id: String): CoinTickerById =
-        httpClient.get("coins/$id/tickers")
-
     override suspend fun getCoinTickerById(
         id: String,
         exchangeIds: String?,
@@ -189,11 +160,6 @@ class CoinGeckoService(
             parameter(EXCHANGE_IDS, exchangeIds)
             parameter(PAGE, page)
             parameter(ORDER, order)
-        }
-
-    override suspend fun getCoinHistoryById(id: String, date: String): CoinHistoryById =
-        httpClient.get("coins/$id/history") {
-            parameter(DATE, date)
         }
 
     override suspend fun getCoinHistoryById(
@@ -228,9 +194,6 @@ class CoinGeckoService(
             parameter(DAYS, days)
         }
 
-    override suspend fun getCoinStatusUpdateById(id: String): StatusUpdates =
-        httpClient.get("coins/$id/status_updates")
-
     override suspend fun getCoinStatusUpdateById(id: String, perPage: Int?, page: Int?): StatusUpdates =
         httpClient.get("coins/$id/status_updates") {
             parameter(PAGE, page)
@@ -249,9 +212,6 @@ class CoinGeckoService(
     override suspend fun getExchangesById(id: String): Exchanges =
         httpClient.get("exchanges/$id")
 
-    override suspend fun getExchangesTickersById(id: String): ExchangesTickersById =
-        httpClient.get("exchanges/$id/tickers")
-
     override suspend fun getExchangesTickersById(
         id: String,
         coinIds: String?,
@@ -263,9 +223,6 @@ class CoinGeckoService(
             parameter(PAGE, page)
             parameter(ORDER, order)
         }
-
-    override suspend fun getExchangesStatusUpdatesById(id: String): StatusUpdates =
-        httpClient.get("exchanges/$id/status_updates")
 
     override suspend fun getExchangesStatusUpdatesById(
         id: String,
@@ -282,9 +239,6 @@ class CoinGeckoService(
             parameter(DAYS, days)
         }
 
-    override suspend fun getStatusUpdates(): StatusUpdates =
-        httpClient.get("status_updates")
-
     override suspend fun getStatusUpdates(
         category: String?,
         projectType: String?,
@@ -296,9 +250,6 @@ class CoinGeckoService(
             parameter(PER_PAGE, perPage)
             parameter(PROJECT_TYPE, projectType)
         }
-
-    override suspend fun getEvents(): Events =
-        httpClient.get("events")
 
     override suspend fun getEvents(
         countryCode: String?,
