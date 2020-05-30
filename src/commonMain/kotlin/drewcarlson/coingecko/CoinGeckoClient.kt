@@ -1,16 +1,16 @@
 package drewcarlson.coingecko
 
-import drewcarlson.coingecko.domain.Ping
-import drewcarlson.coingecko.domain.coins.*
-import drewcarlson.coingecko.domain.events.EventCountries
-import drewcarlson.coingecko.domain.events.EventTypes
-import drewcarlson.coingecko.domain.events.Events
-import drewcarlson.coingecko.domain.exchanges.Exchanges
-import drewcarlson.coingecko.domain.exchanges.ExchangesList
-import drewcarlson.coingecko.domain.exchanges.ExchangesTickersById
-import drewcarlson.coingecko.domain.global.Global
-import drewcarlson.coingecko.domain.rates.ExchangeRates
-import drewcarlson.coingecko.domain.status.StatusUpdates
+import drewcarlson.coingecko.models.Ping
+import drewcarlson.coingecko.models.coins.*
+import drewcarlson.coingecko.models.events.EventCountries
+import drewcarlson.coingecko.models.events.EventTypes
+import drewcarlson.coingecko.models.events.Events
+import drewcarlson.coingecko.models.exchanges.Exchanges
+import drewcarlson.coingecko.models.exchanges.ExchangesList
+import drewcarlson.coingecko.models.exchanges.ExchangesTickersById
+import drewcarlson.coingecko.models.global.Global
+import drewcarlson.coingecko.models.rates.ExchangeRates
+import drewcarlson.coingecko.models.status.StatusUpdates
 
 interface CoinGeckoClient {
     suspend fun ping(): Ping

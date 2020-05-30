@@ -1,24 +1,22 @@
 package drewcarlson.coingecko
 
-import drewcarlson.coingecko.domain.Ping
-import drewcarlson.coingecko.domain.coins.*
-import drewcarlson.coingecko.domain.events.EventCountries
-import drewcarlson.coingecko.domain.events.EventTypes
-import drewcarlson.coingecko.domain.events.Events
-import drewcarlson.coingecko.domain.exchanges.Exchanges
-import drewcarlson.coingecko.domain.exchanges.ExchangesList
-import drewcarlson.coingecko.domain.exchanges.ExchangesTickersById
-import drewcarlson.coingecko.domain.global.Global
-import drewcarlson.coingecko.domain.rates.ExchangeRates
-import drewcarlson.coingecko.domain.status.StatusUpdates
+import drewcarlson.coingecko.models.Ping
+import drewcarlson.coingecko.models.coins.*
+import drewcarlson.coingecko.models.events.EventCountries
+import drewcarlson.coingecko.models.events.EventTypes
+import drewcarlson.coingecko.models.events.Events
+import drewcarlson.coingecko.models.exchanges.Exchanges
+import drewcarlson.coingecko.models.exchanges.ExchangesList
+import drewcarlson.coingecko.models.exchanges.ExchangesTickersById
+import drewcarlson.coingecko.models.global.Global
+import drewcarlson.coingecko.models.rates.ExchangeRates
+import drewcarlson.coingecko.models.status.StatusUpdates
 import io.ktor.client.HttpClient
 import io.ktor.client.features.defaultRequest
 import io.ktor.client.features.json.JsonFeature
 import io.ktor.client.features.json.serializer.KotlinxSerializer
 import io.ktor.client.request.get
 import io.ktor.client.request.parameter
-import io.ktor.client.request.url
-import io.ktor.http.takeFrom
 import kotlinx.serialization.json.Json
 
 private const val IDS = "ids"
@@ -44,16 +42,24 @@ private const val DATE = "date"
 private const val FROM = "from"
 private const val TO = "to"
 private const val DAYS = "days"
+private const val COUNTRY_CODE = "country_code"
+private const val TYPE = "type"
+private const val FROM_DATE = "from_date"
+private const val TO_DATE = "to_date"
+private const val PROJECT_TYPE = "project_type"
+private const val UPCOMING_EVENTS_ONLY = "upcoming_events_only"
+private const val COIN_IDS = "COIN_IDS"
 
 
 class CoinGeckoService(
     httpClient: HttpClient
 ) : CoinGeckoClient {
+
     private val json = Json {
         isLenient = true
         ignoreUnknownKeys = true
-        this.encodeDefaults
     }
+
     private val httpClient = httpClient.config {
         defaultRequest {
             url.host = "api.coingecko.com"
@@ -200,7 +206,6 @@ class CoinGeckoService(
             parameter(LOCALIZATION, localization)
         }
 
-
     override suspend fun getCoinMarketChartRangeById(
         id: String,
         vsCurrency: String,
@@ -223,81 +228,78 @@ class CoinGeckoService(
             parameter(DAYS, days)
         }
 
-    // coins/{id}/status_updates
-    override suspend fun getCoinStatusUpdateById(id: String): StatusUpdates {
-        TODO("Not yet implemented")
-    }
+    override suspend fun getCoinStatusUpdateById(id: String): StatusUpdates =
+        httpClient.get("coins/$id/status_updates")
 
-    // coins/{id}/status_updates
-    override suspend fun getCoinStatusUpdateById(id: String, perPage: Int?, page: Int?): StatusUpdates {
-        TODO("Not yet implemented")
-    }
+    override suspend fun getCoinStatusUpdateById(id: String, perPage: Int?, page: Int?): StatusUpdates =
+        httpClient.get("coins/$id/status_updates") {
+            parameter(PAGE, page)
+            parameter(PER_PAGE, perPage)
+        }
 
-    // coins/{id}/contract/{contract_address}
-    override suspend fun getCoinInfoByContractAddress(id: String, contractAddress: String): CoinFullData {
-        TODO("Not yet implemented")
-    }
+    override suspend fun getCoinInfoByContractAddress(id: String, contractAddress: String): CoinFullData =
+        httpClient.get("coins/$id/contract/$contractAddress")
 
     override suspend fun getExchanges(): List<Exchanges> =
         httpClient.get("exchanges")
 
-    // exchanges/list
-    override suspend fun getExchangesList(): List<ExchangesList> {
-        TODO("Not yet implemented")
-    }
+    override suspend fun getExchangesList(): List<ExchangesList> =
+        httpClient.get("exchanges/list")
 
-    // exchanges/{id}
-    override suspend fun getExchangesById(id: String): Exchanges {
-        TODO("Not yet implemented")
-    }
+    override suspend fun getExchangesById(id: String): Exchanges =
+        httpClient.get("exchanges/$id")
 
-    // exchanges/{id}/tickers
-    override suspend fun getExchangesTickersById(id: String): ExchangesTickersById {
-        TODO("Not yet implemented")
-    }
+    override suspend fun getExchangesTickersById(id: String): ExchangesTickersById =
+        httpClient.get("exchanges/$id/tickers")
 
-    // exchanges/{id}/tickers
     override suspend fun getExchangesTickersById(
         id: String,
         coinIds: String?,
         page: Int?,
         order: String?
-    ): ExchangesTickersById {
-        TODO("Not yet implemented")
-    }
+    ): ExchangesTickersById =
+        httpClient.get("exchanges/$id/tickers") {
+            parameter(COIN_IDS, coinIds)
+            parameter(PAGE, page)
+            parameter(ORDER, order)
+        }
 
-    // exchanges/{id}/status_updates
-    override suspend fun getExchangesStatusUpdatesById(id: String): StatusUpdates {
-        TODO("Not yet implemented")
-    }
+    override suspend fun getExchangesStatusUpdatesById(id: String): StatusUpdates =
+        httpClient.get("exchanges/$id/status_updates")
 
-    // exchanges/{id}/status_updates
-    override suspend fun getExchangesStatusUpdatesById(id: String, perPage: Int?, page: Int?): StatusUpdates {
-        TODO("Not yet implemented")
-    }
+    override suspend fun getExchangesStatusUpdatesById(
+        id: String,
+        perPage: Int?,
+        page: Int?
+    ): StatusUpdates =
+        httpClient.get("exchanges/$id/status_updates") {
+            parameter(PER_PAGE, perPage)
+            parameter(PAGE, page)
+        }
 
-    // exchanges/{id}/volume_chart
-    override suspend fun getExchangesVolumeChart(id: String, days: Int): List<List<String>> {
-        TODO("Not yet implemented")
-    }
+    override suspend fun getExchangesVolumeChart(id: String, days: Int): List<List<String>> =
+        httpClient.get("exchanges/$id/volume_chart") {
+            parameter(DAYS, days)
+        }
 
     override suspend fun getStatusUpdates(): StatusUpdates =
         httpClient.get("status_updates")
 
-    // status_updates
     override suspend fun getStatusUpdates(
         category: String?,
         projectType: String?,
         perPage: Int?,
         page: Int?
-    ): StatusUpdates {
-        TODO("Not yet implemented")
-    }
+    ): StatusUpdates =
+        httpClient.get("status_updates") {
+            parameter(PAGE, page)
+            parameter(PER_PAGE, perPage)
+            parameter(PROJECT_TYPE, projectType)
+        }
 
     override suspend fun getEvents(): Events =
         httpClient.get("events")
 
-    // events
     override suspend fun getEvents(
         countryCode: String?,
         type: String?,
@@ -305,9 +307,15 @@ class CoinGeckoService(
         upcomingEventsOnly: Boolean,
         fromDate: String?,
         toDate: String?
-    ): Events {
-        TODO("Not yet implemented")
-    }
+    ): Events =
+        httpClient.get("events") {
+            parameter(COUNTRY_CODE, countryCode)
+            parameter(TYPE, type)
+            parameter(PAGE, page)
+            parameter(UPCOMING_EVENTS_ONLY, upcomingEventsOnly)
+            parameter(FROM_DATE, fromDate)
+            parameter(TO_DATE, toDate)
+        }
 
     override suspend fun getEventsCountries(): EventCountries =
         httpClient.get("events/countries")
