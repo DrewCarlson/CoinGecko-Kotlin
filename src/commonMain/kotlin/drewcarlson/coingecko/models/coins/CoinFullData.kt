@@ -53,5 +53,5 @@ data class CoinFullData(
         val statusUpdates: List<Update>? = null,
         @SerialName("last_updated")
         val lastUpdated: String? = null,
-        val tickers: List<Ticker>
+        val tickers: List<Ticker>? = null
 )
