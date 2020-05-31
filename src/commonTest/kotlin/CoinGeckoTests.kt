@@ -1,15 +1,18 @@
 package drewcarlson.coingecko
 
 import io.ktor.client.HttpClient
-import io.ktor.client.engine.okhttp.OkHttp
-import kotlinx.coroutines.runBlocking
+import io.ktor.client.engine.HttpClientEngineFactory
+import kotlinx.coroutines.CoroutineScope
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
+expect fun runBlocking(block: suspend CoroutineScope.() -> Unit)
+expect fun createHttpEngine(): HttpClientEngineFactory<*>
+
 class CoinGeckoTests {
 
-    val coinGecko = CoinGeckoService(HttpClient(OkHttp))
+    private val coinGecko = CoinGeckoService(HttpClient(createHttpEngine()))
 
     @Test
     fun testPing() = runBlocking {
