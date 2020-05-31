@@ -17,6 +17,7 @@ import io.ktor.client.features.json.JsonFeature
 import io.ktor.client.features.json.serializer.KotlinxSerializer
 import io.ktor.client.request.get
 import io.ktor.client.request.parameter
+import io.ktor.http.URLProtocol
 import kotlinx.serialization.json.Json
 
 private const val IDS = "ids"
@@ -62,6 +63,7 @@ class CoinGeckoService(
 
     private val httpClient = httpClient.config {
         defaultRequest {
+            url.protocol = URLProtocol.HTTPS
             url.host = "api.coingecko.com"
             url.encodedPath = "/api/v3" + url.encodedPath
         }
