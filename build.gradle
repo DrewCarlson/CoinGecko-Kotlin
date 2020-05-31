@@ -28,6 +28,11 @@ kotlin {
         browser {}
         nodejs {}
     }
+    iosX64("iosSim")
+    iosArm32("ios32")
+    iosArm64("ios64")
+    macosX64("macos")
+    mingwX64("win64")
 
     sourceSets {
         commonMain {
@@ -80,6 +85,48 @@ kotlin {
                 implementation(npm("fs", "*"))
             }
         }
+
+        nativeCommonMain {
+            dependencies {
+                implementation "io.ktor:ktor-client-core-native:$ktor_version"
+                implementation "io.ktor:ktor-client-json-native:$ktor_version"
+                implementation "io.ktor:ktor-client-serialization-native:$ktor_version"
+            }
+        }
+        nativeCommonTest {
+            dependencies {
+                implementation "io.ktor:ktor-client-curl:$ktor_version"
+            }
+        }
+
+        win64Main { dependsOn nativeCommonMain }
+        macosMain { dependsOn nativeCommonMain }
+        iosSimMain { dependsOn nativeCommonMain }
+        ios32Main { dependsOn nativeCommonMain }
+        ios64Main { dependsOn nativeCommonMain }
+
+        win64Test { dependsOn nativeCommonTest }
+        macosTest { dependsOn nativeCommonTest }
+        iosSimTest {
+            dependencies {
+                implementation "io.ktor:ktor-client-ios:$ktor_version"
+            }
+        }
+    }
 }
+
+// TODO: allTest.dependsOn iosTest
+task iosTest {
+    onlyIf { kotlin.targets.iosSim.publishable }
+    def device = project.findProperty("iosDevice")?.toString() ?: "iPhone 11"
+    dependsOn 'linkDebugTestIosSim'
+    group = JavaBasePlugin.VERIFICATION_GROUP
+    description = "Runs tests for target 'ios' on an iOS simulator"
+
+    doLast {
+        def binary = kotlin.targets.iosSim.binaries.getTest('DEBUG').outputFile
+        exec {
+            commandLine 'xcrun', 'simctl', 'spawn', '--standalone', device, binary.absolutePath
+        }
     }
 }
