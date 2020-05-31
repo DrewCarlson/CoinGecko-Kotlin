@@ -19,6 +19,7 @@ import io.ktor.client.request.get
 import io.ktor.client.request.parameter
 import io.ktor.http.URLProtocol
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonConfiguration
 
 private const val IDS = "ids"
 private const val PAGE = "page"
@@ -56,10 +57,10 @@ class CoinGeckoService(
     httpClient: HttpClient
 ) : CoinGeckoClient {
 
-    private val json = Json {
-        isLenient = true
+    private val json = Json(JsonConfiguration.Stable.copy(
+        isLenient = true,
         ignoreUnknownKeys = true
-    }
+    ))
 
     private val httpClient = httpClient.config {
         defaultRequest {
