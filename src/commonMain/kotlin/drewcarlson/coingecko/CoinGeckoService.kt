@@ -52,15 +52,18 @@ private const val PROJECT_TYPE = "project_type"
 private const val UPCOMING_EVENTS_ONLY = "upcoming_events_only"
 private const val COIN_IDS = "COIN_IDS"
 
+typealias RawPriceMap = Map<String, Map<String, String?>>
 
 class CoinGeckoService(
     httpClient: HttpClient
 ) : CoinGeckoClient {
 
-    private val json = Json(JsonConfiguration.Stable.copy(
-        isLenient = true,
-        ignoreUnknownKeys = true
-    ))
+    private val json = Json(
+        JsonConfiguration.Stable.copy(
+            isLenient = true,
+            ignoreUnknownKeys = true
+        )
+    )
 
     private val httpClient = httpClient.config {
         defaultRequest {
@@ -82,15 +85,15 @@ class CoinGeckoService(
         include24hrVol: Boolean,
         include24hrChange: Boolean,
         includeLastUpdatedAt: Boolean
-    ): Map<String, Map<String, Double?>> =
-        httpClient.get("simple/price") {
+    ): Map<String, CoinPrice> =
+        httpClient.get<RawPriceMap>("simple/price") {
             parameter(IDS, ids)
             parameter(VS_CURRENCIES, vsCurrencies)
             parameter(INCLUDE_MARKET_CAP, includeMarketCap)
             parameter(INCLUDE_24HR_VOL, include24hrVol)
             parameter(INCLUDE_24HR_CHANGE, include24hrChange)
             parameter(INCLUDE_LAST_UPDATED_AT, includeLastUpdatedAt)
-        }
+        }.mapValues { (_, v) -> CoinPrice(v) }
 
     override suspend fun getTokenPrice(
         id: String,
