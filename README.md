@@ -19,7 +19,7 @@ For a comprehensive list of available endpoints and to understand the returned d
 
 ```kotlin
 val httpClient = HttpClient(OkHttp) // ktor + okhttp (jvm)
-val coinGecko = CoinGeckService(httpClient)
+val coinGecko = CoinGeckoService(httpClient)
 
 println(coinGecko.getCoinById("ethereum"))
 // CoinFullData(id=ethereum, symbol=eth, name=Ethereum, ...)
