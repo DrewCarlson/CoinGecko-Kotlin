@@ -12,6 +12,8 @@ data class CoinFullData(
         val id: String,
         val symbol: String,
         val name: String,
+        @SerialName("hashing_algorithm")
+        val hashingAlgorithm: String? = null,
         @SerialName("block_time_in_minutes")
         val blockTimeInMinutes: Long = 0,
         val categories: List<String>,

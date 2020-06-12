@@ -6,6 +6,8 @@ plugins {
 repositories {
     mavenCentral()
     jcenter()
+    maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
+    maven { url 'https://kotlin.bintray.com/kotlinx' }
 }
 
 apply plugin: 'maven-publish'
@@ -28,11 +30,17 @@ kotlin {
         browser {}
         nodejs {}
     }
-    iosX64("iosSim")
-    iosArm32("ios32")
-    iosArm64("ios64")
     macosX64("macos")
     mingwX64("win64")
+    linuxX64()
+
+    ios {
+        binaries {
+            framework([DEBUG])
+        }
+    }
+    watchos()
+    tvos()
 
     sourceSets {
         commonMain {
@@ -87,46 +95,58 @@ kotlin {
         }
 
         nativeCommonMain {
+            dependsOn commonMain
             dependencies {
-                implementation "io.ktor:ktor-client-core-native:$ktor_version"
-                implementation "io.ktor:ktor-client-json-native:$ktor_version"
-                implementation "io.ktor:ktor-client-serialization-native:$ktor_version"
+                implementation "io.ktor:ktor-client-core:$ktor_version"
+                implementation "io.ktor:ktor-client-json:$ktor_version"
+                implementation "io.ktor:ktor-client-serialization:$ktor_version"
             }
         }
         nativeCommonTest {
+            dependsOn commonTest
+        }
+        desktopCommonMain {
+            dependsOn nativeCommonMain
+        }
+        desktopCommonTest {
+            dependsOn nativeCommonTest
             dependencies {
                 implementation "io.ktor:ktor-client-curl:$ktor_version"
             }
         }
 
-        win64Main { dependsOn nativeCommonMain }
-        macosMain { dependsOn nativeCommonMain }
-        iosSimMain { dependsOn nativeCommonMain }
-        ios32Main { dependsOn nativeCommonMain }
-        ios64Main { dependsOn nativeCommonMain }
+        configure([win64Main, macosMain, linuxX64Main]) {
+            dependsOn desktopCommonMain
+        }
 
-        win64Test { dependsOn nativeCommonTest }
-        macosTest { dependsOn nativeCommonTest }
-        iosSimTest {
+        configure([win64Test, macosTest, linuxX64Test]) {
+            dependsOn desktopCommonTest
+        }
+
+        iosMain {
+            dependsOn nativeCommonMain
+        }
+        iosTest {
+            dependsOn nativeCommonTest
             dependencies {
                 implementation "io.ktor:ktor-client-ios:$ktor_version"
             }
         }
-    }
-}
 
-// TODO: allTest.dependsOn iosTest
-task iosTest {
-    onlyIf { kotlin.targets.iosSim.publishable }
-    def device = project.findProperty("iosDevice")?.toString() ?: "iPhone 11"
-    dependsOn 'linkDebugTestIosSim'
-    group = JavaBasePlugin.VERIFICATION_GROUP
-    description = "Runs tests for target 'ios' on an iOS simulator"
+        // Configure tvos and watchos to build on ios sources
+        configure([tvosMain, watchosMain]) {
+            dependsOn iosMain
+        }
+        configure([tvosTest, watchosTest]) {
+            dependsOn iosTest
+            kotlin.srcDirs += "src/iosTest/kotlin"
+        }
 
-    doLast {
-        def binary = kotlin.targets.iosSim.binaries.getTest('DEBUG').outputFile
-        exec {
-            commandLine 'xcrun', 'simctl', 'spawn', '--standalone', device, binary.absolutePath
+        // Added for use in the swift demo
+        iosX64Main {
+            dependencies {
+                implementation "io.ktor:ktor-client-ios:$ktor_version"
+            }
         }
     }
 }
