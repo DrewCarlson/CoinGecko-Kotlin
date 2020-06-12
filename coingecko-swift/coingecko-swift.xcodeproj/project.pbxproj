@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A15E8522493E1ED00E588DB /* coingecko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A15E8512493E1ED00E588DB /* coingecko.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		3A15E8532493E1ED00E588DB /* coingecko.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A15E8512493E1ED00E588DB /* coingecko.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3A15E8572493E91C00E588DB /* PriceObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15E8562493E91C00E588DB /* PriceObservable.swift */; };
+		3A7BE39A24944BA600B17051 /* coingecko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7BE39924944BA600B17051 /* coingecko.framework */; };
+		3A7BE39B24944BA600B17051 /* coingecko.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7BE39924944BA600B17051 /* coingecko.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3A84E4262493DA960031D6B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A84E4252493DA960031D6B1 /* AppDelegate.swift */; };
 		3A84E4282493DA960031D6B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A84E4272493DA960031D6B1 /* SceneDelegate.swift */; };
 		3A84E42A2493DA960031D6B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A84E4292493DA960031D6B1 /* ContentView.swift */; };
@@ -19,13 +19,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		3A15E8542493E1ED00E588DB /* Embed Frameworks */ = {
+		3A7BE39C24944BA600B17051 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3A15E8532493E1ED00E588DB /* coingecko.framework in Embed Frameworks */,
+				3A7BE39B24944BA600B17051 /* coingecko.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -35,6 +35,7 @@
 /* Begin PBXFileReference section */
 		3A15E8512493E1ED00E588DB /* coingecko.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = coingecko.framework; path = ../build/bin/iosSim/debugFramework/coingecko.framework; sourceTree = "<group>"; };
 		3A15E8562493E91C00E588DB /* PriceObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceObservable.swift; sourceTree = "<group>"; };
+		3A7BE39924944BA600B17051 /* coingecko.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = coingecko.framework; path = ../build/bin/iosX64/debugFramework/coingecko.framework; sourceTree = "<group>"; };
 		3A84E4222493DA960031D6B1 /* coingecko-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "coingecko-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A84E4252493DA960031D6B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A84E4272493DA960031D6B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A15E8522493E1ED00E588DB /* coingecko.framework in Frameworks */,
+				3A7BE39A24944BA600B17051 /* coingecko.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +101,7 @@
 		3A84E4392493DC390031D6B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A7BE39924944BA600B17051 /* coingecko.framework */,
 				3A15E8512493E1ED00E588DB /* coingecko.framework */,
 			);
 			name = Frameworks;
@@ -116,7 +118,7 @@
 				3A84E41E2493DA960031D6B1 /* Sources */,
 				3A84E41F2493DA960031D6B1 /* Frameworks */,
 				3A84E4202493DA960031D6B1 /* Resources */,
-				3A15E8542493E1ED00E588DB /* Embed Frameworks */,
+				3A7BE39C24944BA600B17051 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -190,7 +192,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd .. && ./gradlew linkDebugFrameworkIosSim\n";
+			shellScript = "cd .. && ./gradlew linkDebugFrameworkIosX64\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -341,7 +343,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "coingecko-swift/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../build/bin/iosSim/debugFramework/**";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../build/bin/iosX64/debugFramework/**";
 				INFOPLIST_FILE = "coingecko-swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -361,7 +363,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "coingecko-swift/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../build/bin/iosSim/debugFramework/**";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../build/bin/iosX64/debugFramework/**";
 				INFOPLIST_FILE = "coingecko-swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

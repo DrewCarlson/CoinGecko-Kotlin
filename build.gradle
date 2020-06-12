@@ -32,18 +32,15 @@ kotlin {
     }
     macosX64("macos")
     mingwX64("win64")
+    linuxX64()
 
-    configure([
-            iosX64("iosSim"),
-            iosArm32("ios32"),
-            iosArm64("ios64")
-    ]) {
+    ios {
         binaries {
-            framework {
-                isStatic = true
-            }
+            framework([DEBUG])
         }
     }
+    watchos()
+    tvos()
 
     sourceSets {
         commonMain {
@@ -98,6 +95,7 @@ kotlin {
         }
 
         nativeCommonMain {
+            dependsOn commonMain
             dependencies {
                 implementation "io.ktor:ktor-client-core:$ktor_version"
                 implementation "io.ktor:ktor-client-json:$ktor_version"
@@ -105,37 +103,96 @@ kotlin {
             }
         }
         nativeCommonTest {
+            dependsOn commonTest
+        }
+        desktopCommonMain {
+            dependsOn nativeCommonMain
+        }
+        desktopCommonTest {
+            dependsOn nativeCommonTest
             dependencies {
                 implementation "io.ktor:ktor-client-curl:$ktor_version"
             }
         }
 
-        win64Main { dependsOn nativeCommonMain }
-        macosMain { dependsOn nativeCommonMain }
-        iosSimMain {
+        configure([win64Main, macosMain, linuxX64Main]) {
+            dependsOn desktopCommonMain
+        }
+
+        configure([win64Test, macosTest, linuxX64Test]) {
+            dependsOn desktopCommonTest
+        }
+
+        iosMain {
             dependsOn nativeCommonMain
+        }
+        iosTest {
+            dependsOn nativeCommonTest
             dependencies {
                 implementation "io.ktor:ktor-client-ios:$ktor_version"
             }
         }
-        ios32Main { dependsOn nativeCommonMain }
-        ios64Main { dependsOn nativeCommonMain }
 
-        win64Test { dependsOn nativeCommonTest }
-        macosTest { dependsOn nativeCommonTest }
+        // Configure tvos and watchos to build on ios sources
+        configure([tvosMain, watchosMain]) {
+            dependsOn iosMain
+        }
+        configure([tvosTest, watchosTest]) {
+            dependsOn iosTest
+            kotlin.srcDirs += "src/iosTest/kotlin"
+        }
+
+        // Added for use in the swift demo
+        iosX64Main {
+            dependencies {
+                implementation "io.ktor:ktor-client-ios:$ktor_version"
+            }
+        }
     }
 }
 
 // TODO: allTest.dependsOn iosTest
 task iosTest {
-    onlyIf { kotlin.targets.iosSim.publishable }
+    onlyIf { kotlin.targets.iosX64.publishable }
     def device = project.findProperty("iosDevice")?.toString() ?: "iPhone 11"
-    dependsOn 'linkDebugTestIosSim'
+    dependsOn 'linkDebugTestIosX64'
     group = JavaBasePlugin.VERIFICATION_GROUP
     description = "Runs tests for target 'ios' on an iOS simulator"
 
     doLast {
-        def binary = kotlin.targets.iosSim.binaries.getTest('DEBUG').outputFile
+        def binary = kotlin.targets.iosX64.binaries.getTest('DEBUG').outputFile
+        exec {
+            commandLine 'xcrun', 'simctl', 'spawn', '--standalone', device, binary.absolutePath
+        }
+    }
+}
+
+// TODO: allTest.dependsOn tvosTest
+task tvosTest {
+    onlyIf { kotlin.targets.tvosX64.publishable }
+    def device = project.findProperty("tvosDevice")?.toString() ?: "Apple TV"
+    dependsOn 'linkDebugTestTvosX64'
+    group = JavaBasePlugin.VERIFICATION_GROUP
+    description = "Runs tests for target 'tvos' on an Apple TV simulator"
+
+    doLast {
+        def binary = kotlin.targets.tvosX64.binaries.getTest('DEBUG').outputFile
+        exec {
+            commandLine 'xcrun', 'simctl', 'spawn', '--standalone', device, binary.absolutePath
+        }
+    }
+}
+
+// TODO: allTest.dependsOn watchosTest
+task watchosTest {
+    onlyIf { kotlin.targets.watchosX86.publishable }
+    def device = project.findProperty("watchosDevice")?.toString() ?: "Apple Watch Series 5"
+    dependsOn 'linkDebugTestWatchosX86'
+    group = JavaBasePlugin.VERIFICATION_GROUP
+    description = "Runs tests for target 'watchos' on an watchOS simulator"
+
+    doLast {
+        def binary = kotlin.targets.watchosX86.binaries.getTest('DEBUG').outputFile
         exec {
             commandLine 'xcrun', 'simctl', 'spawn', '--standalone', device, binary.absolutePath
         }
