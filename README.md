@@ -57,6 +57,29 @@ dependencies {
 }
 ``` 
 
+## Swift Demo
+
+When compiling for Apple targets, Kotlin 1.4+ will output methods with a `completionHandler` argument when marked with `suspend`.
+This allows APIs like `CoinGeckoClient` to be used seamlessly in Swift.  [coingecko-swift](coingecko-swift) provides a complete Xcode demo project.
+Note that `SwiftShims.createHttpClient()` is provided in the `iosSim` target for demo purposes, the arm 32/64 targets do not include this shim or the Ktor iOS client.
+
+Swift Example:
+```swift
+let httpClient = SwiftShims().createHttpClient()
+let coinGecko = CoinGeckoService.init(httpClient: httpClient)
+coinGecko.getPrice(
+    ids: "bitcoin",
+    vsCurrencies: "usd",
+    includeMarketCap: false,
+    include24hrVol: false,
+    include24hrChange: false,
+    includeLastUpdatedAt: false
+) { (priceMap, error) in
+    priceMap!["bitcoin"].getPrice("usd")
+}
+``` 
+
+
 ## License
 ```
 Copyright (c) 2020 Andrew Carlson

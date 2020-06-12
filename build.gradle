@@ -30,11 +30,20 @@ kotlin {
         browser {}
         nodejs {}
     }
-    iosX64("iosSim")
-    iosArm32("ios32")
-    iosArm64("ios64")
     macosX64("macos")
     mingwX64("win64")
+
+    configure([
+            iosX64("iosSim"),
+            iosArm32("ios32"),
+            iosArm64("ios64")
+    ]) {
+        binaries {
+            framework {
+                isStatic = true
+            }
+        }
+    }
 
     sourceSets {
         commonMain {
@@ -103,17 +112,17 @@ kotlin {
 
         win64Main { dependsOn nativeCommonMain }
         macosMain { dependsOn nativeCommonMain }
-        iosSimMain { dependsOn nativeCommonMain }
+        iosSimMain {
+            dependsOn nativeCommonMain
+            dependencies {
+                implementation "io.ktor:ktor-client-ios:$ktor_version"
+            }
+        }
         ios32Main { dependsOn nativeCommonMain }
         ios64Main { dependsOn nativeCommonMain }
 
         win64Test { dependsOn nativeCommonTest }
         macosTest { dependsOn nativeCommonTest }
-        iosSimTest {
-            dependencies {
-                implementation "io.ktor:ktor-client-ios:$ktor_version"
-            }
-        }
     }
 }
 
