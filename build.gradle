@@ -6,6 +6,8 @@ plugins {
 repositories {
     mavenCentral()
     jcenter()
+    maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
+    maven { url 'https://kotlin.bintray.com/kotlinx' }
 }
 
 apply plugin: 'maven-publish'
@@ -88,9 +90,9 @@ kotlin {
 
         nativeCommonMain {
             dependencies {
-                implementation "io.ktor:ktor-client-core-native:$ktor_version"
-                implementation "io.ktor:ktor-client-json-native:$ktor_version"
-                implementation "io.ktor:ktor-client-serialization-native:$ktor_version"
+                implementation "io.ktor:ktor-client-core:$ktor_version"
+                implementation "io.ktor:ktor-client-json:$ktor_version"
+                implementation "io.ktor:ktor-client-serialization:$ktor_version"
             }
         }
         nativeCommonTest {
