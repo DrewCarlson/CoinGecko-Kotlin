@@ -20,6 +20,13 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: 11
+      - name: Cache Build files
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.konan
+            ~/.gradle
+          key: ${{ runner.os }}-${{ hashFiles('gradle.properties') }}
       - uses: eskatos/gradle-command-action@v1
         name: Test Windows Target
         if: ${{ startsWith(matrix.os, 'windows') }}
@@ -35,10 +42,3 @@ jobs:
         if: ${{ startsWith(matrix.os, 'ubuntu') }}
         with:
           arguments: linuxX64Test
-      - name: Cache Build files
-        uses: actions/cache@v2
-        with:
-          path: |
-            ~/.konan
-            ~/.gradle
-          key: ${{ runner.os }}-${{ hashFiles('gradle.properties') }}
