@@ -22,6 +22,7 @@ jobs:
           java-version: 11
       - name: Cache Build files
         uses: actions/cache@v2
+        if: ${{ !startsWith(matrix.os, 'windows') }}
         with:
           path: |
             ~/.konan
