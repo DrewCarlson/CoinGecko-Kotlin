@@ -41,6 +41,16 @@ class CoinGeckoTests {
     }
 
     @Test
+    fun testGetCoinMarkets() = runBlocking {
+        val markets = coinGecko.getCoinMarkets("usd", "bitcoin")
+        val market = assertNotNull(markets.firstOrNull())
+
+        assertEquals("bitcoin", market.id)
+        assertEquals("Bitcoin", market.name)
+        assertEquals("btc", market.symbol)
+    }
+
+    @Test
     fun testCoinPrice() = runBlocking {
         val btcPrices = coinGecko.getPrice("bitcoin", "usd,cad")
         val btc = assertNotNull(btcPrices["bitcoin"])
