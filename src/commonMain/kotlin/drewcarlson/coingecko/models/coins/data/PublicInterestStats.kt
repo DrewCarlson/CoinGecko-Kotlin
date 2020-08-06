@@ -6,7 +6,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class PublicInterestStats(
         @SerialName("alexa_rank")
-        val alexaRank: Long = 0,
+        val alexaRank: Long? = 0,
         @SerialName("bing_matches")
-        val bingMatches: Long = 0
+        val bingMatches: Long? = 0
 )
