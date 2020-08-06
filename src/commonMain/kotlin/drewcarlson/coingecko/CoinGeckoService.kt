@@ -60,6 +60,7 @@ class CoinGeckoService(
     private val json = Json {
         isLenient = true
         ignoreUnknownKeys = true
+        coerceInputValues = true
     }
 
     private val httpClient = httpClient.config {
