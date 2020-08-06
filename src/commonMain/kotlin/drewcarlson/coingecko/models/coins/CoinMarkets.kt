@@ -18,11 +18,11 @@ data class CoinMarkets(
         @SerialName("current_price")
         val currentPrice: Double = 0.0,
         @SerialName("market_cap")
-        val marketCap: Long = 0,
+        val marketCap: Double = 0.0,
         @SerialName("market_cap_rank")
         val marketCapRank: Long = 0,
         @SerialName("total_volume")
-        val totalVolume: Long = 0,
+        val totalVolume: Double = 0.0,
         @SerialName("high_24h")
         val high24h: Double = 0.0,
         @SerialName("low_24h")
@@ -32,7 +32,7 @@ data class CoinMarkets(
         @SerialName("price_change_percentage_24h")
         val priceChangePercentage24h: Double = 0.0,
         @SerialName("market_cap_change_24h")
-        val marketCapChange24h: Long = 0,
+        val marketCapChange24h: Double = 0.0,
         @SerialName("market_cap_change_percentage_24h")
         val marketCapChangePercentage24h: Double = 0.0,
         @SerialName("circulating_supply")

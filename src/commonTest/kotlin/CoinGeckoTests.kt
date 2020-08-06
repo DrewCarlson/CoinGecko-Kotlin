@@ -42,12 +42,13 @@ class CoinGeckoTests {
 
     @Test
     fun testGetCoinMarkets() = runBlocking {
-        val markets = coinGecko.getCoinMarkets("usd", "bitcoin")
-        val market = assertNotNull(markets.firstOrNull())
+        val ids = arrayOf("bitcoin", "ethereum", "bread", "zcash")
+        val markets = coinGecko.getCoinMarkets("usd", ids.joinToString(","))
 
-        assertEquals("bitcoin", market.id)
-        assertEquals("Bitcoin", market.name)
-        assertEquals("btc", market.symbol)
+        assertEquals(ids.size, markets.size)
+        markets.forEach { market ->
+            assertTrue(ids.contains(market.id))
+        }
     }
 
     @Test
