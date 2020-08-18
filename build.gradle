@@ -6,7 +6,6 @@ plugins {
 repositories {
     mavenCentral()
     jcenter()
-    maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
     maven { url 'https://kotlin.bintray.com/kotlinx' }
 }
 
@@ -46,6 +45,7 @@ kotlin {
         commonMain {
             dependencies {
                 implementation kotlin('stdlib-common')
+                implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
                 implementation "io.ktor:ktor-client-core:$ktor_version"
                 implementation "io.ktor:ktor-client-json:$ktor_version"
                 implementation "io.ktor:ktor-client-serialization:$ktor_version"
