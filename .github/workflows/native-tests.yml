@@ -38,8 +38,8 @@ jobs:
         if: ${{ startsWith(matrix.os, 'macos') }}
         with:
           arguments: macosTest # iosTest tvosTest watchosX86Test
-      - uses: eskatos/gradle-command-action@v1
-        name: Test Linux Target
-        if: ${{ startsWith(matrix.os, 'ubuntu') }}
-        with:
-          arguments: linuxX64Test
+#      - uses: eskatos/gradle-command-action@v1
+#        name: Test Linux Target
+#        if: ${{ startsWith(matrix.os, 'ubuntu') }}
+#        with:
+#          arguments: linuxX64Test
