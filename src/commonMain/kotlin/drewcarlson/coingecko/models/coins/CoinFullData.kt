@@ -55,5 +55,9 @@ data class CoinFullData(
         val statusUpdates: List<Update>? = null,
         @SerialName("last_updated")
         val lastUpdated: String? = null,
-        val tickers: List<Ticker>? = null
+        val tickers: List<Ticker>? = null,
+        @SerialName("sentiment_votes_up_percentage")
+        val sentimentVotesUpPercentage: Float = 50f,
+        @SerialName("sentiment_votes_down_percentage")
+        val sentimentVotesDownPercentage: Float = 50f
 )
