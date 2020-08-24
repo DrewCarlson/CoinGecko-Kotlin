@@ -60,9 +60,9 @@ data class IcoData(
         @SerialName("kyc_required")
         val kycRequired: Boolean = false,
         @SerialName("whitelist_available")
-        val whitelistAvailable: Double?,
+        val whitelistAvailable: Boolean?,
         @SerialName("pre_sale_available")
-        val preSaleAvailable: Double?,
+        val preSaleAvailable: Boolean?,
         @SerialName("pre_sale_ended")
         val preSaleEnded: Boolean = false
 )
