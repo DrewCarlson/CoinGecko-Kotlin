@@ -26,8 +26,20 @@ publishing {
 kotlin {
     jvm()
     js(BOTH) {
-        browser {}
-        nodejs {}
+        browser {
+            testTask {
+                useMocha {
+                    timeout = 5000
+                }
+            }
+        }
+        nodejs {
+            testTask {
+                useMocha {
+                    timeout = 5000
+                }
+            }
+        }
     }
     macosX64("macos")
     mingwX64("win64")
