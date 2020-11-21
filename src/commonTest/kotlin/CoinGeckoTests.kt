@@ -6,11 +6,10 @@ import kotlinx.coroutines.CoroutineScope
 import kotlin.test.*
 
 expect fun runBlocking(block: suspend CoroutineScope.() -> Unit)
-expect fun createHttpEngine(): HttpClientEngineFactory<*>
 
 class CoinGeckoTests {
 
-    private val coinGecko = CoinGeckoService(HttpClient(createHttpEngine()))
+    private val coinGecko = CoinGeckoService()
 
     @Test
     fun testPing() = runBlocking {

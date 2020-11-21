@@ -12,14 +12,15 @@ import drewcarlson.coingecko.models.global.Global
 import drewcarlson.coingecko.models.rates.ExchangeRates
 import drewcarlson.coingecko.models.status.StatusUpdates
 import drewcarlson.coingecko.paging.PagingTransformer
-import io.ktor.client.HttpClient
-import io.ktor.client.features.defaultRequest
+import io.ktor.client.*
+import io.ktor.client.features.*
 import io.ktor.client.features.json.JsonFeature
-import io.ktor.client.features.json.serializer.KotlinxSerializer
-import io.ktor.client.request.get
-import io.ktor.client.request.parameter
-import io.ktor.http.URLProtocol
+import io.ktor.client.features.json.serializer.*
+import io.ktor.client.request.*
+import io.ktor.http.*
 import kotlinx.serialization.json.Json
+import kotlin.jvm.JvmOverloads
+import kotlin.native.concurrent.SharedImmutable
 
 private const val IDS = "ids"
 private const val PAGE = "page"
@@ -57,13 +58,16 @@ private const val API_BASE_PATH = "/api/v3"
 
 typealias RawPriceMap = Map<String, Map<String, String?>>
 
-class CoinGeckoService(httpClient: HttpClient) : CoinGeckoClient {
+@SharedImmutable
+private val json = Json {
+    isLenient = true
+    ignoreUnknownKeys = true
+    coerceInputValues = true
+}
 
-    private val json = Json {
-        isLenient = true
-        ignoreUnknownKeys = true
-        coerceInputValues = true
-    }
+class CoinGeckoService @JvmOverloads constructor(
+    httpClient: HttpClient = HttpClient()
+) : CoinGeckoClient {
 
     private val httpClient = httpClient.config {
         defaultRequest {
