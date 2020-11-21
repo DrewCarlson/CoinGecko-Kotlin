@@ -43,10 +43,14 @@ class CoinGeckoTests {
     @Test
     fun testGetCoinMarkets() = runBlocking {
         val ids = arrayOf("bitcoin", "ethereum", "bread", "zcash")
-        val markets = coinGecko.getCoinMarkets("usd", ids.joinToString(","))
+        val response = coinGecko.getCoinMarkets("usd", ids.joinToString(","))
 
-        assertEquals(ids.size, markets.size)
-        markets.forEach { market ->
+        assertEquals(ids.size, response.markets.size)
+        assertEquals(0, response.total)
+        assertEquals(0, response.perPage)
+        assertNull(response.nextPage)
+        assertNull(response.previousPage)
+        response.markets.forEach { market ->
             assertTrue(ids.contains(market.id))
         }
     }
@@ -75,5 +79,20 @@ class CoinGeckoTests {
         assertNotNull(eth.getMarketCap("usd"))
         assertNotNull(eth.getMarketCap("eur"))
         assertNotNull(eth.lastUpdatedAt)
+    }
+
+    @Test
+    fun testCoinTickers() = runBlocking {
+        val coinPage1 = coinGecko.getCoinTickerById("tether", "binance")
+        assertEquals(100, coinPage1.perPage)
+        assertEquals(2, coinPage1.nextPage)
+        assertTrue(coinPage1.total > 100)
+        assertNull(coinPage1.previousPage)
+
+        val coinPage2 = coinGecko.getCoinTickerById("tether", "binance", page = 2)
+        assertEquals(100, coinPage2.perPage)
+        assertEquals(1, coinPage2.previousPage)
+        assertTrue(coinPage2.total > 100)
+        assertNull(coinPage2.nextPage)
     }
 }

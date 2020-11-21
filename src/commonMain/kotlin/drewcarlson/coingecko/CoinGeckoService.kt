@@ -11,6 +11,7 @@ import drewcarlson.coingecko.models.exchanges.ExchangesTickersById
 import drewcarlson.coingecko.models.global.Global
 import drewcarlson.coingecko.models.rates.ExchangeRates
 import drewcarlson.coingecko.models.status.StatusUpdates
+import drewcarlson.coingecko.paging.PagingTransformer
 import io.ktor.client.HttpClient
 import io.ktor.client.features.defaultRequest
 import io.ktor.client.features.json.JsonFeature
@@ -51,11 +52,12 @@ private const val PROJECT_TYPE = "project_type"
 private const val UPCOMING_EVENTS_ONLY = "upcoming_events_only"
 private const val COIN_IDS = "COIN_IDS"
 
+private const val API_HOST = "api.coingecko.com"
+private const val API_BASE_PATH = "/api/v3"
+
 typealias RawPriceMap = Map<String, Map<String, String?>>
 
-class CoinGeckoService(
-    httpClient: HttpClient
-) : CoinGeckoClient {
+class CoinGeckoService(httpClient: HttpClient) : CoinGeckoClient {
 
     private val json = Json {
         isLenient = true
@@ -66,9 +68,10 @@ class CoinGeckoService(
     private val httpClient = httpClient.config {
         defaultRequest {
             url.protocol = URLProtocol.HTTPS
-            url.host = "api.coingecko.com"
-            url.encodedPath = "/api/v3" + url.encodedPath
+            url.host = API_HOST
+            url.encodedPath = API_BASE_PATH + url.encodedPath
         }
+        install(PagingTransformer)
         install(JsonFeature) {
             serializer = KotlinxSerializer(json)
         }
@@ -125,13 +128,13 @@ class CoinGeckoService(
         page: Int?,
         sparkline: Boolean,
         priceChangePercentage: String?
-    ): List<CoinMarkets> =
+    ): CoinMarketsList =
         httpClient.get("coins/markets") {
             parameter(IDS, ids)
             parameter(VS_CURRENCY, vsCurrency)
             parameter(ORDER, order)
             parameter(PER_PAGE, perPage)
-            parameter(PAGE, page)
+            parameter(PAGE, page ?: 1)
             parameter(SPARKLINE, sparkline)
             parameter(PRICE_CHANGE_PERCENTAGE, priceChangePercentage)
         }
