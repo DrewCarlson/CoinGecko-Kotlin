@@ -5,6 +5,6 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'coingecko'
+rootProject.name = "coingecko"
 
-enableFeaturePreview('GRADLE_METADATA')
+enableFeaturePreview("GRADLE_METADATA")
