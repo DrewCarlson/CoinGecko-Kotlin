@@ -65,9 +65,9 @@ private val json = Json {
     coerceInputValues = true
 }
 
-class CoinGeckoService @JvmOverloads constructor(
-    httpClient: HttpClient = HttpClient()
-) : CoinGeckoClient {
+class CoinGeckoService(httpClient: HttpClient) : CoinGeckoClient {
+
+    constructor() : this(HttpClient())
 
     private val httpClient = httpClient.config {
         defaultRequest {
