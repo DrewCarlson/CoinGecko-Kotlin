@@ -47,7 +47,7 @@ interface CoinGeckoClient {
         page: Int? = null,
         sparkline: Boolean = false,
         priceChangePercentage: String? = null
-    ): List<CoinMarkets>
+    ): CoinMarketsList
 
     suspend fun getCoinById(
         id: String,
