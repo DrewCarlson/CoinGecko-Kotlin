@@ -3,10 +3,11 @@ plugins {
     kotlin("plugin.serialization") version KOTLIN_VERSION
 }
 
-repositories {
-    mavenCentral()
-    jcenter()
-    maven { url = uri("https://kotlin.bintray.com/kotlinx") }
+allprojects {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
 }
 
 apply(plugin = "maven-publish")
@@ -45,13 +46,7 @@ kotlin {
     mingwX64("win64")
     linuxX64()
 
-    ios {
-        binaries {
-            framework(listOf(DEBUG)) {
-
-            }
-        }
-    }
+    ios()
     watchos()
     tvos()
 
@@ -163,14 +158,6 @@ kotlin {
         }
         configure(listOf(tvosTest, watchosTest)) {
             dependsOn(iosTest)
-            kotlin.srcDirs("src/iosTest/kotlin")
-        }
-
-        // Added for use in the swift demo
-        val iosX64Main by getting {
-            dependencies {
-                implementation("io.ktor:ktor-client-ios:$KTOR_VERSION")
-            }
         }
     }
 }

@@ -11,8 +11,7 @@ final class PriceObservable: ObservableObject {
     init(coinId: String, target: String) {
         self.coinId = coinId
         self.target = target
-        let httpClient = SwiftShims().createHttpClient()
-        coinGecko = CoinGeckoService.init(httpClient: httpClient)
+        coinGecko = CoinGeckoService.init()
         reload()
     }
 
