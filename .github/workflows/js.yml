@@ -1,4 +1,4 @@
-name: Js Tests
+name: Js
 
 on:
   push:

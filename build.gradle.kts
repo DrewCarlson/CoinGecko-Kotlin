@@ -55,6 +55,15 @@ kotlin {
     watchos()
     tvos()
 
+    configure(listOf(targets["metadata"], jvm(), js())) {
+        mavenPublication {
+            val targetPublication = this@mavenPublication
+            tasks.withType<AbstractPublishToMaven>()
+                .matching { it.publication == targetPublication }
+                .all { onlyIf { findProperty("isMainHost") ?: "true" == "true" } }
+        }
+    }
+
     sourceSets {
         val commonMain by getting {
             dependencies {
