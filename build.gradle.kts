@@ -57,7 +57,7 @@ kotlin {
 
     val isMainHost = findProperty("isMainHost") ?: "true" == "true"
     tasks["publishKotlinMultiplatformPublicationToMavenRepository"].enabled = isMainHost
-    configure(listOf(targets["metadata"], jvm(), js())) {
+    configure(listOf(targets["metadata"], jvm(), js(), linuxX64())) {
         mavenPublication {
             val targetPublication = this@mavenPublication
             tasks.withType<AbstractPublishToMaven>()
