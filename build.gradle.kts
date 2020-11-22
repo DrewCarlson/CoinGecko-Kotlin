@@ -55,12 +55,14 @@ kotlin {
     watchos()
     tvos()
 
+    val isMainHost = findProperty("isMainHost") ?: "true" == "true"
+    tasks["publishKotlinMultiplatformPublicationToMavenRepository"].enabled = isMainHost
     configure(listOf(targets["metadata"], jvm(), js())) {
         mavenPublication {
             val targetPublication = this@mavenPublication
             tasks.withType<AbstractPublishToMaven>()
                 .matching { it.publication == targetPublication }
-                .all { onlyIf { findProperty("isMainHost") ?: "true" == "true" } }
+                .all { onlyIf { isMainHost } }
         }
     }
 
