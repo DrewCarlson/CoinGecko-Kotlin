@@ -11,11 +11,16 @@ allprojects {
     }
 }
 val mavenUrl: String by ext
+val mavenSnapshotUrl: String by ext
 
 configure<PublishingExtension> {
     repositories {
         maven {
-            url = uri(mavenUrl)
+            url = if (version.toString().endsWith("SNAPSHOT")) {
+                uri(mavenSnapshotUrl)
+            } else {
+                uri(mavenUrl)
+            }
             credentials {
                 username = System.getenv("BINTRAY_USER")
                 password = System.getenv("BINTRAY_API_KEY")
