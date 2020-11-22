@@ -1,3 +1,6 @@
+import org.jetbrains.kotlin.gradle.plugin.KotlinTarget
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+
 plugins {
     kotlin("multiplatform") version KOTLIN_VERSION
     kotlin("plugin.serialization") version KOTLIN_VERSION
@@ -55,14 +58,22 @@ kotlin {
     watchos()
     tvos()
 
-    val isMainHost = findProperty("isMainHost") ?: "true" == "true"
-    tasks["publishKotlinMultiplatformPublicationToMavenRepository"].enabled = isMainHost
-    configure(listOf(targets["metadata"], jvm(), js(), linuxX64())) {
-        mavenPublication {
-            val targetPublication = this@mavenPublication
-            tasks.withType<AbstractPublishToMaven>()
-                .matching { it.publication == targetPublication }
-                .all { onlyIf { isMainHost } }
+    if (findProperty("hostPublishing") ?: "false" == "true") {
+        val host = System.getProperty("os.name", "unknown")
+        when {
+            host.contains("win") -> {
+                exclusivePublishing(mingwX64("win64"))
+            }
+            host.contains("mac") -> {
+                val targets = mutableListOf<KotlinNativeTarget>(macosX64("macos"))
+                ios { targets.add(this) }
+                tvos { targets.add(this) }
+                watchos { targets.add(this) }
+                exclusivePublishing(*targets.toTypedArray())
+            }
+            else -> {
+                exclusivePublishing(targets["metadata"], jvm(), js(BOTH), linuxX64())
+            }
         }
     }
 
@@ -177,3 +188,14 @@ kotlin {
         }
     }
 }
+
+/** Disabled all publications except for the provided [targets] */
+fun exclusivePublishing(vararg targets: KotlinTarget) =
+    targets.forEach { target ->
+        target.mavenPublication {
+            val targetPublication = this@mavenPublication
+            tasks.withType<AbstractPublishToMaven>()
+                .matching { it.publication != targetPublication }
+                .all { enabled = false }
+        }
+    }
