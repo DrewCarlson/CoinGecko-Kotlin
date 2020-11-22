@@ -1,13 +1,19 @@
 import SwiftUI
+import coingecko
 
 struct CoinPriceView: View {
     @ObservedObject var dataSource: PriceObservable
     private let formatter = NumberFormatter()
+    private let coinGecko = CoinGeckoService.init()
     
     init(coinId: String, target: String) {
         formatter.numberStyle = .currency
         formatter.currencyCode = target
-        dataSource = PriceObservable(coinId: coinId, target: target)
+        dataSource = PriceObservable(
+            coinId: coinId,
+            target: target,
+            coinGecko: coinGecko
+        )
     }
 
     var body: some View {

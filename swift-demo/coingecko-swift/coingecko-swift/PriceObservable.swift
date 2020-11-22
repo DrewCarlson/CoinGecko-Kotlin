@@ -4,14 +4,13 @@ import coingecko
 final class PriceObservable: ObservableObject {
     let coinId: String
     let target: String
-    @Published var coinPrice: CoinPrice?
-    
     private let coinGecko: CoinGeckoClient
+    @Published var coinPrice: CoinPrice?
 
-    init(coinId: String, target: String) {
+    init(coinId: String, target: String, coinGecko: CoinGeckoClient) {
         self.coinId = coinId
         self.target = target
-        coinGecko = CoinGeckoService.init()
+        self.coinGecko = coinGecko
         reload()
     }
 
