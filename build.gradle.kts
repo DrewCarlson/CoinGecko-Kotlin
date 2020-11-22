@@ -1,6 +1,7 @@
 plugins {
     kotlin("multiplatform") version KOTLIN_VERSION
     kotlin("plugin.serialization") version KOTLIN_VERSION
+    `maven-publish`
 }
 
 allprojects {
@@ -9,17 +10,16 @@ allprojects {
         jcenter()
     }
 }
-
-apply(plugin = "maven-publish")
+val mavenUrl: String by ext
 
 configure<PublishingExtension> {
     repositories {
         maven {
+            url = uri(mavenUrl)
             credentials {
                 username = System.getenv("BINTRAY_USER")
                 password = System.getenv("BINTRAY_API_KEY")
             }
-            url = uri("https://kotlin.bintray.com/kotlinx")
         }
     }
 }
