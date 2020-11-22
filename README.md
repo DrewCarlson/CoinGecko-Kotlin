@@ -18,13 +18,23 @@ CoinGecko-Kotlin is written in common Kotlin to support multiplatform developmen
 
 For a comprehensive list of available endpoints and to understand the returned data, see [coingecko.com/en/api](https://www.coingecko.com/en/api).
 
+Kotlin
 ```kotlin
-val httpClient = HttpClient(OkHttp) // ktor + okhttp (jvm)
-val coinGecko = CoinGeckoService(httpClient)
+val coinGecko = CoinGeckoService()
+
+println(coinGecko.ping().geckoSays)
+// Ping(geckoSays=(V3) To the Moon!)
 
 println(coinGecko.getCoinById("ethereum"))
 // CoinFullData(id=ethereum, symbol=eth, name=Ethereum, ...)
 ```
+Swift
+```swift
+let coinGecko = CoinGeckoService.init()
+coinGecko.ping { (ping, error) in
+    // ...
+}
+``` 
 
 ## Download
 
@@ -72,18 +82,7 @@ dependencies {
 
 ## Swift Demo
 
-When compiling for Apple targets, Kotlin 1.4+ will output methods with a `completionHandler` argument when marked with `suspend`.
-This allows APIs like `CoinGeckoClient` to be used seamlessly in Swift.
-The [swift-demo](swift-demo) module provides a complete Xcode example.
-
-Swift Example:
-```swift
-let coinGecko = CoinGeckoService.init()
-coinGecko.ping { (ping, error) in
-    // ...
-}
-``` 
-
+The [swift-demo](swift-demo) module provides a Framework compilation module, and a complete [Xcode project](swift-demo/coingecko-swift) written in Swift.
 
 ## License
 ```
