@@ -3,6 +3,7 @@
 # CoinGecko Kotlin
 
 ![Bintray](https://img.shields.io/bintray/v/drewcarlson/CoinGecko-Kotlin/CoinGecko-Kotlin?color=blue)
+![](https://img.shields.io/maven-metadata/v?label=artifactory&logoColor=lightgrey&metadataUrl=https%3A%2F%2Foss.jfrog.org%2Fartifactory%2Foss-snapshot-local%2Fdrewcarlson%2Fcoingecko%2Fcoingecko%2Fmaven-metadata.xml&color=lightgrey)
 ![](https://github.com/DrewCarlson/CoinGecko-Kotlin/workflows/Jvm%20Tests/badge.svg)
 ![](https://github.com/DrewCarlson/CoinGecko-Kotlin/workflows/Js%20Tests/badge.svg)
 ![](https://github.com/DrewCarlson/CoinGecko-Kotlin/workflows/Native%20Tests/badge.svg)
@@ -42,6 +43,8 @@ Artifacts are available on [Bintray](https://bintray.com/drewcarlson/CoinGecko-K
 ```groovy
 repositories {
   jcenter()
+  // Or snapshots
+  maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local' }
 }
 
 dependencies {
