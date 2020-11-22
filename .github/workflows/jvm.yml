@@ -26,6 +26,3 @@ jobs:
       - uses: eskatos/gradle-command-action@v1
         with:
           arguments: jvmTest
-      - name: Get tag version
-        id: git_tag
-        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
