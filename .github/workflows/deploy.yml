@@ -1,10 +1,14 @@
-name: Native
+name: Deploy
 
 on:
+  create:
+    branches: [ master ]
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
+
+env:
+  BINTRAY_USER: ${{ secrets.BINTRAY_USER }}
+  BINTRAY_API_KEY: ${{ secrets.BINTRAY_API_KEY }}
 
 jobs:
   gradle:
@@ -28,18 +32,16 @@ jobs:
             ~/.konan
             ~/.gradle
           key: ${{ runner.os }}-${{ hashFiles('gradle.properties') }}
+      - name: Get git tag version
+        id: git_tag
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
       - uses: eskatos/gradle-command-action@v1
-        name: Test Windows Target
-        if: ${{ startsWith(matrix.os, 'windows') }}
+        name: Publish Tag
         with:
-          arguments: win64Test
+          arguments: publish -Pversion=${{ steps.git_tag.outputs.VERSION }} -PisMainHost=${{ startsWith(runner.os, 'ubuntu') }}
+        if: ${{ startsWith(github.ref, 'refs/tags') }}
       - uses: eskatos/gradle-command-action@v1
-        name: Test Apple Targets
-        if: ${{ startsWith(matrix.os, 'macos') }}
+        name: Publish SNAPSHOT
         with:
-          arguments: macosTest # iosTest tvosTest watchosX86Test
-      - uses: eskatos/gradle-command-action@v1
-        name: Test Linux Target
-        if: ${{ startsWith(matrix.os, 'ubuntu') }}
-        with:
-          arguments: linuxX64Test
+          arguments: publish -PisMainHost=${{ startsWith(runner.os, 'ubuntu') }}
+        if: ${{ startsWith(github.ref, 'refs/heads/master') }}
