@@ -30,6 +30,12 @@ publishing {
     }
 }
 
+System.getenv("GITHUB_REF")?.let { ref ->
+    if (ref.startsWith("refs/tags/") == true) {
+        version = ref.substringAfterLast("refs/tags/")
+    }
+}
+
 kotlin {
     jvm()
     js(BOTH) {
