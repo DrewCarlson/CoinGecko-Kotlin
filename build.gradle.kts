@@ -11,6 +11,12 @@ allprojects {
     }
 }
 
+System.getenv("GITHUB_REF")?.let { ref ->
+    if (ref.startsWith("refs/tags/")) {
+        version = ref.substringAfterLast("refs/tags/")
+    }
+}
+
 val mavenUrl: String by ext
 val mavenSnapshotUrl: String by ext
 
@@ -27,12 +33,6 @@ publishing {
                 password = System.getenv("BINTRAY_API_KEY")
             }
         }
-    }
-}
-
-System.getenv("GITHUB_REF")?.let { ref ->
-    if (ref.startsWith("refs/tags/")) {
-        version = ref.substringAfterLast("refs/tags/")
     }
 }
 
