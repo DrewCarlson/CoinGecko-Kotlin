@@ -2,9 +2,9 @@ name: Publish
 
 on:
   create:
-    branches: [ master ]
+    branches: [ main ]
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 env:
   BINTRAY_USER: ${{ secrets.BINTRAY_USER }}
