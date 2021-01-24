@@ -106,12 +106,6 @@ kotlin {
                 implementation(kotlin("test"))
                 implementation(kotlin("test-js"))
                 implementation("io.ktor:ktor-client-js:$KTOR_VERSION")
-                implementation(npm("node-fetch", "*"))
-                implementation(npm("text-encoding", "*"))
-                implementation(npm("bufferutil", "*"))
-                implementation(npm("utf-8-validate", "*"))
-                implementation(npm("abort-controller", "*"))
-                implementation(npm("fs", "*"))
             }
         }
 
