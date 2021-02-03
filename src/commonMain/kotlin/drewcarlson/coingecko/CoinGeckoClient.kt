@@ -11,8 +11,19 @@ import drewcarlson.coingecko.models.exchanges.ExchangesTickersById
 import drewcarlson.coingecko.models.global.Global
 import drewcarlson.coingecko.models.rates.ExchangeRates
 import drewcarlson.coingecko.models.status.StatusUpdates
+import io.ktor.client.HttpClient
 
 interface CoinGeckoClient {
+
+    companion object {
+        fun create(): CoinGeckoClient {
+            return CoinGeckoService()
+        }
+
+        fun create(httpClient: HttpClient): CoinGeckoClient {
+            return CoinGeckoService(httpClient)
+        }
+    }
 
     suspend fun ping(): Ping
 
