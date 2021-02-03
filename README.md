@@ -8,11 +8,7 @@
 ![](https://github.com/DrewCarlson/CoinGecko-Kotlin/workflows/Js/badge.svg)
 ![](https://github.com/DrewCarlson/CoinGecko-Kotlin/workflows/Native/badge.svg)
 
-Kotlin wrapper for the [CoinGecko API](https://www.coingecko.com/en/api).
-
-## About
-
-CoinGecko-Kotlin is written in common Kotlin to support multiplatform development.  [Kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization) provides json (de)serialization and [Ktor](https://ktor.io) the HTTP API.
+Kotlin wrapper for the [CoinGecko API](https://www.coingecko.com/en/api) using [Ktor](https://ktor.io).
 
 ## Usage
 
@@ -20,7 +16,7 @@ For a comprehensive list of available endpoints and to understand the returned d
 
 Kotlin
 ```kotlin
-val coinGecko = CoinGeckoService()
+val coinGecko = CoinGeckoClient.create()
 
 println(coinGecko.ping().geckoSays)
 // Ping(geckoSays=(V3) To the Moon!)
@@ -50,15 +46,15 @@ coinGecko.ping { (ping, error) in
 
 Artifacts are available on [Bintray](https://bintray.com/drewcarlson/CoinGecko-Kotlin).
 
-```groovy
+```kotlin
 repositories {
   jcenter()
   // Or snapshots
-  maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local' }
+  maven(url = "http://oss.jfrog.org/artifactory/oss-snapshot-local")
 }
 
 dependencies {
-  implementation "drewcarlson.coingecko:coingecko-jvm:$coingecko_version"
+  implementation("drewcarlson.coingecko:coingecko-jvm:$coingecko_version")
 }
 ```
 
