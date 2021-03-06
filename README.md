@@ -41,8 +41,8 @@ coinGecko.ping { (ping, error) in
 ![](https://img.shields.io/static/v1?label=&message=macOS&color=blue)
 ![](https://img.shields.io/static/v1?label=&message=Windows&color=blue)
 ![](https://img.shields.io/static/v1?label=&message=iOS&color=blue)
-![](https://img.shields.io/static/v1?label=&message=tvOS&color=blue)
-![](https://img.shields.io/static/v1?label=&message=watchOS&color=blue)
+![](https://img.shields.io/static/v1?label=&message=tvOS&color=red)
+![](https://img.shields.io/static/v1?label=&message=watchOS&color=red)
 
 Artifacts are available on [Bintray](https://bintray.com/drewcarlson/CoinGecko-Kotlin).
 
