@@ -142,6 +142,9 @@ kotlin {
         val linuxX64Test by getting
         configure(listOf(win64Test, macosTest, linuxX64Test)) {
             dependsOn(desktopCommonTest)
+            dependencies {
+                implementation("com.autodesk:coroutineworker:0.6.3")
+            }
         }
 
         val iosMain by getting {
