@@ -142,9 +142,6 @@ kotlin {
         val linuxX64Test by getting
         configure(listOf(win64Test, macosTest, linuxX64Test)) {
             dependsOn(desktopCommonTest)
-            dependencies {
-                implementation("com.autodesk:coroutineworker:0.6.3")
-            }
         }
 
         val iosMain by getting {
@@ -154,6 +151,7 @@ kotlin {
             dependsOn(nativeCommonTest)
             dependencies {
                 implementation("io.ktor:ktor-client-ios:$KTOR_VERSION")
+                implementation("com.autodesk:coroutineworker:0.6.3")
             }
         }
 
