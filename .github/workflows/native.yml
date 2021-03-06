@@ -14,9 +14,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v1
-      - run: sudo apt-get update --fix-missing && sudo apt-get install libcurl4-openssl-dev
-        name: Install libcurl-dev
-        if: ${{ startsWith(matrix.os, 'ubuntu') }}
       - uses: actions/setup-java@v1
         with:
           java-version: 11
