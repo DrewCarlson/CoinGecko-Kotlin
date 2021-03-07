@@ -2,8 +2,8 @@
 
 # CoinGecko Kotlin
 
-![Bintray](https://img.shields.io/bintray/v/drewcarlson/CoinGecko-Kotlin/CoinGecko-Kotlin?color=blue)
-![](https://img.shields.io/maven-metadata/v?label=artifactory&logoColor=lightgrey&metadataUrl=https%3A%2F%2Foss.jfrog.org%2Fartifactory%2Foss-snapshot-local%2Fdrewcarlson%2Fcoingecko%2Fcoingecko%2Fmaven-metadata.xml&color=lightgrey)
+
+![Maven Central](https://img.shields.io/maven-central/v/org.drewcarlson/coingecko-jvm?label=maven&color=blue)
 ![](https://github.com/DrewCarlson/CoinGecko-Kotlin/workflows/Jvm/badge.svg)
 ![](https://github.com/DrewCarlson/CoinGecko-Kotlin/workflows/Js/badge.svg)
 ![](https://github.com/DrewCarlson/CoinGecko-Kotlin/workflows/Native/badge.svg)
@@ -34,6 +34,10 @@ coinGecko.ping { (ping, error) in
 
 ## Download
 
+
+![Maven Central](https://img.shields.io/maven-central/v/org.drewcarlson/coingecko-jvm?label=maven&color=blue)
+![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/org.drewcarlson/coingecko-jvm?server=https%3A%2F%2Fs01.oss.sonatype.org)
+
 ![](https://img.shields.io/static/v1?label=&message=Platforms&color=grey)
 ![](https://img.shields.io/static/v1?label=&message=Js&color=blue)
 ![](https://img.shields.io/static/v1?label=&message=Jvm&color=blue)
@@ -44,17 +48,15 @@ coinGecko.ping { (ping, error) in
 ![](https://img.shields.io/static/v1?label=&message=tvOS&color=red)
 ![](https://img.shields.io/static/v1?label=&message=watchOS&color=red)
 
-Artifacts are available on [Bintray](https://bintray.com/drewcarlson/CoinGecko-Kotlin).
-
 ```kotlin
 repositories {
-  jcenter()
+  mavenCentral()
   // Or snapshots
-  maven(url = "http://oss.jfrog.org/artifactory/oss-snapshot-local")
+  maven(url = "https://s01.oss.sonatype.org/content/repositories/snapshots/")
 }
 
 dependencies {
-  implementation("drewcarlson.coingecko:coingecko-jvm:$coingecko_version")
+  implementation("org.drewcarlson:coingecko-jvm:$coingecko_version")
 }
 ```
 
