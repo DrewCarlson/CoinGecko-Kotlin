@@ -13,7 +13,7 @@ object Currency {
     const val CHF = "chf"
     const val CLP = "clp"
     const val CNY = "cny"
-    const val CZK = "czl"
+    const val CZK = "czk"
     const val DKK = "dkk"
     const val EUR = "eur"
     const val GBP = "gbp"
