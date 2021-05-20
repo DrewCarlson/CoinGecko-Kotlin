@@ -69,7 +69,7 @@ data class MarketData(
         @SerialName("market_cap_change_percentage_24h_in_currency")
         val marketCapChangePercentage24hInCurrency: Map<String, Double>? = null,
         @SerialName("total_supply")
-        val totalSupply: Double?,
+        val totalSupply: Double? = null,
         @SerialName("circulating_supply")
         val circulatingSupply: Double = 0.0,
         @SerialName("last_updated")

@@ -19,5 +19,5 @@ data class CommunityData(
         @SerialName("reddit_accounts_active_48h")
         val redditAccountsActive48h: Double = 0.0,
         @SerialName("telegram_channel_user_count")
-        val telegramChannelUserCount: Double?
+        val telegramChannelUserCount: Double? = null,
 )

@@ -38,7 +38,7 @@ data class CoinMarkets(
         @SerialName("circulating_supply")
         val circulatingSupply: Double = 0.0,
         @SerialName("total_supply")
-        val totalSupply: Double? = 0.0,
+        val totalSupply: Double? = null,
         @SerialName("ath")
         val ath: Double = 0.0,
         @SerialName("ath_change_percentage")

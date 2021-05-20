@@ -97,4 +97,11 @@ class CoinGeckoTests {
         val coinPage3 = coinGecko.getCoinTickerById("tether", "binance", page = 3)
         assertNull(coinPage3.nextPage)
     }
+
+    @Test
+    fun testCoinHistory() = runBlocking {
+        val bitcoin = coinGecko.getCoinHistoryById("bitcoin", "23-10-2018")
+        val image = assertNotNull(bitcoin.image)
+        assertTrue(image.small.isNotBlank())
+    }
 }
