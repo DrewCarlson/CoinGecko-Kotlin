@@ -65,6 +65,7 @@ internal val json = Json {
     isLenient = true
     ignoreUnknownKeys = true
     coerceInputValues = true
+    useAlternativeNames = false
 }
 
 internal class CoinGeckoClientImpl(httpClient: HttpClient) : CoinGeckoClient {
