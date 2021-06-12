@@ -1,5 +1,7 @@
 package drewcarlson.coingecko
 
+import drewcarlson.coingecko.error.*
+import drewcarlson.coingecko.error.ErrorTransformer
 import drewcarlson.coingecko.models.Ping
 import drewcarlson.coingecko.models.coins.*
 import drewcarlson.coingecko.models.events.EventCountries
@@ -59,13 +61,13 @@ private const val API_BASE_PATH = "/api/v3"
 typealias RawPriceMap = Map<String, Map<String, String?>>
 
 @SharedImmutable
-private val json = Json {
+internal val json = Json {
     isLenient = true
     ignoreUnknownKeys = true
     coerceInputValues = true
 }
 
-class CoinGeckoService(httpClient: HttpClient) : CoinGeckoClient {
+internal class CoinGeckoClientImpl(httpClient: HttpClient) : CoinGeckoClient {
 
     constructor() : this(HttpClient())
 
@@ -75,6 +77,7 @@ class CoinGeckoService(httpClient: HttpClient) : CoinGeckoClient {
             url.host = API_HOST
             url.encodedPath = API_BASE_PATH + url.encodedPath
         }
+        install(ErrorTransformer)
         install(PagingTransformer)
         install(JsonFeature) {
             serializer = KotlinxSerializer(json)

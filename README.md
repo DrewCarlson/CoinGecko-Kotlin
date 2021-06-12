@@ -26,7 +26,7 @@ println(coinGecko.getCoinById("ethereum"))
 ```
 Swift
 ```swift
-let coinGecko = CoinGeckoService.init()
+let coinGecko = CoinGeckoClientCompanion().create()
 coinGecko.ping { (ping, error) in
     // ...
 }
@@ -56,7 +56,7 @@ repositories {
 }
 
 dependencies {
-  implementation("org.drewcarlson:coingecko-jvm:$coingecko_version")
+  implementation("org.drewcarlson:coingecko:$coingecko_version")
 }
 ```
 

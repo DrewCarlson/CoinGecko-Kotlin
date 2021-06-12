@@ -4,8 +4,8 @@ import coingecko
 struct CoinPriceView: View {
     @ObservedObject var dataSource: PriceObservable
     private let formatter = NumberFormatter()
-    private let coinGecko = CoinGeckoService.init()
-    
+    private let coinGecko = CoinGeckoClientCompanion().create()
+
     init(coinId: String, target: String) {
         formatter.numberStyle = .currency
         formatter.currencyCode = target
