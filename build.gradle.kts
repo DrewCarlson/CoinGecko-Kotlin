@@ -118,8 +118,13 @@ kotlin {
         val iosTest by getting {
             dependsOn(nativeCommonTest)
             dependencies {
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$COROUTINES_VERSION") {
+                    version {
+                        strictly(COROUTINES_VERSION)
+                    }
+                }
                 implementation("io.ktor:ktor-client-ios:$KTOR_VERSION")
-                implementation("com.autodesk:coroutineworker:0.6.3")
+                implementation("com.autodesk:coroutineworker:0.7.0")
             }
         }
 
