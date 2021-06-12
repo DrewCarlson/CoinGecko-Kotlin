@@ -1,7 +1,6 @@
 package drewcarlson.coingecko
 
-import io.ktor.client.HttpClient
-import io.ktor.client.engine.HttpClientEngineFactory
+import drewcarlson.coingecko.error.*
 import kotlinx.coroutines.CoroutineScope
 import kotlin.test.*
 
@@ -9,7 +8,7 @@ expect fun runBlocking(block: suspend CoroutineScope.() -> Unit)
 
 class CoinGeckoTests {
 
-    private val coinGecko = CoinGeckoService()
+    private val coinGecko = CoinGeckoClientImpl()
 
     @Test
     fun testPing() = runBlocking {
@@ -103,5 +102,15 @@ class CoinGeckoTests {
         val bitcoin = coinGecko.getCoinHistoryById("bitcoin", "23-10-2018")
         val image = assertNotNull(bitcoin.image)
         assertTrue(image.small.isNotBlank())
+    }
+
+    @Test
+    fun testNonExistentCoin() = runBlocking {
+        val exception = assertFailsWith<CoinGeckoApiException> {
+            coinGecko.getCoinById("not-a-real-coin")
+        }
+
+        assertEquals(404, exception.error?.code)
+        assertEquals("Could not find coin with the given id", exception.error?.message)
     }
 }
