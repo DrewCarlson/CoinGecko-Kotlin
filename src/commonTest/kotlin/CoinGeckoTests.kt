@@ -106,10 +106,11 @@ class CoinGeckoTests {
 
     @Test
     fun testNonExistentCoin() = runBlocking {
-        val exception = assertFailsWith<CoinGeckoApiException> {
+        val exception = assertFails {
             coinGecko.getCoinById("not-a-real-coin")
         }
 
+        assertTrue(exception is CoinGeckoApiException)
         assertEquals(404, exception.error?.code)
         assertEquals("Could not find coin with the given id", exception.error?.message)
     }
