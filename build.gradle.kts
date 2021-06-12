@@ -45,6 +45,7 @@ kotlin {
             dependencies {
                 implementation(kotlin("stdlib-common"))
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$COROUTINES_VERSION")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$SERIALIZATION_VERSION")
                 implementation("io.ktor:ktor-client-core:$KTOR_VERSION")
                 implementation("io.ktor:ktor-client-json:$KTOR_VERSION")
                 implementation("io.ktor:ktor-client-serialization:$KTOR_VERSION")
@@ -59,9 +60,6 @@ kotlin {
         val jvmMain by getting {
             dependencies {
                 implementation(kotlin("stdlib-jdk8"))
-                implementation("io.ktor:ktor-client-core-jvm:$KTOR_VERSION")
-                implementation("io.ktor:ktor-client-json-jvm:$KTOR_VERSION")
-                implementation("io.ktor:ktor-client-serialization-jvm:$KTOR_VERSION")
             }
         }
         val jvmTest by getting {
@@ -74,9 +72,6 @@ kotlin {
         val jsMain by getting {
             dependencies {
                 implementation(kotlin("stdlib-js"))
-                implementation("io.ktor:ktor-client-core-js:$KTOR_VERSION")
-                implementation("io.ktor:ktor-client-json-js:$KTOR_VERSION")
-                implementation("io.ktor:ktor-client-serialization-js:$KTOR_VERSION")
             }
         }
         val jsTest by getting {
@@ -89,11 +84,6 @@ kotlin {
 
         val nativeCommonMain by creating {
             dependsOn(commonMain)
-            dependencies {
-                implementation("io.ktor:ktor-client-core:$KTOR_VERSION")
-                implementation("io.ktor:ktor-client-json:$KTOR_VERSION")
-                implementation("io.ktor:ktor-client-serialization:$KTOR_VERSION")
-            }
         }
         val nativeCommonTest by creating {
             dependsOn(commonTest)
