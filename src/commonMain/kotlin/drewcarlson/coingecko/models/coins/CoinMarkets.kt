@@ -41,8 +41,14 @@ data class CoinMarkets(
         val totalSupply: Double? = null,
         @SerialName("ath")
         val ath: Double = 0.0,
+        @SerialName("atl")
+        val atl: Double = 0.0,
+        @SerialName("atl_change_percentage")
+        val atlChangePercentage: Double = 0.0,
         @SerialName("ath_change_percentage")
         val athChangePercentage: Double = 0.0,
+        @SerialName("atl_date")
+        val atlDate: String? = null,
         @SerialName("ath_date")
         val athDate: String? = null,
         @SerialName("roi")
@@ -52,5 +58,9 @@ data class CoinMarkets(
         @SerialName("sparkline_in_7d")
         val sparklineIn7d: SparklineIn7d? = null,
         @SerialName("price_change_percentage_1h_in_currency")
-        val priceChangePercentage1hInCurrency: Double = 0.0
+        val priceChangePercentage1hInCurrency: Double = 0.0,
+        @SerialName("fully_diluted_valuation")
+        val fullyDilutedValuation: Long?,
+        @SerialName("max_supply")
+        val maxSupply: Double = 0.0,
 )

@@ -59,5 +59,12 @@ data class CoinFullData(
         @SerialName("sentiment_votes_up_percentage")
         val sentimentVotesUpPercentage: Float = 50f,
         @SerialName("sentiment_votes_down_percentage")
-        val sentimentVotesDownPercentage: Float = 50f
+        val sentimentVotesDownPercentage: Float = 50f,
+        @SerialName("asset_platform_id")
+        val assetPlatformId: String?,
+        val platforms: Map<String, String> = emptyMap(),
+        @SerialName("public_notice")
+        val publicNotice: String? = null,
+        @SerialName("additional_notices")
+        val additionalNotices: List<String> = emptyList(),
 )

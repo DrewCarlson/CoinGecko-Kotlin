@@ -30,5 +30,9 @@ data class Ticker(
         @SerialName("trade_url")
         val tradeUrl: String? = null,
         @SerialName("coin_id")
-        val coinId: String
+        val coinId: String,
+        @SerialName("token_info_url")
+        val tokenInfoUrl: String?,
+        @SerialName("target_coin_id")
+        val targetCoinId: String? = null,
 )
