@@ -37,8 +37,8 @@ kotlin {
     linuxX64()
 
     ios()
-    //watchos()
-    //tvos()
+    watchos()
+    tvos()
 
     sourceSets {
         val commonMain by getting {
@@ -82,27 +82,14 @@ kotlin {
             }
         }
 
-        val nativeCommonMain by creating {
-            dependsOn(commonMain)
-        }
         val nativeCommonTest by creating {
             dependsOn(commonTest)
-        }
-        val desktopCommonMain by creating {
-            dependsOn(nativeCommonMain)
         }
         val desktopCommonTest by creating {
             dependsOn(nativeCommonTest)
             dependencies {
                 implementation("io.ktor:ktor-client-curl:$KTOR_VERSION")
             }
-        }
-
-        val win64Main by getting
-        val macosMain by getting
-        val linuxX64Main by getting
-        configure(listOf(win64Main, macosMain, linuxX64Main)) {
-            dependsOn(desktopCommonMain)
         }
 
         val win64Test by getting
@@ -112,9 +99,6 @@ kotlin {
             dependsOn(desktopCommonTest)
         }
 
-        val iosMain by getting {
-            dependsOn(nativeCommonMain)
-        }
         val iosTest by getting {
             dependsOn(nativeCommonTest)
             dependencies {
