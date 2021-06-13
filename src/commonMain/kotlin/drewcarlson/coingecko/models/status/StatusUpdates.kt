@@ -1,6 +1,6 @@
 package drewcarlson.coingecko.models.status
 
-import drewcarlson.coingecko.paging.Page
+import drewcarlson.coingecko.models.Page
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

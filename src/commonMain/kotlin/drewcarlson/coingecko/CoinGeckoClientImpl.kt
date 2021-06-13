@@ -1,8 +1,6 @@
 package drewcarlson.coingecko
 
-import drewcarlson.coingecko.error.*
 import drewcarlson.coingecko.error.ErrorTransformer
-import drewcarlson.coingecko.models.Ping
 import drewcarlson.coingecko.models.coins.*
 import drewcarlson.coingecko.models.events.EventCountries
 import drewcarlson.coingecko.models.events.EventTypes
@@ -13,7 +11,8 @@ import drewcarlson.coingecko.models.exchanges.ExchangesTickersById
 import drewcarlson.coingecko.models.global.Global
 import drewcarlson.coingecko.models.rates.ExchangeRates
 import drewcarlson.coingecko.models.status.StatusUpdates
-import drewcarlson.coingecko.paging.PagingTransformer
+import drewcarlson.coingecko.internal.PagingTransformer
+import drewcarlson.coingecko.models.*
 import io.ktor.client.*
 import io.ktor.client.features.*
 import io.ktor.client.features.json.JsonFeature
@@ -21,7 +20,6 @@ import io.ktor.client.features.json.serializer.*
 import io.ktor.client.request.*
 import io.ktor.http.*
 import kotlinx.serialization.json.Json
-import kotlin.jvm.JvmOverloads
 import kotlin.native.concurrent.SharedImmutable
 
 private const val IDS = "ids"
@@ -217,6 +215,23 @@ internal class CoinGeckoClientImpl(httpClient: HttpClient) : CoinGeckoClient {
 
     override suspend fun getCoinInfoByContractAddress(id: String, contractAddress: String): CoinFullData =
         httpClient.get("coins/$id/contract/$contractAddress")
+
+    override suspend fun getCoinOhlc(id: String, vsCurrency: String, days: Int): List<CoinOhlc> =
+        httpClient.get("coins/$id/ohlc") {
+            parameter(VS_CURRENCY, vsCurrency)
+            parameter(DAYS, days)
+        }
+
+    override suspend fun getAssetPlatforms(): List<AssetPlatform> =
+        httpClient.get("asset_platforms")
+
+    override suspend fun getCoinCategoriesList(): List<CoinCategory> =
+        httpClient.get("coins/categories/list")
+
+    override suspend fun getCoinCategories(order: String): List<CoinCategoryAndData> =
+        httpClient.get("coins/categories") {
+            parameter(ORDER, order)
+        }
 
     override suspend fun getExchanges(): List<Exchanges> =
         httpClient.get("exchanges")

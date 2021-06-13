@@ -1,5 +1,6 @@
 package drewcarlson.coingecko
 
+import drewcarlson.coingecko.constant.*
 import drewcarlson.coingecko.error.*
 import kotlinx.coroutines.CoroutineScope
 import kotlin.test.*
@@ -113,5 +114,16 @@ class CoinGeckoTests {
         assertTrue(exception is CoinGeckoApiException)
         assertEquals(404, exception.error?.code)
         assertEquals("Could not find coin with the given id", exception.error?.message)
+    }
+
+    @Test
+    fun testCoinOhlc() = runBlocking {
+        val ohlc = coinGecko.getCoinOhlc("tezos", Currency.USD, 1).firstOrNull()
+
+        assertNotNull(ohlc?.time)
+        assertNotNull(ohlc?.close)
+        assertNotNull(ohlc?.high)
+        assertNotNull(ohlc?.low)
+        assertNotNull(ohlc?.open)
     }
 }

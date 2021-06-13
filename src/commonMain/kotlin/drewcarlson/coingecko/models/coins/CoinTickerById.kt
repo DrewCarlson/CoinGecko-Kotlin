@@ -1,6 +1,6 @@
 package drewcarlson.coingecko.models.coins
 
-import drewcarlson.coingecko.paging.Page
+import drewcarlson.coingecko.models.Page
 import drewcarlson.coingecko.models.shared.Ticker
 import kotlinx.serialization.Serializable
 

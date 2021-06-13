@@ -1,7 +1,8 @@
 package drewcarlson.coingecko
 
+import drewcarlson.coingecko.constant.*
 import drewcarlson.coingecko.error.*
-import drewcarlson.coingecko.models.Ping
+import drewcarlson.coingecko.models.*
 import drewcarlson.coingecko.models.coins.*
 import drewcarlson.coingecko.models.events.EventCountries
 import drewcarlson.coingecko.models.events.EventTypes
@@ -121,6 +122,24 @@ interface CoinGeckoClient {
         id: String,
         contractAddress: String
     ): CoinFullData
+
+    @Throws(CoinGeckoApiException::class, CancellationException::class)
+    suspend fun getCoinOhlc(
+        id: String,
+        vsCurrency: String,
+        days: Int,
+    ): List<CoinOhlc>
+
+    @Throws(CoinGeckoApiException::class, CancellationException::class)
+    suspend fun getAssetPlatforms(): List<AssetPlatform>
+
+    @Throws(CoinGeckoApiException::class, CancellationException::class)
+    suspend fun getCoinCategoriesList(): List<CoinCategory>
+
+    @Throws(CoinGeckoApiException::class, CancellationException::class)
+    suspend fun getCoinCategories(
+        order: String = Order.MARKET_CAP_DESC
+    ): List<CoinCategoryAndData>
 
     @Throws(CoinGeckoApiException::class, CancellationException::class)
     suspend fun getExchanges(): List<Exchanges>

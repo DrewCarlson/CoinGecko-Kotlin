@@ -1,4 +1,4 @@
-package drewcarlson.coingecko.paging
+package drewcarlson.coingecko.internal
 
 import io.ktor.client.HttpClient
 import io.ktor.client.features.HttpClientFeature

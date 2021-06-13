@@ -1,4 +1,4 @@
-package drewcarlson.coingecko.paging
+package drewcarlson.coingecko.models
 
 interface Page {
     val total: Int
