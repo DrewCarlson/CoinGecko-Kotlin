@@ -37,8 +37,8 @@ kotlin {
     linuxX64()
 
     ios()
-    watchos()
-    tvos()
+    //watchos()
+    //tvos()
 
     sourceSets {
         val commonMain by getting {
