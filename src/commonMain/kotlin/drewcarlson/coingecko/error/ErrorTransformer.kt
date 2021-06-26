@@ -20,7 +20,7 @@ internal object ErrorTransformer : HttpClientFeature<ErrorTransformer, ErrorTran
             try {
                 proceed()
             } catch (e: Throwable) {
-                if (e is ClientRequestException) {
+                if (e is ResponseException) {
                     val bodyText = e.response.readText()
                     val body = try {
                         json.parseToJsonElement(bodyText)
