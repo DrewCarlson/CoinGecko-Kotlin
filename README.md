@@ -8,7 +8,7 @@
 ![](https://github.com/DrewCarlson/CoinGecko-Kotlin/workflows/Js/badge.svg)
 ![](https://github.com/DrewCarlson/CoinGecko-Kotlin/workflows/Native/badge.svg)
 
-Kotlin wrapper for the [CoinGecko API](https://www.coingecko.com/en/api) using [Ktor](https://ktor.io).
+Multiplatform Kotlin wrapper for the [CoinGecko API](https://www.coingecko.com/en/api) using [Ktor](https://ktor.io).
 
 ## Usage
 
@@ -77,10 +77,6 @@ dependencies {
   implementation("io.ktor:ktor-client-js:$ktor_version")
 }
 ``` 
-
-## Swift Demo
-
-The [swift-demo](swift-demo) module provides a Framework compilation module, and a complete [Xcode project](swift-demo/coingecko-swift) written in Swift.
 
 ## License
 ```
