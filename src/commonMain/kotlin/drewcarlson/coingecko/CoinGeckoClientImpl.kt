@@ -1,6 +1,6 @@
 package drewcarlson.coingecko
 
-import drewcarlson.coingecko.error.ErrorTransformer
+import drewcarlson.coingecko.internal.ErrorTransformer
 import drewcarlson.coingecko.models.coins.*
 import drewcarlson.coingecko.models.events.EventCountries
 import drewcarlson.coingecko.models.events.EventTypes

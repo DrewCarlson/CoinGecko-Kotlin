@@ -1,5 +1,6 @@
-package drewcarlson.coingecko.error
+package drewcarlson.coingecko.internal
 
+import drewcarlson.coingecko.error.*
 import drewcarlson.coingecko.json
 import io.ktor.client.*
 import io.ktor.client.features.*
