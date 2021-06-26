@@ -37,7 +37,9 @@ kotlin {
     linuxX64()
 
     ios()
-    watchos()
+    watchosArm32()
+    watchosArm64()
+    watchosX86()
     tvos()
 
     sourceSets {
@@ -113,8 +115,10 @@ kotlin {
 
         // Configure tvos and watchos to build on ios sources
         val tvosTest by getting
-        val watchosTest by getting
-        configure(listOf(tvosTest, watchosTest)) {
+        val watchosArm32Test by getting
+        val watchosArm64Test by getting
+        val watchosX86Test by getting
+        configure(listOf(tvosTest, watchosArm32Test, watchosArm64Test, watchosX86Test)) {
             dependsOn(iosTest)
         }
     }
