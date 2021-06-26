@@ -108,7 +108,6 @@ kotlin {
                     }
                 }
                 implementation("io.ktor:ktor-client-ios:$KTOR_VERSION")
-                implementation("com.autodesk:coroutineworker:0.7.0")
             }
         }
 
