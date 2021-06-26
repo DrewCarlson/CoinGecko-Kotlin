@@ -123,8 +123,10 @@ internal class CoinGeckoClientImpl(httpClient: HttpClient) : CoinGeckoClient {
     override suspend fun getSupportedVsCurrencies(): List<String> =
         httpClient.get("simple/supported_vs_currencies")
 
-    override suspend fun getCoinList(): List<CoinList> =
-        httpClient.get("coins/list")
+    override suspend fun getCoinList(includePlatform: Boolean): List<CoinList> =
+        httpClient.get("coins/list") {
+            parameter("include_platform", includePlatform)
+        }
 
     override suspend fun getCoinMarkets(
         vsCurrency: String,

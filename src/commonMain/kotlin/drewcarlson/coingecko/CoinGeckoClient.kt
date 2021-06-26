@@ -56,7 +56,7 @@ interface CoinGeckoClient {
     suspend fun getSupportedVsCurrencies(): List<String>
 
     @Throws(CoinGeckoApiException::class, CancellationException::class)
-    suspend fun getCoinList(): List<CoinList>
+    suspend fun getCoinList(includePlatform: Boolean = false): List<CoinList>
 
     @Throws(CoinGeckoApiException::class, CancellationException::class)
     suspend fun getCoinMarkets(
