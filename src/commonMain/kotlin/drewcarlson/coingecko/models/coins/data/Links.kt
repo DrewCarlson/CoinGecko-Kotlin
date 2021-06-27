@@ -5,7 +5,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Links(
-    @SerialName("homepage")
     val homepage: List<String>? = null,
     @SerialName("blockchain_site")
     val blockchainSite: List<String?>? = null,

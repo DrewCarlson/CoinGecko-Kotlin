@@ -8,9 +8,7 @@ import kotlinx.serialization.Serializable
 data class MarketData(
         @SerialName("current_price")
         val currentPrice: Map<String, Double>? = null,
-        @SerialName("roi")
         val roi: Roi? = null,
-        @SerialName("ath")
         val ath: Map<String, Double>? = null,
         @SerialName("ath_change_percentage")
         val athChangePercentage: Map<String, Double>? = null,

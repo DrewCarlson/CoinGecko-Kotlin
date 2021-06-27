@@ -7,13 +7,9 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class CoinMarkets(
-        @SerialName("id")
         val id: String,
-        @SerialName("symbol")
         val symbol: String,
-        @SerialName("name")
         val name: String,
-        @SerialName("image")
         val image: String? = null,
         @SerialName("current_price")
         val currentPrice: Double = 0.0,
@@ -39,9 +35,7 @@ data class CoinMarkets(
         val circulatingSupply: Double = 0.0,
         @SerialName("total_supply")
         val totalSupply: Double? = null,
-        @SerialName("ath")
         val ath: Double = 0.0,
-        @SerialName("atl")
         val atl: Double = 0.0,
         @SerialName("atl_change_percentage")
         val atlChangePercentage: Double = 0.0,
@@ -51,7 +45,6 @@ data class CoinMarkets(
         val atlDate: String? = null,
         @SerialName("ath_date")
         val athDate: String? = null,
-        @SerialName("roi")
         val roi: Roi? = null,
         @SerialName("last_updated")
         val lastUpdated: String? = null,

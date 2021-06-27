@@ -11,9 +11,7 @@ data class IcoData(
         val icoEndDate: String? = null,
         @SerialName("short_desc")
         val shortDesc: String? = null,
-        @SerialName("description")
         val description: String? = null,
-        @SerialName("links")
         val links: IcoLinks? = null,
         @SerialName("softcap_currency")
         val softcapCurrency: String? = null,

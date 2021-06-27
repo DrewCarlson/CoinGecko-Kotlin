@@ -9,15 +9,10 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class CoinHistoryById(
-        @SerialName("id")
-        val id: String? = null,
-        @SerialName("symbol")
-        val symbol: String? = null,
-        @SerialName("name")
-        val name: String? = null,
-        @SerialName("localization")
-        val localization: Map<String, String>? = null,
-        @SerialName("image")
+        val id: String,
+        val symbol: String,
+        val name: String,
+        val localization: Map<String, String> = emptyMap(),
         val image: Image? = null,
         @SerialName("market_data")
         val marketData: MarketData? = null,
