@@ -8,11 +8,11 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class CoinMarkets(
         @SerialName("id")
-        val id: String? = null,
+        val id: String,
         @SerialName("symbol")
-        val symbol: String? = null,
+        val symbol: String,
         @SerialName("name")
-        val name: String? = null,
+        val name: String,
         @SerialName("image")
         val image: String? = null,
         @SerialName("current_price")
