@@ -193,7 +193,7 @@ internal class CoinGeckoClientImpl(httpClient: HttpClient) : CoinGeckoClient {
         from: String,
         to: String
     ): MarketChart =
-        httpClient.get("coins/$id/market_chart") {
+        httpClient.get("coins/$id/market_chart/range") {
             parameter(VS_CURRENCY, vsCurrency)
             parameter(FROM, from)
             parameter(TO, to)
