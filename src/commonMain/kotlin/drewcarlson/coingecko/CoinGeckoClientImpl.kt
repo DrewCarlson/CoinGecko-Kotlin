@@ -202,7 +202,7 @@ internal class CoinGeckoClientImpl(httpClient: HttpClient) : CoinGeckoClient {
     override suspend fun getCoinMarketChartById(
         id: String,
         vsCurrency: String,
-        days: Int
+        days: Double
     ): MarketChart =
         httpClient.get("coins/$id/market_chart") {
             parameter(VS_CURRENCY, vsCurrency)
