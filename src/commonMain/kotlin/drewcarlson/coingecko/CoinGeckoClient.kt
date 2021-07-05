@@ -99,7 +99,7 @@ interface CoinGeckoClient {
     suspend fun getCoinMarketChartById(
         id: String,
         vsCurrency: String,
-        days: Int
+        days: Double
     ): MarketChart
 
     @Throws(CoinGeckoApiException::class, CancellationException::class)

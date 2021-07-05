@@ -30,7 +30,7 @@ class CoinGeckoTests {
 
     @Test
     fun testMarketData() = runBlocking {
-        val btcData = coinGecko.getCoinMarketChartById("bitcoin", "usd", 3)
+        val btcData = coinGecko.getCoinMarketChartById("bitcoin", "usd", 3.0)
         assertTrue(btcData.prices.isNotEmpty())
         assertTrue(btcData.prices.first().isNotEmpty())
         assertTrue(btcData.marketCaps.isNotEmpty())
