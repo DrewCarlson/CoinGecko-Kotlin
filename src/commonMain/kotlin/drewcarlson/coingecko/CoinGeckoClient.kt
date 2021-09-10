@@ -12,6 +12,7 @@ import drewcarlson.coingecko.models.exchanges.ExchangesList
 import drewcarlson.coingecko.models.exchanges.ExchangesTickersById
 import drewcarlson.coingecko.models.global.Global
 import drewcarlson.coingecko.models.rates.ExchangeRates
+import drewcarlson.coingecko.models.search.TrendingCoinList
 import drewcarlson.coingecko.models.status.StatusUpdates
 import io.ktor.client.HttpClient
 import kotlin.coroutines.cancellation.*
@@ -200,4 +201,7 @@ interface CoinGeckoClient {
 
     @Throws(CoinGeckoApiException::class, CancellationException::class)
     suspend fun getGlobal(): Global
+
+    @Throws(CoinGeckoApiException::class, CancellationException::class)
+    suspend fun getTrending(): TrendingCoinList
 }

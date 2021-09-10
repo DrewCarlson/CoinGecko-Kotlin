@@ -13,6 +13,7 @@ import drewcarlson.coingecko.models.rates.ExchangeRates
 import drewcarlson.coingecko.models.status.StatusUpdates
 import drewcarlson.coingecko.internal.PagingTransformer
 import drewcarlson.coingecko.models.*
+import drewcarlson.coingecko.models.search.TrendingCoinList
 import io.ktor.client.*
 import io.ktor.client.features.*
 import io.ktor.client.features.json.JsonFeature
@@ -311,4 +312,7 @@ internal class CoinGeckoClientImpl(httpClient: HttpClient) : CoinGeckoClient {
 
     override suspend fun getGlobal(): Global =
         httpClient.get("global")
+
+    override suspend fun getTrending(): TrendingCoinList =
+        httpClient.get("search/trending")
 }

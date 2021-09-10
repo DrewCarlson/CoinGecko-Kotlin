@@ -126,4 +126,25 @@ class CoinGeckoTests {
         assertNotNull(ohlc?.low)
         assertNotNull(ohlc?.open)
     }
+
+    @Test
+    fun testTrending() = runBlocking {
+        val trending = coinGecko.getTrending()
+
+        assertNotNull(trending)
+        assertNotNull(trending.coins)
+        assertTrue { trending.coins.isNotEmpty() }
+        val first = trending.coins.firstOrNull()?.item
+        assertNotNull(first?.id)
+        assertNotNull(first?.coinId)
+        assertNotNull(first?.name)
+        assertNotNull(first?.symbol)
+        assertNotNull(first?.marketCapRank)
+        assertNotNull(first?.thumb)
+        assertNotNull(first?.small)
+        assertNotNull(first?.large)
+        assertNotNull(first?.slug)
+        assertNotNull(first?.priceBtc)
+        assertNotNull(first?.score)
+    }
 }
