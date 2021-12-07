@@ -94,8 +94,8 @@ class CoinGeckoTests {
         assertTrue(coinPage2.total > 100)
         assertNotNull(coinPage2.nextPage)
 
-        val coinPage3 = coinGecko.getCoinTickerById("tether", "binance", page = 3)
-        assertNull(coinPage3.nextPage)
+        val coinPage500 = coinGecko.getCoinTickerById("tether", "binance", page = 500)
+        assertNull(coinPage500.nextPage)
     }
 
     @Test
