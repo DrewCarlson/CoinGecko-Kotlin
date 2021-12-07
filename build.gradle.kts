@@ -16,7 +16,7 @@ apply(from = "gradle/publishing.gradle.kts")
 
 kotlin {
     jvm()
-    js(BOTH) {
+    js(IR) {
         browser {
             testTask {
                 useMocha {
