@@ -1,5 +1,6 @@
 package drewcarlson.coingecko.models.coins
 
+import drewcarlson.coingecko.internal.NullValueOmittingMapSerializer
 import drewcarlson.coingecko.models.coins.data.Roi
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -20,10 +21,12 @@ data class MarketData(
         val marketCapRank: Long = 0,
         @SerialName("total_volume")
         val totalVolume: Map<String, Double>? = null,
+        @Serializable(NullValueOmittingMapSerializer::class)
         @SerialName("high_24h")
-        val high24h: Map<String, Double>? = null,
+        val high24h: Map<String, Double> = emptyMap(),
+        @Serializable(NullValueOmittingMapSerializer::class)
         @SerialName("low_24h")
-        val low24h: Map<String, Double>? = null,
+        val low24h: Map<String, Double> = emptyMap(),
         @SerialName("price_change_24h")
         val priceChange24h: Double = 0.0,
         @SerialName("price_change_percentage_24h")
