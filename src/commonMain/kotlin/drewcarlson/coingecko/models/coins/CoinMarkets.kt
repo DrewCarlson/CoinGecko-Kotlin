@@ -53,7 +53,7 @@ data class CoinMarkets(
         @SerialName("price_change_percentage_1h_in_currency")
         val priceChangePercentage1hInCurrency: Double = 0.0,
         @SerialName("fully_diluted_valuation")
-        val fullyDilutedValuation: Long?,
+        val fullyDilutedValuation: Double?,
         @SerialName("max_supply")
         val maxSupply: Double = 0.0,
 )
