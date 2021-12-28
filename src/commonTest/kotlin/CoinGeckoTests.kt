@@ -30,9 +30,9 @@ class CoinGeckoTests {
 
     @Test
     fun testCoinWithMarketData() = runBlocking {
-        val sai = coinGecko.getCoinById("sai", marketData = true)
-        val high = assertNotNull(sai.marketData).high24h
-        val low = assertNotNull(sai.marketData).low24h
+        val coin = coinGecko.getCoinById("100man", marketData = true)
+        val high = assertNotNull(coin.marketData).high24h
+        val low = assertNotNull(coin.marketData).low24h
         assertFalse(high.containsKey(Currency.USD))
         assertFalse(low.containsKey(Currency.USD))
     }

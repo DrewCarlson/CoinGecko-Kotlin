@@ -1,5 +1,6 @@
 package drewcarlson.coingecko.models.coins
 
+import drewcarlson.coingecko.internal.NullValueOmittingListSerializer
 import drewcarlson.coingecko.models.coins.data.*
 import drewcarlson.coingecko.models.shared.Image
 import drewcarlson.coingecko.models.shared.Ticker
@@ -16,6 +17,7 @@ data class CoinFullData(
         val hashingAlgorithm: String? = null,
         @SerialName("block_time_in_minutes")
         val blockTimeInMinutes: Long = 0,
+        @Serializable(NullValueOmittingListSerializer::class)
         val categories: List<String>,
         val localization: Map<String, String>,
         val description: Map<String, String>,
