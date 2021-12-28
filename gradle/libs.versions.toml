@@ -22,4 +22,4 @@ ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktorio"
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktorio" }
 ktor-client-js = { module = "io.ktor:ktor-client-js", version.ref = "ktorio" }
 ktor-client-curl = { module = "io.ktor:ktor-client-curl", version.ref = "ktorio" }
-ktor-client-ios = { module = "io.ktor:ktor-client-curl", version.ref = "ktorio" }
+ktor-client-ios = { module = "io.ktor:ktor-client-ios", version.ref = "ktorio" }
