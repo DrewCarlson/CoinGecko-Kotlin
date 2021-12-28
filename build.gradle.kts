@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.targets.js.yarn.yarn
+
 plugins {
     kotlin("multiplatform") version KOTLIN_VERSION
     kotlin("plugin.serialization") version KOTLIN_VERSION
@@ -13,6 +15,7 @@ allprojects {
 
 apply(from = "gradle/publishing.gradle.kts")
 
+yarn.lockFileDirectory = file("gradle/kotlin-js-store")
 
 kotlin {
     jvm()
