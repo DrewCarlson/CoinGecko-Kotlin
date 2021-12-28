@@ -1,0 +1,25 @@
+[versions]
+kotlin = "1.6.10"
+coroutines = "1.5.2-native-mt"
+serialization = "1.3.2"
+ktorio = "1.6.7"
+dokka = "1.6.0"
+
+[plugins]
+multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+
+[libraries]
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+
+ktor-client-serialization-core = { module = "io.ktor:ktor-client-serialization", version.ref = "ktorio" }
+ktor-client-serialization-json = { module = "io.ktor:ktor-client-json", version.ref = "ktorio" }
+
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktorio" }
+ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktorio" }
+ktor-client-js = { module = "io.ktor:ktor-client-js", version.ref = "ktorio" }
+ktor-client-curl = { module = "io.ktor:ktor-client-curl", version.ref = "ktorio" }
+ktor-client-ios = { module = "io.ktor:ktor-client-curl", version.ref = "ktorio" }

@@ -1,9 +1,10 @@
 import org.jetbrains.kotlin.gradle.targets.js.yarn.yarn
 
+@Suppress("DSL_SCOPE_VIOLATION", "UnstableApiUsage")
 plugins {
-    kotlin("multiplatform") version KOTLIN_VERSION
-    kotlin("plugin.serialization") version KOTLIN_VERSION
-    id("org.jetbrains.dokka") version "1.6.0"
+    alias(libs.plugins.multiplatform)
+    alias(libs.plugins.serialization)
+    alias(libs.plugins.dokka)
     `maven-publish`
 }
 
@@ -49,11 +50,11 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(kotlin("stdlib-common"))
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$COROUTINES_VERSION")
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$SERIALIZATION_VERSION")
-                implementation("io.ktor:ktor-client-core:$KTOR_VERSION")
-                implementation("io.ktor:ktor-client-json:$KTOR_VERSION")
-                implementation("io.ktor:ktor-client-serialization:$KTOR_VERSION")
+                implementation(libs.coroutines.core)
+                implementation(libs.serialization.json)
+                implementation(libs.ktor.client.core)
+                implementation(libs.ktor.client.serialization.core)
+                implementation(libs.ktor.client.serialization.json)
             }
         }
         val commonTest by getting {
@@ -71,7 +72,7 @@ kotlin {
             dependencies {
                 implementation(kotlin("test"))
                 implementation(kotlin("test-junit"))
-                implementation("io.ktor:ktor-client-okhttp:$KTOR_VERSION")
+                implementation(libs.ktor.client.okhttp)
             }
         }
         val jsMain by getting {
@@ -83,7 +84,7 @@ kotlin {
             dependencies {
                 implementation(kotlin("test"))
                 implementation(kotlin("test-js"))
-                implementation("io.ktor:ktor-client-js:$KTOR_VERSION")
+                implementation(libs.ktor.client.js)
             }
         }
 
@@ -93,7 +94,7 @@ kotlin {
         val desktopCommonTest by creating {
             dependsOn(nativeCommonTest)
             dependencies {
-                implementation("io.ktor:ktor-client-curl:$KTOR_VERSION")
+                implementation(libs.ktor.client.curl)
             }
         }
 
@@ -107,12 +108,8 @@ kotlin {
         val iosTest by getting {
             dependsOn(nativeCommonTest)
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$COROUTINES_VERSION") {
-                    version {
-                        strictly(COROUTINES_VERSION)
-                    }
-                }
-                implementation("io.ktor:ktor-client-ios:$KTOR_VERSION")
+                implementation(libs.coroutines.core)
+                implementation(libs.ktor.client.ios)
             }
         }
 
