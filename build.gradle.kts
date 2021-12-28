@@ -47,6 +47,9 @@ kotlin {
     tvos()
 
     sourceSets {
+        all {
+            languageSettings.optIn("kotlin.RequiresOptIn")
+        }
         val commonMain by getting {
             dependencies {
                 implementation(kotlin("stdlib-common"))
