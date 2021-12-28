@@ -16,7 +16,7 @@ jobs:
   gradle:
     strategy:
       matrix:
-        os: [ macos-latest, windows-latest ]
+        os: [ macos-latest ]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
@@ -26,18 +26,12 @@ jobs:
           java-version: 11
       - name: Cache Build files
         uses: actions/cache@v2
-        if: ${{ !startsWith(matrix.os, 'windows') }}
         with:
           path: |
             ~/.konan
             ~/.gradle
           key: ${{ runner.os }}-${{ hashFiles('gradle.properties') }}
       - uses: gradle/gradle-build-action@v2
-        name: Publish (macos)
+        name: Publish
         with:
           arguments: clean publish
-        if: ${{ !startsWith(matrix.os, 'windows') }}
-      - name: Publish (windows)
-        shell: bash
-        run: ./gradlew clean publishWin64PublicationToMavenRepository
-        if: ${{ startsWith(matrix.os, 'windows') }}
