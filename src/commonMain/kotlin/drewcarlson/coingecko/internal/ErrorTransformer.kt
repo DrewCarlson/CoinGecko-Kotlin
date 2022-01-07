@@ -3,26 +3,26 @@ package drewcarlson.coingecko.internal
 import drewcarlson.coingecko.error.*
 import drewcarlson.coingecko.json
 import io.ktor.client.*
-import io.ktor.client.features.*
+import io.ktor.client.plugins.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.util.*
 import kotlinx.serialization.*
 import kotlinx.serialization.json.*
 
-internal object ErrorTransformer : HttpClientFeature<ErrorTransformer, ErrorTransformer> {
+internal object ErrorTransformer : HttpClientPlugin<ErrorTransformer, ErrorTransformer> {
 
     override val key: AttributeKey<ErrorTransformer> = AttributeKey("ErrorTransformer")
 
     override fun prepare(block: ErrorTransformer.() -> Unit): ErrorTransformer = this
 
-    override fun install(feature: ErrorTransformer, scope: HttpClient) {
+    override fun install(plugin: ErrorTransformer, scope: HttpClient) {
         scope.requestPipeline.intercept(HttpRequestPipeline.Render) {
             try {
                 proceed()
             } catch (e: Throwable) {
                 if (e is ResponseException) {
-                    val bodyText = e.response.readText()
+                    val bodyText = e.response.bodyAsText()
                     val body = try {
                         json.parseToJsonElement(bodyText)
                     } catch (e: SerializationException) {

@@ -70,7 +70,7 @@ dependencies {
   implementation("io.ktor:ktor-client-okhttp:$ktor_version")
   implementation("io.ktor:ktor-client-android:$ktor_version")
   // iOS
-  implementation("io.ktor:ktor-client-ios:$ktor_version")
+  implementation("io.ktor:ktor-client-darwin:$ktor_version")
   // macOS/Windows/Linux
   implementation("io.ktor:ktor-client-curl:$ktor_version")
   // Javascript/NodeJS

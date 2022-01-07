@@ -2,9 +2,13 @@ name: Publish
 
 on:
   create:
-    branches: [ main ]
+    branches:
+      - main
+      - 'release/**'
   push:
-    branches: [ main ]
+    branches:
+      - main
+      - 'release/**'
 
 env:
   ORG_GRADLE_PROJECT_signingKey: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGKEY }}

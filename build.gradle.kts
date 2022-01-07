@@ -56,8 +56,8 @@ kotlin {
                 implementation(libs.coroutines.core)
                 implementation(libs.serialization.json)
                 implementation(libs.ktor.client.core)
-                implementation(libs.ktor.client.serialization.core)
-                implementation(libs.ktor.client.serialization.json)
+                implementation(libs.ktor.client.contentNegotiation)
+                implementation(libs.ktor.serialization)
             }
         }
         val commonTest by getting {
@@ -112,7 +112,7 @@ kotlin {
             dependsOn(nativeCommonTest)
             dependencies {
                 implementation(libs.coroutines.core)
-                implementation(libs.ktor.client.ios)
+                implementation(libs.ktor.client.darwin)
             }
         }
 
