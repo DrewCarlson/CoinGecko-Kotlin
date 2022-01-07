@@ -1,6 +1,7 @@
 package drewcarlson.coingecko
 
-import drewcarlson.coingecko.internal.ErrorTransformer
+import drewcarlson.coingecko.error.CoinGeckoApiError
+import drewcarlson.coingecko.error.CoinGeckoApiException
 import drewcarlson.coingecko.models.coins.*
 import drewcarlson.coingecko.models.events.EventCountries
 import drewcarlson.coingecko.models.events.EventTypes
@@ -15,11 +16,16 @@ import drewcarlson.coingecko.internal.PagingTransformer
 import drewcarlson.coingecko.models.*
 import drewcarlson.coingecko.models.search.TrendingCoinList
 import io.ktor.client.*
-import io.ktor.client.features.*
-import io.ktor.client.features.json.JsonFeature
-import io.ktor.client.features.json.serializer.*
+import io.ktor.client.call.*
+import io.ktor.client.plugins.*
+import io.ktor.client.plugins.contentnegotiation.*
 import io.ktor.client.request.*
+import io.ktor.client.statement.*
 import io.ktor.http.*
+import io.ktor.serialization.kotlinx.json.*
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.SerializationException
+import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import kotlin.native.concurrent.SharedImmutable
 
@@ -77,14 +83,35 @@ internal class CoinGeckoClientImpl(httpClient: HttpClient) : CoinGeckoClient {
             url.host = API_HOST
             url.encodedPath = API_BASE_PATH + url.encodedPath
         }
-        install(ErrorTransformer)
         install(PagingTransformer)
-        install(JsonFeature) {
-            serializer = KotlinxSerializer(json)
+        install(ContentNegotiation) {
+            json(json)
+        }
+    }.apply {
+        sendPipeline.intercept(HttpSendPipeline.Before) {
+            try {
+                proceed()
+            } catch (e: Throwable) {
+                throw CoinGeckoApiException(e)
+            }
         }
     }
 
-    override suspend fun ping(): Ping = httpClient.get("ping")
+    private suspend inline fun <reified T> HttpResponse.bodyOrThrow(): T {
+        return if (status == HttpStatusCode.OK) {
+            body()
+        } else {
+            val bodyText = bodyAsText()
+            val bodyError = try {
+                json.decodeFromString<ErrorBody>(bodyText).error
+            } catch (e: SerializationException) {
+                null
+            }
+            throw CoinGeckoApiException(CoinGeckoApiError(status.value, bodyError))
+        }
+    }
+
+    override suspend fun ping(): Ping = httpClient.get("ping").bodyOrThrow()
 
     override suspend fun getPrice(
         ids: String,
@@ -94,14 +121,14 @@ internal class CoinGeckoClientImpl(httpClient: HttpClient) : CoinGeckoClient {
         include24hrChange: Boolean,
         includeLastUpdatedAt: Boolean
     ): Map<String, CoinPrice> =
-        httpClient.get<RawPriceMap>("simple/price") {
+        httpClient.get("simple/price") {
             parameter(IDS, ids)
             parameter(VS_CURRENCIES, vsCurrencies)
             parameter(INCLUDE_MARKET_CAP, includeMarketCap)
             parameter(INCLUDE_24HR_VOL, include24hrVol)
             parameter(INCLUDE_24HR_CHANGE, include24hrChange)
             parameter(INCLUDE_LAST_UPDATED_AT, includeLastUpdatedAt)
-        }.mapValues { (_, v) -> CoinPrice(v) }
+        }.body<RawPriceMap>().mapValues { (_, v) -> CoinPrice(v) }
 
     override suspend fun getTokenPrice(
         id: String,
@@ -119,15 +146,15 @@ internal class CoinGeckoClientImpl(httpClient: HttpClient) : CoinGeckoClient {
             parameter(INCLUDE_24HR_VOL, include24hrVol)
             parameter(INCLUDE_24HR_CHANGE, include24hrChange)
             parameter(INCLUDE_LAST_UPDATED_AT, includeLastUpdatedAt)
-        }
+        }.bodyOrThrow()
 
     override suspend fun getSupportedVsCurrencies(): List<String> =
-        httpClient.get("simple/supported_vs_currencies")
+        httpClient.get("simple/supported_vs_currencies").bodyOrThrow()
 
     override suspend fun getCoinList(includePlatform: Boolean): List<CoinList> =
         httpClient.get("coins/list") {
             parameter("include_platform", includePlatform)
-        }
+        }.bodyOrThrow()
 
     override suspend fun getCoinMarkets(
         vsCurrency: String,
@@ -146,7 +173,7 @@ internal class CoinGeckoClientImpl(httpClient: HttpClient) : CoinGeckoClient {
             parameter(PAGE, page ?: 1)
             parameter(SPARKLINE, sparkline)
             parameter(PRICE_CHANGE_PERCENTAGE, priceChangePercentage)
-        }
+        }.bodyOrThrow()
 
     override suspend fun getCoinById(
         id: String,
@@ -164,7 +191,7 @@ internal class CoinGeckoClientImpl(httpClient: HttpClient) : CoinGeckoClient {
             parameter(COMMUNITY_DATA, communityData)
             parameter(DEVELOPER_DATA, developerData)
             parameter(SPARKLINE, sparkline)
-        }
+        }.bodyOrThrow()
 
     override suspend fun getCoinTickerById(
         id: String,
@@ -176,7 +203,7 @@ internal class CoinGeckoClientImpl(httpClient: HttpClient) : CoinGeckoClient {
             parameter(EXCHANGE_IDS, exchangeIds)
             parameter(PAGE, page)
             parameter(ORDER, order)
-        }
+        }.bodyOrThrow()
 
     override suspend fun getCoinHistoryById(
         id: String,
@@ -186,7 +213,7 @@ internal class CoinGeckoClientImpl(httpClient: HttpClient) : CoinGeckoClient {
         httpClient.get("coins/$id/history") {
             parameter(DATE, date)
             parameter(LOCALIZATION, localization)
-        }
+        }.bodyOrThrow()
 
     override suspend fun getCoinMarketChartRangeById(
         id: String,
@@ -198,7 +225,7 @@ internal class CoinGeckoClientImpl(httpClient: HttpClient) : CoinGeckoClient {
             parameter(VS_CURRENCY, vsCurrency)
             parameter(FROM, from)
             parameter(TO, to)
-        }
+        }.bodyOrThrow()
 
     override suspend fun getCoinMarketChartById(
         id: String,
@@ -208,42 +235,42 @@ internal class CoinGeckoClientImpl(httpClient: HttpClient) : CoinGeckoClient {
         httpClient.get("coins/$id/market_chart") {
             parameter(VS_CURRENCY, vsCurrency)
             parameter(DAYS, days)
-        }
+        }.bodyOrThrow()
 
     override suspend fun getCoinStatusUpdateById(id: String, perPage: Int?, page: Int?): StatusUpdates =
         httpClient.get("coins/$id/status_updates") {
             parameter(PAGE, page)
             parameter(PER_PAGE, perPage)
-        }
+        }.bodyOrThrow()
 
     override suspend fun getCoinInfoByContractAddress(id: String, contractAddress: String): CoinFullData =
-        httpClient.get("coins/$id/contract/$contractAddress")
+        httpClient.get("coins/$id/contract/$contractAddress").bodyOrThrow()
 
     override suspend fun getCoinOhlc(id: String, vsCurrency: String, days: Int): List<CoinOhlc> =
         httpClient.get("coins/$id/ohlc") {
             parameter(VS_CURRENCY, vsCurrency)
             parameter(DAYS, days)
-        }
+        }.bodyOrThrow()
 
     override suspend fun getAssetPlatforms(): List<AssetPlatform> =
-        httpClient.get("asset_platforms")
+        httpClient.get("asset_platforms").bodyOrThrow()
 
     override suspend fun getCoinCategoriesList(): List<CoinCategory> =
-        httpClient.get("coins/categories/list")
+        httpClient.get("coins/categories/list").bodyOrThrow()
 
     override suspend fun getCoinCategories(order: String): List<CoinCategoryAndData> =
         httpClient.get("coins/categories") {
             parameter(ORDER, order)
-        }
+        }.bodyOrThrow()
 
     override suspend fun getExchanges(): List<Exchanges> =
-        httpClient.get("exchanges")
+        httpClient.get("exchanges").bodyOrThrow()
 
     override suspend fun getExchangesList(): List<ExchangesList> =
-        httpClient.get("exchanges/list")
+        httpClient.get("exchanges/list").bodyOrThrow()
 
     override suspend fun getExchangesById(id: String): Exchanges =
-        httpClient.get("exchanges/$id")
+        httpClient.get("exchanges/$id").bodyOrThrow()
 
     override suspend fun getExchangesTickersById(
         id: String,
@@ -255,7 +282,7 @@ internal class CoinGeckoClientImpl(httpClient: HttpClient) : CoinGeckoClient {
             parameter(COIN_IDS, coinIds)
             parameter(PAGE, page)
             parameter(ORDER, order)
-        }
+        }.bodyOrThrow()
 
     override suspend fun getExchangesStatusUpdatesById(
         id: String,
@@ -265,12 +292,12 @@ internal class CoinGeckoClientImpl(httpClient: HttpClient) : CoinGeckoClient {
         httpClient.get("exchanges/$id/status_updates") {
             parameter(PER_PAGE, perPage)
             parameter(PAGE, page)
-        }
+        }.bodyOrThrow()
 
     override suspend fun getExchangesVolumeChart(id: String, days: Int): List<List<String>> =
         httpClient.get("exchanges/$id/volume_chart") {
             parameter(DAYS, days)
-        }
+        }.bodyOrThrow()
 
     override suspend fun getStatusUpdates(
         category: String?,
@@ -282,7 +309,7 @@ internal class CoinGeckoClientImpl(httpClient: HttpClient) : CoinGeckoClient {
             parameter(PAGE, page)
             parameter(PER_PAGE, perPage)
             parameter(PROJECT_TYPE, projectType)
-        }
+        }.bodyOrThrow()
 
     override suspend fun getEvents(
         countryCode: String?,
@@ -299,20 +326,23 @@ internal class CoinGeckoClientImpl(httpClient: HttpClient) : CoinGeckoClient {
             parameter(UPCOMING_EVENTS_ONLY, upcomingEventsOnly)
             parameter(FROM_DATE, fromDate)
             parameter(TO_DATE, toDate)
-        }
+        }.bodyOrThrow()
 
     override suspend fun getEventsCountries(): EventCountries =
-        httpClient.get("events/countries")
+        httpClient.get("events/countries").bodyOrThrow()
 
     override suspend fun getEventsTypes(): EventTypes =
-        httpClient.get("events/types")
+        httpClient.get("events/types").bodyOrThrow()
 
     override suspend fun getExchangeRates(): ExchangeRates =
-        httpClient.get("exchange_rates")
+        httpClient.get("exchange_rates").bodyOrThrow()
 
     override suspend fun getGlobal(): Global =
-        httpClient.get("global")
+        httpClient.get("global").bodyOrThrow()
 
     override suspend fun getTrending(): TrendingCoinList =
-        httpClient.get("search/trending")
+        httpClient.get("search/trending").bodyOrThrow()
+
+    @Serializable
+    private data class ErrorBody(val error: String?)
 }

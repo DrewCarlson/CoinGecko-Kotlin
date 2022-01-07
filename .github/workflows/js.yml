@@ -2,16 +2,13 @@ name: Js
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, 'release/**' ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, 'release/**' ]
 
 jobs:
-  gradle:
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-    runs-on: ${{ matrix.os }}
+  test-js:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-java@v3

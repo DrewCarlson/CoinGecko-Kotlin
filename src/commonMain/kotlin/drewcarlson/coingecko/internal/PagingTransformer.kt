@@ -1,7 +1,7 @@
 package drewcarlson.coingecko.internal
 
 import io.ktor.client.HttpClient
-import io.ktor.client.features.HttpClientFeature
+import io.ktor.client.plugins.*
 import io.ktor.client.statement.HttpResponseContainer
 import io.ktor.client.statement.HttpResponsePipeline
 import io.ktor.util.AttributeKey
@@ -20,13 +20,13 @@ private const val ARRAY_START = "["
  * If the body is an array, an object will be returned and the
  * body moved to an `items` field.
  */
-internal object PagingTransformer : HttpClientFeature<PagingTransformer, PagingTransformer> {
+internal object PagingTransformer : HttpClientPlugin<PagingTransformer, PagingTransformer> {
 
     override val key: AttributeKey<PagingTransformer> = AttributeKey("PagingTransformer")
 
     override fun prepare(block: PagingTransformer.() -> Unit): PagingTransformer = this
 
-    override fun install(feature: PagingTransformer, scope: HttpClient) {
+    override fun install(plugin: PagingTransformer, scope: HttpClient) {
         scope.responsePipeline.intercept(HttpResponsePipeline.Parse) { (info, body) ->
             if (body !is ByteReadChannel) return@intercept
             val request = context.request
