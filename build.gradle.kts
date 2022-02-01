@@ -40,7 +40,9 @@ kotlin {
     mingwX64("win64")
     linuxX64()
 
-    ios()
+    iosArm64()
+    iosX64()
+    iosSimulatorArm64()
     watchosArm32()
     watchosArm64()
     watchosX86()
@@ -108,11 +110,28 @@ kotlin {
             dependsOn(desktopCommonTest)
         }
 
-        val iosTest by getting {
+        val iosMain by creating {
+            dependsOn(commonMain)
+        }
+        val iosTest by creating {
             dependsOn(nativeCommonTest)
             dependencies {
                 implementation(libs.coroutines.core)
                 implementation(libs.ktor.client.darwin)
+            }
+        }
+
+        sourceSets.filter { sourceSet ->
+            sourceSet.name.run {
+                startsWith("iosX64") ||
+                    startsWith("iosArm") ||
+                    startsWith("iosSimulator")
+            }
+        }.forEach { sourceSet ->
+            if (sourceSet.name.endsWith("Main")) {
+                sourceSet.dependsOn(iosMain)
+            } else {
+                sourceSet.dependsOn(iosTest)
             }
         }
 
