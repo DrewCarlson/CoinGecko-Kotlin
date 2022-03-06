@@ -17,6 +17,9 @@ jobs:
       - run: sudo apt-get update --fix-missing && sudo apt-get install libcurl4-openssl-dev
         name: Install libcurl-dev
         if: ${{ startsWith(matrix.os, 'ubuntu') }}
+      - run: choco install curl
+        name: Install curl
+        if: ${{ startsWith(matrix.os, 'windows') }}
       - uses: actions/setup-java@v3
         with:
           distribution: 'zulu'
