@@ -51,6 +51,7 @@ kotlin {
     sourceSets {
         all {
             languageSettings.optIn("kotlin.RequiresOptIn")
+            languageSettings.optIn("kotlinx.coroutines.ExperimentalCoroutinesApi")
         }
         val commonMain by getting {
             dependencies {
@@ -58,12 +59,13 @@ kotlin {
                 implementation(libs.coroutines.core)
                 implementation(libs.serialization.json)
                 implementation(libs.ktor.client.core)
-                implementation(libs.ktor.client.serialization.core)
-                implementation(libs.ktor.client.serialization.json)
+                implementation(libs.ktor.client.contentNegotiation)
+                implementation(libs.ktor.serialization)
             }
         }
         val commonTest by getting {
             dependencies {
+                implementation(libs.coroutines.test)
                 implementation(kotlin("test-common"))
                 implementation(kotlin("test-annotations-common"))
             }
@@ -114,10 +116,9 @@ kotlin {
             dependsOn(commonMain)
         }
         val iosTest by creating {
-            dependsOn(nativeCommonTest)
             dependencies {
                 implementation(libs.coroutines.core)
-                implementation(libs.ktor.client.ios)
+                implementation(libs.ktor.client.darwin)
             }
         }
 
