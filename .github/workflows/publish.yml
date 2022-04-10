@@ -12,7 +12,7 @@ env:
   ORG_GRADLE_PROJECT_sonatypeUsername: ${{ secrets.ORG_GRADLE_PROJECT_SONATYPEUSERNAME }}
 
 jobs:
-  oublish:
+  publish:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
