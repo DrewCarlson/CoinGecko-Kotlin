@@ -3,7 +3,7 @@ kotlin = "1.6.20"
 coroutines = "1.6.1"
 serialization = "1.3.2"
 ktorio = "2.0.0"
-dokka = "1.6.10"
+dokka = "1.6.20"
 
 [plugins]
 multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
