@@ -60,7 +60,8 @@ class CoinGeckoTests {
         assertNotNull(btc.getPrice("cad"))
         assertNull(btc.lastUpdatedAt)
 
-        val ethPrices = coinGecko.getPrice("ethereum", "usd,eur",
+        val ethPrices = coinGecko.getPrice(
+            "ethereum", "usd,eur",
             includeMarketCap = true,
             include24hrVol = true,
             include24hrChange = true,
@@ -147,5 +148,23 @@ class CoinGeckoTests {
         assertNotNull(first?.slug)
         assertNotNull(first?.priceBtc)
         assertNotNull(first?.score)
+    }
+
+    @Test
+    fun testAssetPlatforms() = runTest {
+        val assetPlatforms = coinGecko.getAssetPlatforms()
+
+        val withoutId = assetPlatforms.filter { it.id.isEmpty() }
+        assertTrue(withoutId.isEmpty(), "All platforms should include an id, ${withoutId.size} were missing")
+
+        val hbar = assetPlatforms.singleOrNull { it.id == "hedera-hashgraph" }
+        assertEquals("Hedera Hashgraph", hbar?.name)
+        assertEquals(null, hbar?.chainIdentifier)
+        assertEquals("hashgraph", hbar?.shortname)
+
+        val poly = assetPlatforms.singleOrNull { it.id == "polygon-pos" }
+        assertEquals("Polygon POS", poly?.name)
+        assertEquals(137, poly?.chainIdentifier)
+        assertEquals("MATIC", poly?.shortname)
     }
 }

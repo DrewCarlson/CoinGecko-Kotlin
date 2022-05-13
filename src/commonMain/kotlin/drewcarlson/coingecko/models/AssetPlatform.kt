@@ -1,8 +1,9 @@
 package drewcarlson.coingecko.models
 
+import drewcarlson.coingecko.internal.AssetPlatformSerializer
 import kotlinx.serialization.*
 
-@Serializable
+@Serializable(with = AssetPlatformSerializer::class)
 data class AssetPlatform(
     val id: String,
     @SerialName("chain_identifier")
