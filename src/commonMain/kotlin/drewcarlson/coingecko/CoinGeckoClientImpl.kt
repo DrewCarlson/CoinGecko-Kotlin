@@ -81,7 +81,7 @@ internal class CoinGeckoClientImpl(httpClient: HttpClient) : CoinGeckoClient {
         defaultRequest {
             url.protocol = URLProtocol.HTTPS
             url.host = API_HOST
-            url.encodedPath = API_BASE_PATH + url.encodedPath
+            url.path(API_BASE_PATH, url.encodedPath)
         }
         install(PagingTransformer)
         install(ContentNegotiation) {
