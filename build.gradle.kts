@@ -24,14 +24,14 @@ kotlin {
         browser {
             testTask {
                 useMocha {
-                    timeout = "10000"
+                    timeout = "15000"
                 }
             }
         }
         nodejs {
             testTask {
                 useMocha {
-                    timeout = "10000"
+                    timeout = "15000"
                 }
             }
         }
@@ -49,10 +49,6 @@ kotlin {
     tvos()
 
     sourceSets {
-        all {
-            languageSettings.optIn("kotlin.RequiresOptIn")
-            languageSettings.optIn("kotlinx.coroutines.ExperimentalCoroutinesApi")
-        }
         val commonMain by getting {
             dependencies {
                 implementation(kotlin("stdlib-common"))

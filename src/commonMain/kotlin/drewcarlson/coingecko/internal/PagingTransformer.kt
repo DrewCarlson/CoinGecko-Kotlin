@@ -6,7 +6,6 @@ import io.ktor.client.statement.HttpResponseContainer
 import io.ktor.client.statement.HttpResponsePipeline
 import io.ktor.util.AttributeKey
 import io.ktor.utils.io.ByteReadChannel
-import io.ktor.utils.io.readRemaining
 
 private const val TOTAL = "total"
 private const val PAGE = "page"
@@ -15,7 +14,8 @@ private const val ARRAY_START = "["
 
 /**
  * Extract pagination information from response headers and merge
- * with the JSON body for use with [Page] response models.
+ * with the JSON body for use with [drewcarlson.coingecko.models.Page]
+ * response models.
  *
  * If the body is an array, an object will be returned and the
  * body moved to an `items` field.
