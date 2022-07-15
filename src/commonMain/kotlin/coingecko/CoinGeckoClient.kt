@@ -5,9 +5,6 @@ import coingecko.error.CoinGeckoApiException
 import coingecko.internal.PagingTransformer
 import coingecko.models.*
 import coingecko.models.coins.*
-import coingecko.models.events.EventCountries
-import coingecko.models.events.EventTypes
-import coingecko.models.events.Events
 import coingecko.models.exchanges.Exchanges
 import coingecko.models.exchanges.ExchangesList
 import coingecko.models.exchanges.ExchangesTickersById
@@ -53,12 +50,6 @@ private const val DATE = "date"
 private const val FROM = "from"
 private const val TO = "to"
 private const val DAYS = "days"
-private const val COUNTRY_CODE = "country_code"
-private const val TYPE = "type"
-private const val FROM_DATE = "from_date"
-private const val TO_DATE = "to_date"
-private const val PROJECT_TYPE = "project_type"
-private const val UPCOMING_EVENTS_ONLY = "upcoming_events_only"
 private const val COIN_IDS = "COIN_IDS"
 
 private const val API_HOST = "api.coingecko.com"
@@ -299,55 +290,10 @@ class CoinGeckoClient(httpClient: HttpClient) {
             parameter(ORDER, order)
         }.bodyOrThrow()
 
-    suspend fun getExchangesStatusUpdatesById(
-        id: String,
-        perPage: Int? = null,
-        page: Int? = null
-    ): StatusUpdates =
-        httpClient.get("exchanges/$id/status_updates") {
-            parameter(PER_PAGE, perPage)
-            parameter(PAGE, page)
-        }.bodyOrThrow()
-
     suspend fun getExchangesVolumeChart(id: String, days: Int): List<List<String>> =
         httpClient.get("exchanges/$id/volume_chart") {
             parameter(DAYS, days)
         }.bodyOrThrow()
-
-    suspend fun getStatusUpdates(
-        category: String? = null,
-        projectType: String? = null,
-        perPage: Int? = null,
-        page: Int? = null
-    ): StatusUpdates =
-        httpClient.get("status_updates") {
-            parameter(PAGE, page)
-            parameter(PER_PAGE, perPage)
-            parameter(PROJECT_TYPE, projectType)
-        }.bodyOrThrow()
-
-    suspend fun getEvents(
-        countryCode: String? = null,
-        type: String? = null,
-        page: Int? = null,
-        upcomingEventsOnly: Boolean = false,
-        fromDate: String? = null,
-        toDate: String? = null
-    ): Events =
-        httpClient.get("events") {
-            parameter(COUNTRY_CODE, countryCode)
-            parameter(TYPE, type)
-            parameter(PAGE, page)
-            parameter(UPCOMING_EVENTS_ONLY, upcomingEventsOnly)
-            parameter(FROM_DATE, fromDate)
-            parameter(TO_DATE, toDate)
-        }.bodyOrThrow()
-
-    suspend fun getEventsCountries(): EventCountries =
-        httpClient.get("events/countries").bodyOrThrow()
-
-    suspend fun getEventsTypes(): EventTypes =
-        httpClient.get("events/types").bodyOrThrow()
 
     suspend fun getExchangeRates(): ExchangeRates =
         httpClient.get("exchange_rates").bodyOrThrow()
