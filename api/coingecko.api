@@ -1,56 +1,56 @@
-public abstract interface class coingecko/CoinGeckoClient {
+public final class coingecko/CoinGeckoClient {
 	public static final field Companion Lcoingecko/CoinGeckoClient$Companion;
-	public abstract fun getAssetPlatforms (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getCoinById (Ljava/lang/String;ZZZZZZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getCoinCategories (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getCoinCategoriesList (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getCoinHistoryById (Ljava/lang/String;Ljava/lang/String;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getCoinInfoByContractAddress (Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getCoinList (ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getCoinMarketChartById (Ljava/lang/String;Ljava/lang/String;DLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getCoinMarketChartRangeById (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getCoinMarkets (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;ZLjava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getCoinOhlc (Ljava/lang/String;Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getCoinStatusUpdateById (Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getCoinTickerById (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getEvents (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;ZLjava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getEventsCountries (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getEventsTypes (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getExchangeRates (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getExchanges (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getExchangesById (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getExchangesList (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getExchangesStatusUpdatesById (Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getExchangesTickersById (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getExchangesVolumeChart (Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getGlobal (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getPrice (Ljava/lang/String;Ljava/lang/String;ZZZZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getStatusUpdates (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getSupportedVsCurrencies (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getTokenPrice (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getTrending (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun ping (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun <init> ()V
+	public fun <init> (Lio/ktor/client/HttpClient;)V
+	public static final fun create ()Lcoingecko/CoinGeckoClient;
+	public static final fun create (Lio/ktor/client/HttpClient;)Lcoingecko/CoinGeckoClient;
+	public final fun getAssetPlatforms (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getCoinById (Ljava/lang/String;ZZZZZZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun getCoinById$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;ZZZZZZLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public final fun getCoinCategories (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getCoinCategoriesList (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getCoinHistoryById (Ljava/lang/String;Ljava/lang/String;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun getCoinHistoryById$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;ZLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public final fun getCoinInfoByContractAddress (Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getCoinList (ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun getCoinList$default (Lcoingecko/CoinGeckoClient;ZLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public final fun getCoinMarketChartById (Ljava/lang/String;Ljava/lang/String;DLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getCoinMarketChartRangeById (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getCoinMarkets (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;ZLjava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun getCoinMarkets$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;ZLjava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public final fun getCoinOhlc (Ljava/lang/String;Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getCoinStatusUpdateById (Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun getCoinStatusUpdateById$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public final fun getCoinTickerById (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun getCoinTickerById$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public final fun getEvents (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;ZLjava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun getEvents$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;ZLjava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public final fun getEventsCountries (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getEventsTypes (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getExchangeRates (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getExchanges (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getExchangesById (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getExchangesList (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getExchangesStatusUpdatesById (Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun getExchangesStatusUpdatesById$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public final fun getExchangesTickersById (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun getExchangesTickersById$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public final fun getExchangesVolumeChart (Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getGlobal (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getPrice (Ljava/lang/String;Ljava/lang/String;ZZZZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun getPrice$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;ZZZZLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public final fun getStatusUpdates (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun getStatusUpdates$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public final fun getSupportedVsCurrencies (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getTokenPrice (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun getTokenPrice$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZZLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public final fun getTrending (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun ping (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
 public final class coingecko/CoinGeckoClient$Companion {
 	public final fun create ()Lcoingecko/CoinGeckoClient;
 	public final fun create (Lio/ktor/client/HttpClient;)Lcoingecko/CoinGeckoClient;
-}
-
-public final class coingecko/CoinGeckoClient$DefaultImpls {
-	public static synthetic fun getCoinById$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;ZZZZZZLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
-	public static synthetic fun getCoinCategories$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
-	public static synthetic fun getCoinHistoryById$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;ZLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
-	public static synthetic fun getCoinList$default (Lcoingecko/CoinGeckoClient;ZLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
-	public static synthetic fun getCoinMarkets$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;ZLjava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
-	public static synthetic fun getCoinStatusUpdateById$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
-	public static synthetic fun getCoinTickerById$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
-	public static synthetic fun getEvents$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;ZLjava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
-	public static synthetic fun getExchangesStatusUpdatesById$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
-	public static synthetic fun getExchangesTickersById$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
-	public static synthetic fun getPrice$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;ZZZZLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
-	public static synthetic fun getStatusUpdates$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
-	public static synthetic fun getTokenPrice$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZZLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
 }
 
 public final class coingecko/constant/Currency {

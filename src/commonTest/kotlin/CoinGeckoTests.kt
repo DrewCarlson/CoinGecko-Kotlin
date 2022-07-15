@@ -9,7 +9,7 @@ import kotlin.test.*
 @OptIn(ExperimentalCoroutinesApi::class)
 class CoinGeckoTests {
 
-    private val coinGecko = CoinGeckoClientImpl()
+    private val coinGecko = CoinGeckoClient()
 
     @Test
     fun testPing() = runTest {
