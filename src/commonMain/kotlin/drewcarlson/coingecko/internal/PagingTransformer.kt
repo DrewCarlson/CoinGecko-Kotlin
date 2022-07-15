@@ -40,10 +40,10 @@ internal object PagingTransformer : HttpClientPlugin<PagingTransformer, PagingTr
                 val previousPage = if (currentPage == 1) null else currentPage - 1
                 val newBody = buildString {
                     append(",")
-                    append("\"total\":${total},")
-                    append("\"perPage\":${perPage},")
-                    append("\"nextPage\":${nextPage},")
-                    append("\"previousPage\":${previousPage}")
+                    append("\"total\":$total,")
+                    append("\"perPage\":$perPage,")
+                    append("\"nextPage\":$nextPage,")
+                    append("\"previousPage\":$previousPage")
                     append("}")
                 }
                 val finalBody = if (fullBody.startsWith(ARRAY_START)) {

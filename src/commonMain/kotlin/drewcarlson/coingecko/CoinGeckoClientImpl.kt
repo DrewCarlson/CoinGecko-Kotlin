@@ -2,6 +2,8 @@ package drewcarlson.coingecko
 
 import drewcarlson.coingecko.error.CoinGeckoApiError
 import drewcarlson.coingecko.error.CoinGeckoApiException
+import drewcarlson.coingecko.internal.PagingTransformer
+import drewcarlson.coingecko.models.*
 import drewcarlson.coingecko.models.coins.*
 import drewcarlson.coingecko.models.events.EventCountries
 import drewcarlson.coingecko.models.events.EventTypes
@@ -11,10 +13,8 @@ import drewcarlson.coingecko.models.exchanges.ExchangesList
 import drewcarlson.coingecko.models.exchanges.ExchangesTickersById
 import drewcarlson.coingecko.models.global.Global
 import drewcarlson.coingecko.models.rates.ExchangeRates
-import drewcarlson.coingecko.models.status.StatusUpdates
-import drewcarlson.coingecko.internal.PagingTransformer
-import drewcarlson.coingecko.models.*
 import drewcarlson.coingecko.models.search.TrendingCoinList
+import drewcarlson.coingecko.models.status.StatusUpdates
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.plugins.*

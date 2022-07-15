@@ -2,9 +2,11 @@ package drewcarlson.coingecko
 
 import drewcarlson.coingecko.constant.*
 import drewcarlson.coingecko.error.*
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import kotlin.test.*
 
+@OptIn(ExperimentalCoroutinesApi::class)
 class CoinGeckoTests {
 
     private val coinGecko = CoinGeckoClientImpl()
@@ -61,7 +63,8 @@ class CoinGeckoTests {
         assertNull(btc.lastUpdatedAt)
 
         val ethPrices = coinGecko.getPrice(
-            "ethereum", "usd,eur",
+            "ethereum",
+            "usd,eur",
             includeMarketCap = true,
             include24hrVol = true,
             include24hrChange = true,

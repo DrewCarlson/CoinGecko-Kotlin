@@ -1,7 +1,7 @@
 package drewcarlson.coingecko.constant
 
 object Currency {
-    //Fiat
+    // Fiat
     const val AED = "aed"
     const val ARS = "ars"
     const val AUD = "aud"

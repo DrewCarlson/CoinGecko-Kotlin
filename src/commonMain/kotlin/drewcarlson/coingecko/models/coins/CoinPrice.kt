@@ -1,6 +1,5 @@
 package drewcarlson.coingecko.models.coins
 
-
 data class CoinPrice(
     private val rawFields: Map<String, String?>
 ) {
