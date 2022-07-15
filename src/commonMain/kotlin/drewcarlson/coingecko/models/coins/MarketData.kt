@@ -15,6 +15,11 @@ data class MarketData(
         val athChangePercentage: Map<String, Double>? = null,
         @SerialName("ath_date")
         val athDate: Map<String, String>? = null,
+        val atl: Map<String, Double>? = null,
+        @SerialName("atl_change_percentage")
+        val atlChangePercentage: Map<String, Double>? = null,
+        @SerialName("atl_date")
+        val atlDate: Map<String, String>? = null,
         @SerialName("market_cap")
         val marketCap: Map<String, Double>? = null,
         @SerialName("market_cap_rank")
