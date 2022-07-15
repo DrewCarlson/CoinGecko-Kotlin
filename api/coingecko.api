@@ -1,0 +1,2054 @@
+public abstract interface class drewcarlson/coingecko/CoinGeckoClient {
+	public static final field Companion Ldrewcarlson/coingecko/CoinGeckoClient$Companion;
+	public abstract fun getAssetPlatforms (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getCoinById (Ljava/lang/String;ZZZZZZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getCoinCategories (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getCoinCategoriesList (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getCoinHistoryById (Ljava/lang/String;Ljava/lang/String;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getCoinInfoByContractAddress (Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getCoinList (ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getCoinMarketChartById (Ljava/lang/String;Ljava/lang/String;DLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getCoinMarketChartRangeById (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getCoinMarkets (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;ZLjava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getCoinOhlc (Ljava/lang/String;Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getCoinStatusUpdateById (Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getCoinTickerById (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getEvents (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;ZLjava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getEventsCountries (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getEventsTypes (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getExchangeRates (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getExchanges (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getExchangesById (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getExchangesList (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getExchangesStatusUpdatesById (Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getExchangesTickersById (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getExchangesVolumeChart (Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getGlobal (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getPrice (Ljava/lang/String;Ljava/lang/String;ZZZZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getStatusUpdates (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getSupportedVsCurrencies (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getTokenPrice (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getTrending (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun ping (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class drewcarlson/coingecko/CoinGeckoClient$Companion {
+	public final fun create ()Ldrewcarlson/coingecko/CoinGeckoClient;
+	public final fun create (Lio/ktor/client/HttpClient;)Ldrewcarlson/coingecko/CoinGeckoClient;
+}
+
+public final class drewcarlson/coingecko/CoinGeckoClient$DefaultImpls {
+	public static synthetic fun getCoinById$default (Ldrewcarlson/coingecko/CoinGeckoClient;Ljava/lang/String;ZZZZZZLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun getCoinCategories$default (Ldrewcarlson/coingecko/CoinGeckoClient;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun getCoinHistoryById$default (Ldrewcarlson/coingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;ZLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun getCoinList$default (Ldrewcarlson/coingecko/CoinGeckoClient;ZLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun getCoinMarkets$default (Ldrewcarlson/coingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;ZLjava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun getCoinStatusUpdateById$default (Ldrewcarlson/coingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun getCoinTickerById$default (Ldrewcarlson/coingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun getEvents$default (Ldrewcarlson/coingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;ZLjava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun getExchangesStatusUpdatesById$default (Ldrewcarlson/coingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun getExchangesTickersById$default (Ldrewcarlson/coingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun getPrice$default (Ldrewcarlson/coingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;ZZZZLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun getStatusUpdates$default (Ldrewcarlson/coingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun getTokenPrice$default (Ldrewcarlson/coingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZZLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+}
+
+public final class drewcarlson/coingecko/constant/Currency {
+	public static final field AED Ljava/lang/String;
+	public static final field ARS Ljava/lang/String;
+	public static final field AUD Ljava/lang/String;
+	public static final field BCH Ljava/lang/String;
+	public static final field BDT Ljava/lang/String;
+	public static final field BHD Ljava/lang/String;
+	public static final field BMD Ljava/lang/String;
+	public static final field BNB Ljava/lang/String;
+	public static final field BRL Ljava/lang/String;
+	public static final field BTC Ljava/lang/String;
+	public static final field CAD Ljava/lang/String;
+	public static final field CHF Ljava/lang/String;
+	public static final field CLP Ljava/lang/String;
+	public static final field CNY Ljava/lang/String;
+	public static final field CZK Ljava/lang/String;
+	public static final field DKK Ljava/lang/String;
+	public static final field EOS Ljava/lang/String;
+	public static final field ETH Ljava/lang/String;
+	public static final field EUR Ljava/lang/String;
+	public static final field GBP Ljava/lang/String;
+	public static final field HKD Ljava/lang/String;
+	public static final field HUF Ljava/lang/String;
+	public static final field IDR Ljava/lang/String;
+	public static final field ILS Ljava/lang/String;
+	public static final field INR Ljava/lang/String;
+	public static final field INSTANCE Ldrewcarlson/coingecko/constant/Currency;
+	public static final field JPY Ljava/lang/String;
+	public static final field KRW Ljava/lang/String;
+	public static final field KWD Ljava/lang/String;
+	public static final field LKR Ljava/lang/String;
+	public static final field LTC Ljava/lang/String;
+	public static final field MMK Ljava/lang/String;
+	public static final field MXN Ljava/lang/String;
+	public static final field MYR Ljava/lang/String;
+	public static final field NOK Ljava/lang/String;
+	public static final field NZD Ljava/lang/String;
+	public static final field PHP Ljava/lang/String;
+	public static final field PKR Ljava/lang/String;
+	public static final field PLN Ljava/lang/String;
+	public static final field RUB Ljava/lang/String;
+	public static final field SAR Ljava/lang/String;
+	public static final field SEK Ljava/lang/String;
+	public static final field SGD Ljava/lang/String;
+	public static final field THB Ljava/lang/String;
+	public static final field TRY Ljava/lang/String;
+	public static final field TWD Ljava/lang/String;
+	public static final field UAH Ljava/lang/String;
+	public static final field USD Ljava/lang/String;
+	public static final field VEF Ljava/lang/String;
+	public static final field VND Ljava/lang/String;
+	public static final field XAG Ljava/lang/String;
+	public static final field XAU Ljava/lang/String;
+	public static final field XDR Ljava/lang/String;
+	public static final field XLM Ljava/lang/String;
+	public static final field XRP Ljava/lang/String;
+	public static final field ZAR Ljava/lang/String;
+}
+
+public final class drewcarlson/coingecko/constant/Order {
+	public static final field COIN_NAME_ASC Ljava/lang/String;
+	public static final field COIN_NAME_DESC Ljava/lang/String;
+	public static final field GECKO_ASC Ljava/lang/String;
+	public static final field GECKO_DESC Ljava/lang/String;
+	public static final field HOUR_24_ASC Ljava/lang/String;
+	public static final field HOUR_24_DESC Ljava/lang/String;
+	public static final field INSTANCE Ldrewcarlson/coingecko/constant/Order;
+	public static final field MARKET_CAP_ASC Ljava/lang/String;
+	public static final field MARKET_CAP_DESC Ljava/lang/String;
+	public static final field PRICE_ASC Ljava/lang/String;
+	public static final field PRICE_DESC Ljava/lang/String;
+	public static final field TRUST_SCORE_DESC Ljava/lang/String;
+	public static final field VOLUME_ASC Ljava/lang/String;
+	public static final field VOLUME_DESC Ljava/lang/String;
+}
+
+public final class drewcarlson/coingecko/error/CoinGeckoApiError {
+	public fun <init> ()V
+	public fun <init> (ILjava/lang/String;)V
+	public synthetic fun <init> (ILjava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()I
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (ILjava/lang/String;)Ldrewcarlson/coingecko/error/CoinGeckoApiError;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/error/CoinGeckoApiError;ILjava/lang/String;ILjava/lang/Object;)Ldrewcarlson/coingecko/error/CoinGeckoApiError;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCode ()I
+	public final fun getMessage ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class drewcarlson/coingecko/error/CoinGeckoApiException : java/lang/Exception {
+	public fun <init> (Ldrewcarlson/coingecko/error/CoinGeckoApiError;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/Throwable;)V
+	public fun <init> (Ljava/lang/Throwable;)V
+	public final fun getError ()Ldrewcarlson/coingecko/error/CoinGeckoApiError;
+	public fun getMessage ()Ljava/lang/String;
+}
+
+public final class drewcarlson/coingecko/internal/CoinOhlcSerializer : kotlinx/serialization/KSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/internal/CoinOhlcSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/coins/CoinOhlc;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/coins/CoinOhlc;)Ljava/lang/Void;
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+}
+
+public final class drewcarlson/coingecko/models/AssetPlatform {
+	public static final field Companion Ldrewcarlson/coingecko/models/AssetPlatform$Companion;
+	public fun <init> (Ljava/lang/String;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/Long;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;)Ldrewcarlson/coingecko/models/AssetPlatform;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/AssetPlatform;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/AssetPlatform;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getChainIdentifier ()Ljava/lang/Long;
+	public final fun getId ()Ljava/lang/String;
+	public final fun getName ()Ljava/lang/String;
+	public final fun getShortname ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class drewcarlson/coingecko/models/AssetPlatform$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public abstract interface class drewcarlson/coingecko/models/Page {
+	public abstract fun getNextPage ()Ljava/lang/Integer;
+	public abstract fun getPerPage ()I
+	public abstract fun getPreviousPage ()Ljava/lang/Integer;
+	public abstract fun getTotal ()I
+}
+
+public final class drewcarlson/coingecko/models/Ping {
+	public static final field Companion Ldrewcarlson/coingecko/models/Ping$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Ldrewcarlson/coingecko/models/Ping;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/Ping;Ljava/lang/String;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/Ping;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getGeckoSays ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/Ping;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/Ping$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/Ping$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/Ping;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/Ping;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/Ping$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinCategory {
+	public static final field Companion Ldrewcarlson/coingecko/models/coins/CoinCategory$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;)Ldrewcarlson/coingecko/models/coins/CoinCategory;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/coins/CoinCategory;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/coins/CoinCategory;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCategoryId ()Ljava/lang/String;
+	public final fun getName ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/coins/CoinCategory;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinCategory$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/coins/CoinCategory$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/coins/CoinCategory;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/coins/CoinCategory;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinCategory$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinCategoryAndData {
+	public static final field Companion Ldrewcarlson/coingecko/models/coins/CoinCategoryAndData$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;DDLjava/lang/String;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;DDLjava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()D
+	public final fun component4 ()D
+	public final fun component5 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;DDLjava/lang/String;)Ldrewcarlson/coingecko/models/coins/CoinCategoryAndData;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/coins/CoinCategoryAndData;Ljava/lang/String;Ljava/lang/String;DDLjava/lang/String;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/coins/CoinCategoryAndData;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getId ()Ljava/lang/String;
+	public final fun getMarketCap ()D
+	public final fun getMarketCapChange24h ()D
+	public final fun getName ()Ljava/lang/String;
+	public final fun getUpdatedAt ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/coins/CoinCategoryAndData;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinCategoryAndData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/coins/CoinCategoryAndData$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/coins/CoinCategoryAndData;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/coins/CoinCategoryAndData;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinCategoryAndData$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinFullData {
+	public static final field Companion Ldrewcarlson/coingecko/models/coins/CoinFullData$Companion;
+	public synthetic fun <init> (IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/util/List;Ljava/util/Map;Ljava/util/Map;Ldrewcarlson/coingecko/models/coins/data/Links;Ldrewcarlson/coingecko/models/shared/Image;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/IcoData;JJDDDDDLdrewcarlson/coingecko/models/coins/MarketData;Ldrewcarlson/coingecko/models/coins/data/CommunityData;Ldrewcarlson/coingecko/models/coins/data/DeveloperData;Ldrewcarlson/coingecko/models/coins/data/PublicInterestStats;Ljava/util/List;Ljava/lang/String;Ljava/util/List;FFLjava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/util/List;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/util/List;Ljava/util/Map;Ljava/util/Map;Ldrewcarlson/coingecko/models/coins/data/Links;Ldrewcarlson/coingecko/models/shared/Image;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/IcoData;JJDDDDDLdrewcarlson/coingecko/models/coins/MarketData;Ldrewcarlson/coingecko/models/coins/data/CommunityData;Ldrewcarlson/coingecko/models/coins/data/DeveloperData;Ldrewcarlson/coingecko/models/coins/data/PublicInterestStats;Ljava/util/List;Ljava/lang/String;Ljava/util/List;FFLjava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/util/List;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/util/List;Ljava/util/Map;Ljava/util/Map;Ldrewcarlson/coingecko/models/coins/data/Links;Ldrewcarlson/coingecko/models/shared/Image;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/IcoData;JJDDDDDLdrewcarlson/coingecko/models/coins/MarketData;Ldrewcarlson/coingecko/models/coins/data/CommunityData;Ldrewcarlson/coingecko/models/coins/data/DeveloperData;Ldrewcarlson/coingecko/models/coins/data/PublicInterestStats;Ljava/util/List;Ljava/lang/String;Ljava/util/List;FFLjava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/util/List;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component10 ()Ldrewcarlson/coingecko/models/shared/Image;
+	public final fun component11 ()Ljava/lang/String;
+	public final fun component12 ()Ljava/lang/String;
+	public final fun component13 ()Ljava/lang/String;
+	public final fun component14 ()Ldrewcarlson/coingecko/models/coins/data/IcoData;
+	public final fun component15 ()J
+	public final fun component16 ()J
+	public final fun component17 ()D
+	public final fun component18 ()D
+	public final fun component19 ()D
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component20 ()D
+	public final fun component21 ()D
+	public final fun component22 ()Ldrewcarlson/coingecko/models/coins/MarketData;
+	public final fun component23 ()Ldrewcarlson/coingecko/models/coins/data/CommunityData;
+	public final fun component24 ()Ldrewcarlson/coingecko/models/coins/data/DeveloperData;
+	public final fun component25 ()Ldrewcarlson/coingecko/models/coins/data/PublicInterestStats;
+	public final fun component26 ()Ljava/util/List;
+	public final fun component27 ()Ljava/lang/String;
+	public final fun component28 ()Ljava/util/List;
+	public final fun component29 ()F
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component30 ()F
+	public final fun component31 ()Ljava/lang/String;
+	public final fun component32 ()Ljava/util/Map;
+	public final fun component33 ()Ljava/lang/String;
+	public final fun component34 ()Ljava/util/List;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()J
+	public final fun component6 ()Ljava/util/List;
+	public final fun component7 ()Ljava/util/Map;
+	public final fun component8 ()Ljava/util/Map;
+	public final fun component9 ()Ldrewcarlson/coingecko/models/coins/data/Links;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/util/List;Ljava/util/Map;Ljava/util/Map;Ldrewcarlson/coingecko/models/coins/data/Links;Ldrewcarlson/coingecko/models/shared/Image;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/IcoData;JJDDDDDLdrewcarlson/coingecko/models/coins/MarketData;Ldrewcarlson/coingecko/models/coins/data/CommunityData;Ldrewcarlson/coingecko/models/coins/data/DeveloperData;Ldrewcarlson/coingecko/models/coins/data/PublicInterestStats;Ljava/util/List;Ljava/lang/String;Ljava/util/List;FFLjava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/util/List;)Ldrewcarlson/coingecko/models/coins/CoinFullData;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/coins/CoinFullData;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/util/List;Ljava/util/Map;Ljava/util/Map;Ldrewcarlson/coingecko/models/coins/data/Links;Ldrewcarlson/coingecko/models/shared/Image;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/IcoData;JJDDDDDLdrewcarlson/coingecko/models/coins/MarketData;Ldrewcarlson/coingecko/models/coins/data/CommunityData;Ldrewcarlson/coingecko/models/coins/data/DeveloperData;Ldrewcarlson/coingecko/models/coins/data/PublicInterestStats;Ljava/util/List;Ljava/lang/String;Ljava/util/List;FFLjava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/util/List;IILjava/lang/Object;)Ldrewcarlson/coingecko/models/coins/CoinFullData;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAdditionalNotices ()Ljava/util/List;
+	public final fun getAssetPlatformId ()Ljava/lang/String;
+	public final fun getBlockTimeInMinutes ()J
+	public final fun getCategories ()Ljava/util/List;
+	public final fun getCoingeckoRank ()J
+	public final fun getCoingeckoScore ()D
+	public final fun getCommunityData ()Ldrewcarlson/coingecko/models/coins/data/CommunityData;
+	public final fun getCommunityScore ()D
+	public final fun getContractAddress ()Ljava/lang/String;
+	public final fun getCountryOrigin ()Ljava/lang/String;
+	public final fun getDescription ()Ljava/util/Map;
+	public final fun getDeveloperData ()Ldrewcarlson/coingecko/models/coins/data/DeveloperData;
+	public final fun getDeveloperScore ()D
+	public final fun getGenesisDate ()Ljava/lang/String;
+	public final fun getHashingAlgorithm ()Ljava/lang/String;
+	public final fun getIcoData ()Ldrewcarlson/coingecko/models/coins/data/IcoData;
+	public final fun getId ()Ljava/lang/String;
+	public final fun getImage ()Ldrewcarlson/coingecko/models/shared/Image;
+	public final fun getLastUpdated ()Ljava/lang/String;
+	public final fun getLinks ()Ldrewcarlson/coingecko/models/coins/data/Links;
+	public final fun getLiquidityScore ()D
+	public final fun getLocalization ()Ljava/util/Map;
+	public final fun getMarketCapRank ()J
+	public final fun getMarketData ()Ldrewcarlson/coingecko/models/coins/MarketData;
+	public final fun getName ()Ljava/lang/String;
+	public final fun getPlatforms ()Ljava/util/Map;
+	public final fun getPublicInterestScore ()D
+	public final fun getPublicInterestStats ()Ldrewcarlson/coingecko/models/coins/data/PublicInterestStats;
+	public final fun getPublicNotice ()Ljava/lang/String;
+	public final fun getSentimentVotesDownPercentage ()F
+	public final fun getSentimentVotesUpPercentage ()F
+	public final fun getStatusUpdates ()Ljava/util/List;
+	public final fun getSymbol ()Ljava/lang/String;
+	public final fun getTickers ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/coins/CoinFullData;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinFullData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/coins/CoinFullData$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/coins/CoinFullData;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/coins/CoinFullData;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinFullData$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinHistoryById {
+	public static final field Companion Ldrewcarlson/coingecko/models/coins/CoinHistoryById$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ldrewcarlson/coingecko/models/shared/Image;Ldrewcarlson/coingecko/models/coins/MarketData;Ldrewcarlson/coingecko/models/coins/data/CommunityData;Ldrewcarlson/coingecko/models/coins/data/DeveloperData;Ldrewcarlson/coingecko/models/coins/data/PublicInterestStats;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ldrewcarlson/coingecko/models/shared/Image;Ldrewcarlson/coingecko/models/coins/MarketData;Ldrewcarlson/coingecko/models/coins/data/CommunityData;Ldrewcarlson/coingecko/models/coins/data/DeveloperData;Ldrewcarlson/coingecko/models/coins/data/PublicInterestStats;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ldrewcarlson/coingecko/models/shared/Image;Ldrewcarlson/coingecko/models/coins/MarketData;Ldrewcarlson/coingecko/models/coins/data/CommunityData;Ldrewcarlson/coingecko/models/coins/data/DeveloperData;Ldrewcarlson/coingecko/models/coins/data/PublicInterestStats;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/util/Map;
+	public final fun component5 ()Ldrewcarlson/coingecko/models/shared/Image;
+	public final fun component6 ()Ldrewcarlson/coingecko/models/coins/MarketData;
+	public final fun component7 ()Ldrewcarlson/coingecko/models/coins/data/CommunityData;
+	public final fun component8 ()Ldrewcarlson/coingecko/models/coins/data/DeveloperData;
+	public final fun component9 ()Ldrewcarlson/coingecko/models/coins/data/PublicInterestStats;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ldrewcarlson/coingecko/models/shared/Image;Ldrewcarlson/coingecko/models/coins/MarketData;Ldrewcarlson/coingecko/models/coins/data/CommunityData;Ldrewcarlson/coingecko/models/coins/data/DeveloperData;Ldrewcarlson/coingecko/models/coins/data/PublicInterestStats;)Ldrewcarlson/coingecko/models/coins/CoinHistoryById;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/coins/CoinHistoryById;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ldrewcarlson/coingecko/models/shared/Image;Ldrewcarlson/coingecko/models/coins/MarketData;Ldrewcarlson/coingecko/models/coins/data/CommunityData;Ldrewcarlson/coingecko/models/coins/data/DeveloperData;Ldrewcarlson/coingecko/models/coins/data/PublicInterestStats;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/coins/CoinHistoryById;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCommunityData ()Ldrewcarlson/coingecko/models/coins/data/CommunityData;
+	public final fun getDeveloperData ()Ldrewcarlson/coingecko/models/coins/data/DeveloperData;
+	public final fun getId ()Ljava/lang/String;
+	public final fun getImage ()Ldrewcarlson/coingecko/models/shared/Image;
+	public final fun getLocalization ()Ljava/util/Map;
+	public final fun getMarketData ()Ldrewcarlson/coingecko/models/coins/MarketData;
+	public final fun getName ()Ljava/lang/String;
+	public final fun getPublicInterestStats ()Ldrewcarlson/coingecko/models/coins/data/PublicInterestStats;
+	public final fun getSymbol ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/coins/CoinHistoryById;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinHistoryById$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/coins/CoinHistoryById$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/coins/CoinHistoryById;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/coins/CoinHistoryById;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinHistoryById$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinList {
+	public static final field Companion Ldrewcarlson/coingecko/models/coins/CoinList$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/util/Map;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)Ldrewcarlson/coingecko/models/coins/CoinList;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/coins/CoinList;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/coins/CoinList;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getId ()Ljava/lang/String;
+	public final fun getName ()Ljava/lang/String;
+	public final fun getPlatforms ()Ljava/util/Map;
+	public final fun getSymbol ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/coins/CoinList;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinList$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/coins/CoinList$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/coins/CoinList;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/coins/CoinList;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinList$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinMarkets {
+	public static final field Companion Ldrewcarlson/coingecko/models/coins/CoinMarkets$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;DDJDDDDDDDDLjava/lang/Double;DDDDLjava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/Roi;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/SparklineIn7d;DLjava/lang/Double;DLkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;DDJDDDDDDDDLjava/lang/Double;DDDDLjava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/Roi;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/SparklineIn7d;DLjava/lang/Double;D)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;DDJDDDDDDDDLjava/lang/Double;DDDDLjava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/Roi;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/SparklineIn7d;DLjava/lang/Double;DILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component10 ()D
+	public final fun component11 ()D
+	public final fun component12 ()D
+	public final fun component13 ()D
+	public final fun component14 ()D
+	public final fun component15 ()D
+	public final fun component16 ()Ljava/lang/Double;
+	public final fun component17 ()D
+	public final fun component18 ()D
+	public final fun component19 ()D
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component20 ()D
+	public final fun component21 ()Ljava/lang/String;
+	public final fun component22 ()Ljava/lang/String;
+	public final fun component23 ()Ldrewcarlson/coingecko/models/coins/data/Roi;
+	public final fun component24 ()Ljava/lang/String;
+	public final fun component25 ()Ldrewcarlson/coingecko/models/coins/data/SparklineIn7d;
+	public final fun component26 ()D
+	public final fun component27 ()Ljava/lang/Double;
+	public final fun component28 ()D
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()D
+	public final fun component6 ()D
+	public final fun component7 ()J
+	public final fun component8 ()D
+	public final fun component9 ()D
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;DDJDDDDDDDDLjava/lang/Double;DDDDLjava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/Roi;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/SparklineIn7d;DLjava/lang/Double;D)Ldrewcarlson/coingecko/models/coins/CoinMarkets;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/coins/CoinMarkets;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;DDJDDDDDDDDLjava/lang/Double;DDDDLjava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/Roi;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/SparklineIn7d;DLjava/lang/Double;DILjava/lang/Object;)Ldrewcarlson/coingecko/models/coins/CoinMarkets;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAth ()D
+	public final fun getAthChangePercentage ()D
+	public final fun getAthDate ()Ljava/lang/String;
+	public final fun getAtl ()D
+	public final fun getAtlChangePercentage ()D
+	public final fun getAtlDate ()Ljava/lang/String;
+	public final fun getCirculatingSupply ()D
+	public final fun getCurrentPrice ()D
+	public final fun getFullyDilutedValuation ()Ljava/lang/Double;
+	public final fun getHigh24h ()D
+	public final fun getId ()Ljava/lang/String;
+	public final fun getImage ()Ljava/lang/String;
+	public final fun getLastUpdated ()Ljava/lang/String;
+	public final fun getLow24h ()D
+	public final fun getMarketCap ()D
+	public final fun getMarketCapChange24h ()D
+	public final fun getMarketCapChangePercentage24h ()D
+	public final fun getMarketCapRank ()J
+	public final fun getMaxSupply ()D
+	public final fun getName ()Ljava/lang/String;
+	public final fun getPriceChange24h ()D
+	public final fun getPriceChangePercentage1hInCurrency ()D
+	public final fun getPriceChangePercentage24h ()D
+	public final fun getRoi ()Ldrewcarlson/coingecko/models/coins/data/Roi;
+	public final fun getSparklineIn7d ()Ldrewcarlson/coingecko/models/coins/data/SparklineIn7d;
+	public final fun getSymbol ()Ljava/lang/String;
+	public final fun getTotalSupply ()Ljava/lang/Double;
+	public final fun getTotalVolume ()D
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/coins/CoinMarkets;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinMarkets$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/coins/CoinMarkets$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/coins/CoinMarkets;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/coins/CoinMarkets;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinMarkets$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinMarketsList : drewcarlson/coingecko/models/Page {
+	public static final field Companion Ldrewcarlson/coingecko/models/coins/CoinMarketsList$Companion;
+	public synthetic fun <init> (ILjava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun component2 ()I
+	public final fun component3 ()I
+	public final fun component4 ()Ljava/lang/Integer;
+	public final fun component5 ()Ljava/lang/Integer;
+	public final fun copy (Ljava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;)Ldrewcarlson/coingecko/models/coins/CoinMarketsList;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/coins/CoinMarketsList;Ljava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/coins/CoinMarketsList;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getMarkets ()Ljava/util/List;
+	public fun getNextPage ()Ljava/lang/Integer;
+	public fun getPerPage ()I
+	public fun getPreviousPage ()Ljava/lang/Integer;
+	public fun getTotal ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/coins/CoinMarketsList;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinMarketsList$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/coins/CoinMarketsList$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/coins/CoinMarketsList;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/coins/CoinMarketsList;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinMarketsList$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinOhlc {
+	public static final field Companion Ldrewcarlson/coingecko/models/coins/CoinOhlc$Companion;
+	public fun <init> (JDDDD)V
+	public final fun component1 ()J
+	public final fun component2 ()D
+	public final fun component3 ()D
+	public final fun component4 ()D
+	public final fun component5 ()D
+	public final fun copy (JDDDD)Ldrewcarlson/coingecko/models/coins/CoinOhlc;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/coins/CoinOhlc;JDDDDILjava/lang/Object;)Ldrewcarlson/coingecko/models/coins/CoinOhlc;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getClose ()D
+	public final fun getHigh ()D
+	public final fun getLow ()D
+	public final fun getOpen ()D
+	public final fun getTime ()J
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinOhlc$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinPrice {
+	public fun <init> (Ljava/util/Map;)V
+	public final fun copy (Ljava/util/Map;)Ldrewcarlson/coingecko/models/coins/CoinPrice;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/coins/CoinPrice;Ljava/util/Map;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/coins/CoinPrice;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun get24hrChange (Ljava/lang/String;)D
+	public final fun get24hrChangeOrNull (Ljava/lang/String;)Ljava/lang/Double;
+	public final fun get24hrVol (Ljava/lang/String;)D
+	public final fun get24hrVolOrNull (Ljava/lang/String;)Ljava/lang/Double;
+	public final fun getLastUpdatedAt ()Ljava/lang/Long;
+	public final fun getMarketCap (Ljava/lang/String;)D
+	public final fun getMarketCapOrNull (Ljava/lang/String;)Ljava/lang/Double;
+	public final fun getPrice (Ljava/lang/String;)D
+	public final fun getPriceOrNull (Ljava/lang/String;)Ljava/lang/Double;
+	public final fun getRawField (Ljava/lang/String;)Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinTickerById : drewcarlson/coingecko/models/Page {
+	public static final field Companion Ldrewcarlson/coingecko/models/coins/CoinTickerById$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/util/List;
+	public final fun component3 ()I
+	public final fun component4 ()I
+	public final fun component5 ()Ljava/lang/Integer;
+	public final fun component6 ()Ljava/lang/Integer;
+	public final fun copy (Ljava/lang/String;Ljava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;)Ldrewcarlson/coingecko/models/coins/CoinTickerById;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/coins/CoinTickerById;Ljava/lang/String;Ljava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/coins/CoinTickerById;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getName ()Ljava/lang/String;
+	public fun getNextPage ()Ljava/lang/Integer;
+	public fun getPerPage ()I
+	public fun getPreviousPage ()Ljava/lang/Integer;
+	public final fun getTickers ()Ljava/util/List;
+	public fun getTotal ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/coins/CoinTickerById;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinTickerById$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/coins/CoinTickerById$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/coins/CoinTickerById;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/coins/CoinTickerById;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/CoinTickerById$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/MarketChart {
+	public static final field Companion Ldrewcarlson/coingecko/models/coins/MarketChart$Companion;
+	public synthetic fun <init> (ILjava/util/List;Ljava/util/List;Ljava/util/List;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun component2 ()Ljava/util/List;
+	public final fun component3 ()Ljava/util/List;
+	public final fun copy (Ljava/util/List;Ljava/util/List;Ljava/util/List;)Ldrewcarlson/coingecko/models/coins/MarketChart;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/coins/MarketChart;Ljava/util/List;Ljava/util/List;Ljava/util/List;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/coins/MarketChart;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getMarketCaps ()Ljava/util/List;
+	public final fun getPrices ()Ljava/util/List;
+	public final fun getTotalVolumes ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/coins/MarketChart;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/coins/MarketChart$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/coins/MarketChart$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/coins/MarketChart;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/coins/MarketChart;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/MarketChart$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/MarketData {
+	public static final field Companion Ldrewcarlson/coingecko/models/coins/MarketData$Companion;
+	public fun <init> ()V
+	public synthetic fun <init> (IILjava/util/Map;Ldrewcarlson/coingecko/models/coins/data/Roi;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;JLjava/util/Map;Ljava/util/Map;Ljava/util/Map;DDDDDDDDDDLjava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Double;DLjava/lang/String;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/util/Map;Ldrewcarlson/coingecko/models/coins/data/Roi;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;JLjava/util/Map;Ljava/util/Map;Ljava/util/Map;DDDDDDDDDDLjava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Double;DLjava/lang/String;)V
+	public synthetic fun <init> (Ljava/util/Map;Ldrewcarlson/coingecko/models/coins/data/Roi;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;JLjava/util/Map;Ljava/util/Map;Ljava/util/Map;DDDDDDDDDDLjava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Double;DLjava/lang/String;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/util/Map;
+	public final fun component10 ()J
+	public final fun component11 ()Ljava/util/Map;
+	public final fun component12 ()Ljava/util/Map;
+	public final fun component13 ()Ljava/util/Map;
+	public final fun component14 ()D
+	public final fun component15 ()D
+	public final fun component16 ()D
+	public final fun component17 ()D
+	public final fun component18 ()D
+	public final fun component19 ()D
+	public final fun component2 ()Ldrewcarlson/coingecko/models/coins/data/Roi;
+	public final fun component20 ()D
+	public final fun component21 ()D
+	public final fun component22 ()D
+	public final fun component23 ()D
+	public final fun component24 ()Ljava/util/Map;
+	public final fun component25 ()Ljava/util/Map;
+	public final fun component26 ()Ljava/util/Map;
+	public final fun component27 ()Ljava/util/Map;
+	public final fun component28 ()Ljava/util/Map;
+	public final fun component29 ()Ljava/util/Map;
+	public final fun component3 ()Ljava/util/Map;
+	public final fun component30 ()Ljava/util/Map;
+	public final fun component31 ()Ljava/util/Map;
+	public final fun component32 ()Ljava/util/Map;
+	public final fun component33 ()Ljava/util/Map;
+	public final fun component34 ()Ljava/util/Map;
+	public final fun component35 ()Ljava/lang/Double;
+	public final fun component36 ()D
+	public final fun component37 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/util/Map;
+	public final fun component5 ()Ljava/util/Map;
+	public final fun component6 ()Ljava/util/Map;
+	public final fun component7 ()Ljava/util/Map;
+	public final fun component8 ()Ljava/util/Map;
+	public final fun component9 ()Ljava/util/Map;
+	public final fun copy (Ljava/util/Map;Ldrewcarlson/coingecko/models/coins/data/Roi;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;JLjava/util/Map;Ljava/util/Map;Ljava/util/Map;DDDDDDDDDDLjava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Double;DLjava/lang/String;)Ldrewcarlson/coingecko/models/coins/MarketData;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/coins/MarketData;Ljava/util/Map;Ldrewcarlson/coingecko/models/coins/data/Roi;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;JLjava/util/Map;Ljava/util/Map;Ljava/util/Map;DDDDDDDDDDLjava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Double;DLjava/lang/String;IILjava/lang/Object;)Ldrewcarlson/coingecko/models/coins/MarketData;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAth ()Ljava/util/Map;
+	public final fun getAthChangePercentage ()Ljava/util/Map;
+	public final fun getAthDate ()Ljava/util/Map;
+	public final fun getAtl ()Ljava/util/Map;
+	public final fun getAtlChangePercentage ()Ljava/util/Map;
+	public final fun getAtlDate ()Ljava/util/Map;
+	public final fun getCirculatingSupply ()D
+	public final fun getCurrentPrice ()Ljava/util/Map;
+	public final fun getHigh24h ()Ljava/util/Map;
+	public final fun getLastUpdated ()Ljava/lang/String;
+	public final fun getLow24h ()Ljava/util/Map;
+	public final fun getMarketCap ()Ljava/util/Map;
+	public final fun getMarketCapChange24h ()D
+	public final fun getMarketCapChange24hInCurrency ()Ljava/util/Map;
+	public final fun getMarketCapChangePercentage24h ()D
+	public final fun getMarketCapChangePercentage24hInCurrency ()Ljava/util/Map;
+	public final fun getMarketCapRank ()J
+	public final fun getPriceChange24h ()D
+	public final fun getPriceChange24hInCurrency ()Ljava/util/Map;
+	public final fun getPriceChangePercentage14d ()D
+	public final fun getPriceChangePercentage14dInCurrency ()Ljava/util/Map;
+	public final fun getPriceChangePercentage1hInCurrency ()Ljava/util/Map;
+	public final fun getPriceChangePercentage1y ()D
+	public final fun getPriceChangePercentage1yInCurrency ()Ljava/util/Map;
+	public final fun getPriceChangePercentage200d ()D
+	public final fun getPriceChangePercentage200dInCurrency ()Ljava/util/Map;
+	public final fun getPriceChangePercentage24h ()D
+	public final fun getPriceChangePercentage24hInCurrency ()Ljava/util/Map;
+	public final fun getPriceChangePercentage30d ()D
+	public final fun getPriceChangePercentage30dInCurrency ()Ljava/util/Map;
+	public final fun getPriceChangePercentage60d ()D
+	public final fun getPriceChangePercentage60dInCurrency ()Ljava/util/Map;
+	public final fun getPriceChangePercentage7d ()D
+	public final fun getPriceChangePercentage7dInCurrency ()Ljava/util/Map;
+	public final fun getRoi ()Ldrewcarlson/coingecko/models/coins/data/Roi;
+	public final fun getTotalSupply ()Ljava/lang/Double;
+	public final fun getTotalVolume ()Ljava/util/Map;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/coins/MarketData;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/coins/MarketData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/coins/MarketData$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/coins/MarketData;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/coins/MarketData;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/MarketData$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/data/CodeAdditionsDeletions4Weeks {
+	public static final field Companion Ldrewcarlson/coingecko/models/coins/data/CodeAdditionsDeletions4Weeks$Companion;
+	public fun <init> ()V
+	public synthetic fun <init> (IJJLkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (JJ)V
+	public synthetic fun <init> (JJILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()J
+	public final fun component2 ()J
+	public final fun copy (JJ)Ldrewcarlson/coingecko/models/coins/data/CodeAdditionsDeletions4Weeks;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/coins/data/CodeAdditionsDeletions4Weeks;JJILjava/lang/Object;)Ldrewcarlson/coingecko/models/coins/data/CodeAdditionsDeletions4Weeks;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAdditions ()J
+	public final fun getDeletions ()J
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/coins/data/CodeAdditionsDeletions4Weeks;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/coins/data/CodeAdditionsDeletions4Weeks$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/coins/data/CodeAdditionsDeletions4Weeks$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/coins/data/CodeAdditionsDeletions4Weeks;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/coins/data/CodeAdditionsDeletions4Weeks;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/data/CodeAdditionsDeletions4Weeks$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/data/CommunityData {
+	public static final field Companion Ldrewcarlson/coingecko/models/coins/data/CommunityData$Companion;
+	public fun <init> ()V
+	public fun <init> (DDDDDDLjava/lang/Double;)V
+	public synthetic fun <init> (DDDDDDLjava/lang/Double;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (IDDDDDDLjava/lang/Double;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public final fun component1 ()D
+	public final fun component2 ()D
+	public final fun component3 ()D
+	public final fun component4 ()D
+	public final fun component5 ()D
+	public final fun component6 ()D
+	public final fun component7 ()Ljava/lang/Double;
+	public final fun copy (DDDDDDLjava/lang/Double;)Ldrewcarlson/coingecko/models/coins/data/CommunityData;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/coins/data/CommunityData;DDDDDDLjava/lang/Double;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/coins/data/CommunityData;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getFacebookLikes ()D
+	public final fun getRedditAccountsActive48h ()D
+	public final fun getRedditAverageComments48h ()D
+	public final fun getRedditAveragePosts48h ()D
+	public final fun getRedditSubscribers ()D
+	public final fun getTelegramChannelUserCount ()Ljava/lang/Double;
+	public final fun getTwitterFollowers ()D
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/coins/data/CommunityData;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/coins/data/CommunityData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/coins/data/CommunityData$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/coins/data/CommunityData;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/coins/data/CommunityData;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/data/CommunityData$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/data/DeveloperData {
+	public static final field Companion Ldrewcarlson/coingecko/models/coins/data/DeveloperData$Companion;
+	public fun <init> ()V
+	public synthetic fun <init> (IJJJJJJJLdrewcarlson/coingecko/models/coins/data/CodeAdditionsDeletions4Weeks;JLjava/util/List;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (JJJJJJJLdrewcarlson/coingecko/models/coins/data/CodeAdditionsDeletions4Weeks;JLjava/util/List;)V
+	public synthetic fun <init> (JJJJJJJLdrewcarlson/coingecko/models/coins/data/CodeAdditionsDeletions4Weeks;JLjava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()J
+	public final fun component10 ()Ljava/util/List;
+	public final fun component2 ()J
+	public final fun component3 ()J
+	public final fun component4 ()J
+	public final fun component5 ()J
+	public final fun component6 ()J
+	public final fun component7 ()J
+	public final fun component8 ()Ldrewcarlson/coingecko/models/coins/data/CodeAdditionsDeletions4Weeks;
+	public final fun component9 ()J
+	public final fun copy (JJJJJJJLdrewcarlson/coingecko/models/coins/data/CodeAdditionsDeletions4Weeks;JLjava/util/List;)Ldrewcarlson/coingecko/models/coins/data/DeveloperData;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/coins/data/DeveloperData;JJJJJJJLdrewcarlson/coingecko/models/coins/data/CodeAdditionsDeletions4Weeks;JLjava/util/List;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/coins/data/DeveloperData;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getClosedIssues ()J
+	public final fun getCodeAdditionsDeletions4Weeks ()Ldrewcarlson/coingecko/models/coins/data/CodeAdditionsDeletions4Weeks;
+	public final fun getCommitCount4Weeks ()J
+	public final fun getForks ()J
+	public final fun getLast4WeeksCommitActivitySeries ()Ljava/util/List;
+	public final fun getPullRequestContributors ()J
+	public final fun getPullRequestsMerged ()J
+	public final fun getStars ()J
+	public final fun getSubscribers ()J
+	public final fun getTotalIssues ()J
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/coins/data/DeveloperData;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/coins/data/DeveloperData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/coins/data/DeveloperData$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/coins/data/DeveloperData;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/coins/data/DeveloperData;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/data/DeveloperData$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/data/IcoData {
+	public static final field Companion Ldrewcarlson/coingecko/models/coins/data/IcoData$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/IcoLinks;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Double;ZLjava/lang/Boolean;Ljava/lang/Boolean;ZLkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/IcoLinks;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Double;ZLjava/lang/Boolean;Ljava/lang/Boolean;Z)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/IcoLinks;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Double;ZLjava/lang/Boolean;Ljava/lang/Boolean;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component10 ()Ljava/lang/Double;
+	public final fun component11 ()Ljava/lang/Double;
+	public final fun component12 ()Ljava/lang/String;
+	public final fun component13 ()Ljava/lang/Double;
+	public final fun component14 ()Ljava/lang/Double;
+	public final fun component15 ()Ljava/lang/String;
+	public final fun component16 ()Ljava/lang/String;
+	public final fun component17 ()Ljava/lang/String;
+	public final fun component18 ()Ljava/lang/String;
+	public final fun component19 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component20 ()Ljava/lang/String;
+	public final fun component21 ()Ljava/lang/String;
+	public final fun component22 ()Ljava/lang/String;
+	public final fun component23 ()Ljava/lang/String;
+	public final fun component24 ()Ljava/lang/String;
+	public final fun component25 ()Ljava/lang/String;
+	public final fun component26 ()Ljava/lang/Double;
+	public final fun component27 ()Z
+	public final fun component28 ()Ljava/lang/Boolean;
+	public final fun component29 ()Ljava/lang/Boolean;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component30 ()Z
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Ldrewcarlson/coingecko/models/coins/data/IcoLinks;
+	public final fun component6 ()Ljava/lang/String;
+	public final fun component7 ()Ljava/lang/String;
+	public final fun component8 ()Ljava/lang/String;
+	public final fun component9 ()Ljava/lang/Double;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/IcoLinks;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Double;ZLjava/lang/Boolean;Ljava/lang/Boolean;Z)Ldrewcarlson/coingecko/models/coins/data/IcoData;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/coins/data/IcoData;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/IcoLinks;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Double;ZLjava/lang/Boolean;Ljava/lang/Boolean;ZILjava/lang/Object;)Ldrewcarlson/coingecko/models/coins/data/IcoData;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAcceptingCurrencies ()Ljava/lang/String;
+	public final fun getAmountForSale ()Ljava/lang/Double;
+	public final fun getBasePreSaleAmount ()Ljava/lang/Double;
+	public final fun getBasePublicSaleAmount ()Ljava/lang/String;
+	public final fun getBountyDetailUrl ()Ljava/lang/String;
+	public final fun getCountryOrigin ()Ljava/lang/String;
+	public final fun getDescription ()Ljava/lang/String;
+	public final fun getHardcapAmount ()Ljava/lang/Double;
+	public final fun getHardcapCurrency ()Ljava/lang/String;
+	public final fun getIcoEndDate ()Ljava/lang/String;
+	public final fun getIcoStartDate ()Ljava/lang/String;
+	public final fun getKycRequired ()Z
+	public final fun getLinks ()Ldrewcarlson/coingecko/models/coins/data/IcoLinks;
+	public final fun getPreSaleAvailable ()Ljava/lang/Boolean;
+	public final fun getPreSaleEndDate ()Ljava/lang/String;
+	public final fun getPreSaleEnded ()Z
+	public final fun getPreSaleStartDate ()Ljava/lang/String;
+	public final fun getQuotePreSaleAmount ()Ljava/lang/Double;
+	public final fun getQuotePreSaleCurrency ()Ljava/lang/String;
+	public final fun getQuotePublicSaleAmount ()Ljava/lang/String;
+	public final fun getQuotePublicSaleCurrency ()Ljava/lang/String;
+	public final fun getShortDesc ()Ljava/lang/String;
+	public final fun getSoftcapAmount ()Ljava/lang/Double;
+	public final fun getSoftcapCurrency ()Ljava/lang/String;
+	public final fun getTotalRaised ()Ljava/lang/Double;
+	public final fun getTotalRaisedCurrency ()Ljava/lang/String;
+	public final fun getWhitelistAvailable ()Ljava/lang/Boolean;
+	public final fun getWhitelistEndDate ()Ljava/lang/String;
+	public final fun getWhitelistStartDate ()Ljava/lang/String;
+	public final fun getWhitelistUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/coins/data/IcoData;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/coins/data/IcoData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/coins/data/IcoData$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/coins/data/IcoData;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/coins/data/IcoData;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/data/IcoData$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/data/IcoLinks {
+	public static final field Companion Ldrewcarlson/coingecko/models/coins/data/IcoLinks$Companion;
+	public fun <init> ()V
+	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getBlog ()Ljava/lang/String;
+	public final fun getFacebook ()Ljava/lang/String;
+	public final fun getGithub ()Ljava/lang/String;
+	public final fun getLinkedin ()Ljava/lang/String;
+	public final fun getTelegram ()Ljava/lang/String;
+	public final fun getTwitter ()Ljava/lang/String;
+	public final fun getWeb ()Ljava/lang/String;
+	public final fun getWhitepaper ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/coins/data/IcoLinks;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/coins/data/IcoLinks$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/coins/data/IcoLinks$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/coins/data/IcoLinks;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/coins/data/IcoLinks;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/data/IcoLinks$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/data/Links {
+	public static final field Companion Ldrewcarlson/coingecko/models/coins/data/Links$Companion;
+	public fun <init> ()V
+	public synthetic fun <init> (ILjava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/ReposUrl;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/ReposUrl;)V
+	public synthetic fun <init> (Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/ReposUrl;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun component10 ()Ljava/lang/String;
+	public final fun component11 ()Ldrewcarlson/coingecko/models/coins/data/ReposUrl;
+	public final fun component2 ()Ljava/util/List;
+	public final fun component3 ()Ljava/util/List;
+	public final fun component4 ()Ljava/util/List;
+	public final fun component5 ()Ljava/util/List;
+	public final fun component6 ()Ljava/lang/String;
+	public final fun component7 ()Ljava/lang/String;
+	public final fun component8 ()Ljava/lang/String;
+	public final fun component9 ()Ljava/lang/String;
+	public final fun copy (Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/ReposUrl;)Ldrewcarlson/coingecko/models/coins/data/Links;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/coins/data/Links;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/coins/data/ReposUrl;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/coins/data/Links;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAnnouncementUrl ()Ljava/util/List;
+	public final fun getBitcointalkThreadIdentifier ()Ljava/lang/String;
+	public final fun getBlockchainSite ()Ljava/util/List;
+	public final fun getChatUrl ()Ljava/util/List;
+	public final fun getFacebookUsername ()Ljava/lang/String;
+	public final fun getHomepage ()Ljava/util/List;
+	public final fun getOfficialForumUrl ()Ljava/util/List;
+	public final fun getReposUrl ()Ldrewcarlson/coingecko/models/coins/data/ReposUrl;
+	public final fun getSubredditUrl ()Ljava/lang/String;
+	public final fun getTelegramChannelIdentifier ()Ljava/lang/String;
+	public final fun getTwitterScreenName ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/coins/data/Links;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/coins/data/Links$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/coins/data/Links$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/coins/data/Links;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/coins/data/Links;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/data/Links$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/data/PublicInterestStats {
+	public static final field Companion Ldrewcarlson/coingecko/models/coins/data/PublicInterestStats$Companion;
+	public fun <init> ()V
+	public synthetic fun <init> (ILjava/lang/Long;Ljava/lang/Long;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/Long;Ljava/lang/Long;)V
+	public synthetic fun <init> (Ljava/lang/Long;Ljava/lang/Long;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/Long;
+	public final fun component2 ()Ljava/lang/Long;
+	public final fun copy (Ljava/lang/Long;Ljava/lang/Long;)Ldrewcarlson/coingecko/models/coins/data/PublicInterestStats;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/coins/data/PublicInterestStats;Ljava/lang/Long;Ljava/lang/Long;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/coins/data/PublicInterestStats;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAlexaRank ()Ljava/lang/Long;
+	public final fun getBingMatches ()Ljava/lang/Long;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/coins/data/PublicInterestStats;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/coins/data/PublicInterestStats$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/coins/data/PublicInterestStats$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/coins/data/PublicInterestStats;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/coins/data/PublicInterestStats;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/data/PublicInterestStats$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/data/ReposUrl {
+	public static final field Companion Ldrewcarlson/coingecko/models/coins/data/ReposUrl$Companion;
+	public synthetic fun <init> (ILjava/util/List;Ljava/util/List;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/util/List;Ljava/util/List;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun component2 ()Ljava/util/List;
+	public final fun copy (Ljava/util/List;Ljava/util/List;)Ldrewcarlson/coingecko/models/coins/data/ReposUrl;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/coins/data/ReposUrl;Ljava/util/List;Ljava/util/List;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/coins/data/ReposUrl;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBitbucket ()Ljava/util/List;
+	public final fun getGithub ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/coins/data/ReposUrl;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/coins/data/ReposUrl$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/coins/data/ReposUrl$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/coins/data/ReposUrl;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/coins/data/ReposUrl;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/data/ReposUrl$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/data/Roi {
+	public static final field Companion Ldrewcarlson/coingecko/models/coins/data/Roi$Companion;
+	public fun <init> ()V
+	public fun <init> (FLjava/lang/String;F)V
+	public synthetic fun <init> (FLjava/lang/String;FILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (IFLjava/lang/String;FLkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public final fun component1 ()F
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()F
+	public final fun copy (FLjava/lang/String;F)Ldrewcarlson/coingecko/models/coins/data/Roi;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/coins/data/Roi;FLjava/lang/String;FILjava/lang/Object;)Ldrewcarlson/coingecko/models/coins/data/Roi;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCurrency ()Ljava/lang/String;
+	public final fun getPercentage ()F
+	public final fun getTimes ()F
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/coins/data/Roi;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/coins/data/Roi$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/coins/data/Roi$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/coins/data/Roi;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/coins/data/Roi;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/data/Roi$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/data/SparklineIn7d {
+	public static final field Companion Ldrewcarlson/coingecko/models/coins/data/SparklineIn7d$Companion;
+	public fun <init> ()V
+	public synthetic fun <init> (ILjava/util/List;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/util/List;)V
+	public synthetic fun <init> (Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun copy (Ljava/util/List;)Ldrewcarlson/coingecko/models/coins/data/SparklineIn7d;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/coins/data/SparklineIn7d;Ljava/util/List;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/coins/data/SparklineIn7d;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getPrice ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/coins/data/SparklineIn7d;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/coins/data/SparklineIn7d$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/coins/data/SparklineIn7d$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/coins/data/SparklineIn7d;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/coins/data/SparklineIn7d;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/coins/data/SparklineIn7d$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/events/EventCountries {
+	public static final field Companion Ldrewcarlson/coingecko/models/events/EventCountries$Companion;
+	public synthetic fun <init> (ILjava/util/List;ILkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/util/List;I)V
+	public synthetic fun <init> (Ljava/util/List;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun component2 ()I
+	public final fun copy (Ljava/util/List;I)Ldrewcarlson/coingecko/models/events/EventCountries;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/events/EventCountries;Ljava/util/List;IILjava/lang/Object;)Ldrewcarlson/coingecko/models/events/EventCountries;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCount ()I
+	public final fun getData ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/events/EventCountries;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/events/EventCountries$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/events/EventCountries$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/events/EventCountries;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/events/EventCountries;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/events/EventCountries$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/events/EventCountryData {
+	public static final field Companion Ldrewcarlson/coingecko/models/events/EventCountryData$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;)Ldrewcarlson/coingecko/models/events/EventCountryData;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/events/EventCountryData;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/events/EventCountryData;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCode ()Ljava/lang/String;
+	public final fun getCountry ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/events/EventCountryData;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/events/EventCountryData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/events/EventCountryData$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/events/EventCountryData;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/events/EventCountryData;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/events/EventCountryData$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/events/EventData {
+	public static final field Companion Ldrewcarlson/coingecko/models/events/EventData$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component10 ()Ljava/lang/String;
+	public final fun component11 ()Ljava/lang/String;
+	public final fun component12 ()Ljava/lang/String;
+	public final fun component13 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Ljava/lang/String;
+	public final fun component6 ()Ljava/lang/String;
+	public final fun component7 ()Ljava/lang/String;
+	public final fun component8 ()Ljava/lang/String;
+	public final fun component9 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ldrewcarlson/coingecko/models/events/EventData;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/events/EventData;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/events/EventData;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAddress ()Ljava/lang/String;
+	public final fun getCity ()Ljava/lang/String;
+	public final fun getCountry ()Ljava/lang/String;
+	public final fun getDescription ()Ljava/lang/String;
+	public final fun getEmail ()Ljava/lang/String;
+	public final fun getEndDate ()Ljava/lang/String;
+	public final fun getOrganizer ()Ljava/lang/String;
+	public final fun getScreenshot ()Ljava/lang/String;
+	public final fun getStartDate ()Ljava/lang/String;
+	public final fun getTitle ()Ljava/lang/String;
+	public final fun getType ()Ljava/lang/String;
+	public final fun getVenue ()Ljava/lang/String;
+	public final fun getWebsite ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/events/EventData;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/events/EventData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/events/EventData$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/events/EventData;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/events/EventData;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/events/EventData$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/events/EventTypes {
+	public static final field Companion Ldrewcarlson/coingecko/models/events/EventTypes$Companion;
+	public synthetic fun <init> (ILjava/util/List;JLkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/util/List;J)V
+	public synthetic fun <init> (Ljava/util/List;JILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun component2 ()J
+	public final fun copy (Ljava/util/List;J)Ldrewcarlson/coingecko/models/events/EventTypes;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/events/EventTypes;Ljava/util/List;JILjava/lang/Object;)Ldrewcarlson/coingecko/models/events/EventTypes;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCount ()J
+	public final fun getData ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/events/EventTypes;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/events/EventTypes$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/events/EventTypes$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/events/EventTypes;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/events/EventTypes;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/events/EventTypes$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/events/Events {
+	public static final field Companion Ldrewcarlson/coingecko/models/events/Events$Companion;
+	public synthetic fun <init> (ILjava/util/List;JJLkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/util/List;JJ)V
+	public synthetic fun <init> (Ljava/util/List;JJILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun component2 ()J
+	public final fun component3 ()J
+	public final fun copy (Ljava/util/List;JJ)Ldrewcarlson/coingecko/models/events/Events;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/events/Events;Ljava/util/List;JJILjava/lang/Object;)Ldrewcarlson/coingecko/models/events/Events;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCount ()J
+	public final fun getData ()Ljava/util/List;
+	public final fun getPage ()J
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/events/Events;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/events/Events$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/events/Events$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/events/Events;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/events/Events;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/events/Events$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public class drewcarlson/coingecko/models/exchanges/Exchanges {
+	public static final field Companion Ldrewcarlson/coingecko/models/exchanges/Exchanges$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZDLjava/util/List;Ljava/util/List;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZDLjava/util/List;Ljava/util/List;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZDLjava/util/List;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getCountry ()Ljava/lang/String;
+	public final fun getDescription ()Ljava/lang/String;
+	public final fun getHasTradingIncentive ()Z
+	public final fun getId ()Ljava/lang/String;
+	public final fun getImage ()Ljava/lang/String;
+	public final fun getName ()Ljava/lang/String;
+	public final fun getStatusUpdates ()Ljava/util/List;
+	public final fun getTickers ()Ljava/util/List;
+	public final fun getTradeVolume24hBtc ()D
+	public final fun getUrl ()Ljava/lang/String;
+	public final fun getYearEstablished ()J
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/exchanges/Exchanges;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/exchanges/Exchanges$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/exchanges/Exchanges$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/exchanges/Exchanges;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/exchanges/Exchanges;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/exchanges/Exchanges$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/exchanges/ExchangesList {
+	public static final field Companion Ldrewcarlson/coingecko/models/exchanges/ExchangesList$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;)Ldrewcarlson/coingecko/models/exchanges/ExchangesList;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/exchanges/ExchangesList;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/exchanges/ExchangesList;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getId ()Ljava/lang/String;
+	public final fun getName ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/exchanges/ExchangesList;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/exchanges/ExchangesList$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/exchanges/ExchangesList$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/exchanges/ExchangesList;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/exchanges/ExchangesList;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/exchanges/ExchangesList$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/exchanges/ExchangesTickersById : drewcarlson/coingecko/models/Page {
+	public static final field Companion Ldrewcarlson/coingecko/models/exchanges/ExchangesTickersById$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getName ()Ljava/lang/String;
+	public fun getNextPage ()Ljava/lang/Integer;
+	public fun getPerPage ()I
+	public fun getPreviousPage ()Ljava/lang/Integer;
+	public final fun getTickers ()Ljava/util/List;
+	public fun getTotal ()I
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/exchanges/ExchangesTickersById;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/exchanges/ExchangesTickersById$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/exchanges/ExchangesTickersById$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/exchanges/ExchangesTickersById;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/exchanges/ExchangesTickersById;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/exchanges/ExchangesTickersById$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/global/Global {
+	public static final field Companion Ldrewcarlson/coingecko/models/global/Global$Companion;
+	public synthetic fun <init> (ILdrewcarlson/coingecko/models/global/GlobalData;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ldrewcarlson/coingecko/models/global/GlobalData;)V
+	public final fun component1 ()Ldrewcarlson/coingecko/models/global/GlobalData;
+	public final fun copy (Ldrewcarlson/coingecko/models/global/GlobalData;)Ldrewcarlson/coingecko/models/global/Global;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/global/Global;Ldrewcarlson/coingecko/models/global/GlobalData;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/global/Global;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getData ()Ldrewcarlson/coingecko/models/global/GlobalData;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/global/Global;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/global/Global$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/global/Global$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/global/Global;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/global/Global;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/global/Global$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/global/GlobalData {
+	public static final field Companion Ldrewcarlson/coingecko/models/global/GlobalData$Companion;
+	public fun <init> ()V
+	public synthetic fun <init> (IJJJJJLjava/util/Map;Ljava/util/Map;Ljava/util/Map;DJLkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (JJJJJLjava/util/Map;Ljava/util/Map;Ljava/util/Map;DJ)V
+	public synthetic fun <init> (JJJJJLjava/util/Map;Ljava/util/Map;Ljava/util/Map;DJILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()J
+	public final fun component10 ()J
+	public final fun component2 ()J
+	public final fun component3 ()J
+	public final fun component4 ()J
+	public final fun component5 ()J
+	public final fun component6 ()Ljava/util/Map;
+	public final fun component7 ()Ljava/util/Map;
+	public final fun component8 ()Ljava/util/Map;
+	public final fun component9 ()D
+	public final fun copy (JJJJJLjava/util/Map;Ljava/util/Map;Ljava/util/Map;DJ)Ldrewcarlson/coingecko/models/global/GlobalData;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/global/GlobalData;JJJJJLjava/util/Map;Ljava/util/Map;Ljava/util/Map;DJILjava/lang/Object;)Ldrewcarlson/coingecko/models/global/GlobalData;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getActiveCryptocurrencies ()J
+	public final fun getEndedIcos ()J
+	public final fun getMarketCapChangePercentage24hUsd ()D
+	public final fun getMarketCapPercentage ()Ljava/util/Map;
+	public final fun getMarkets ()J
+	public final fun getOngoingIcos ()J
+	public final fun getTotalMarketCap ()Ljava/util/Map;
+	public final fun getTotalVolume ()Ljava/util/Map;
+	public final fun getUpcomingIcos ()J
+	public final fun getUpdatedAt ()J
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/global/GlobalData;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/global/GlobalData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/global/GlobalData$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/global/GlobalData;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/global/GlobalData;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/global/GlobalData$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/rates/ExchangeRates {
+	public static final field Companion Ldrewcarlson/coingecko/models/rates/ExchangeRates$Companion;
+	public synthetic fun <init> (ILjava/util/Map;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/util/Map;)V
+	public final fun component1 ()Ljava/util/Map;
+	public final fun copy (Ljava/util/Map;)Ldrewcarlson/coingecko/models/rates/ExchangeRates;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/rates/ExchangeRates;Ljava/util/Map;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/rates/ExchangeRates;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getRates ()Ljava/util/Map;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/rates/ExchangeRates;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/rates/ExchangeRates$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/rates/ExchangeRates$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/rates/ExchangeRates;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/rates/ExchangeRates;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/rates/ExchangeRates$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/rates/Rate {
+	public static final field Companion Ldrewcarlson/coingecko/models/rates/Rate$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;JLjava/lang/String;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()J
+	public final fun component4 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;)Ldrewcarlson/coingecko/models/rates/Rate;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/rates/Rate;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/rates/Rate;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getName ()Ljava/lang/String;
+	public final fun getType ()Ljava/lang/String;
+	public final fun getUnit ()Ljava/lang/String;
+	public final fun getValue ()J
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/rates/Rate;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/rates/Rate$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/rates/Rate$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/rates/Rate;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/rates/Rate;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/rates/Rate$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/search/TrendingCoin {
+	public static final field Companion Ldrewcarlson/coingecko/models/search/TrendingCoin$Companion;
+	public synthetic fun <init> (ILdrewcarlson/coingecko/models/search/TrendingCoinItem;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ldrewcarlson/coingecko/models/search/TrendingCoinItem;)V
+	public final fun component1 ()Ldrewcarlson/coingecko/models/search/TrendingCoinItem;
+	public final fun copy (Ldrewcarlson/coingecko/models/search/TrendingCoinItem;)Ldrewcarlson/coingecko/models/search/TrendingCoin;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/search/TrendingCoin;Ldrewcarlson/coingecko/models/search/TrendingCoinItem;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/search/TrendingCoin;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getItem ()Ldrewcarlson/coingecko/models/search/TrendingCoinItem;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/search/TrendingCoin;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/search/TrendingCoin$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/search/TrendingCoin$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/search/TrendingCoin;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/search/TrendingCoin;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/search/TrendingCoin$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/search/TrendingCoinItem {
+	public static final field Companion Ldrewcarlson/coingecko/models/search/TrendingCoinItem$Companion;
+	public synthetic fun <init> (ILjava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;DILkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;DI)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component10 ()D
+	public final fun component11 ()I
+	public final fun component2 ()I
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()I
+	public final fun component6 ()Ljava/lang/String;
+	public final fun component7 ()Ljava/lang/String;
+	public final fun component8 ()Ljava/lang/String;
+	public final fun component9 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;DI)Ldrewcarlson/coingecko/models/search/TrendingCoinItem;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/search/TrendingCoinItem;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;DIILjava/lang/Object;)Ldrewcarlson/coingecko/models/search/TrendingCoinItem;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCoinId ()I
+	public final fun getId ()Ljava/lang/String;
+	public final fun getLarge ()Ljava/lang/String;
+	public final fun getMarketCapRank ()I
+	public final fun getName ()Ljava/lang/String;
+	public final fun getPriceBtc ()D
+	public final fun getScore ()I
+	public final fun getSlug ()Ljava/lang/String;
+	public final fun getSmall ()Ljava/lang/String;
+	public final fun getSymbol ()Ljava/lang/String;
+	public final fun getThumb ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/search/TrendingCoinItem;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/search/TrendingCoinItem$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/search/TrendingCoinItem$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/search/TrendingCoinItem;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/search/TrendingCoinItem;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/search/TrendingCoinItem$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/search/TrendingCoinList {
+	public static final field Companion Ldrewcarlson/coingecko/models/search/TrendingCoinList$Companion;
+	public synthetic fun <init> (ILjava/util/List;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/util/List;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun copy (Ljava/util/List;)Ldrewcarlson/coingecko/models/search/TrendingCoinList;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/search/TrendingCoinList;Ljava/util/List;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/search/TrendingCoinList;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCoins ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/search/TrendingCoinList;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/search/TrendingCoinList$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/search/TrendingCoinList$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/search/TrendingCoinList;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/search/TrendingCoinList;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/search/TrendingCoinList$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/shared/Image {
+	public static final field Companion Ldrewcarlson/coingecko/models/shared/Image$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ldrewcarlson/coingecko/models/shared/Image;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/shared/Image;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/shared/Image;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getLarge ()Ljava/lang/String;
+	public final fun getSmall ()Ljava/lang/String;
+	public final fun getThumb ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/shared/Image;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/shared/Image$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/shared/Image$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/shared/Image;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/shared/Image;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/shared/Image$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/shared/Market {
+	public static final field Companion Ldrewcarlson/coingecko/models/shared/Market$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;ZLkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Z)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Z
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Z)Ldrewcarlson/coingecko/models/shared/Market;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/shared/Market;Ljava/lang/String;Ljava/lang/String;ZILjava/lang/Object;)Ldrewcarlson/coingecko/models/shared/Market;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getHasTradingIncentive ()Z
+	public final fun getIdentifier ()Ljava/lang/String;
+	public final fun getName ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/shared/Market;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/shared/Market$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/shared/Market$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/shared/Market;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/shared/Market;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/shared/Market$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/shared/Ticker {
+	public static final field Companion Ldrewcarlson/coingecko/models/shared/Ticker$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/shared/Market;DDLjava/util/Map;Ljava/util/Map;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/shared/Market;DDLjava/util/Map;Ljava/util/Map;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/shared/Market;DDLjava/util/Map;Ljava/util/Map;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component10 ()Ljava/lang/String;
+	public final fun component11 ()Ljava/lang/String;
+	public final fun component12 ()Ljava/lang/String;
+	public final fun component13 ()Z
+	public final fun component14 ()Z
+	public final fun component15 ()Ljava/lang/String;
+	public final fun component16 ()Ljava/lang/String;
+	public final fun component17 ()Ljava/lang/String;
+	public final fun component18 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ldrewcarlson/coingecko/models/shared/Market;
+	public final fun component4 ()D
+	public final fun component5 ()D
+	public final fun component6 ()Ljava/util/Map;
+	public final fun component7 ()Ljava/util/Map;
+	public final fun component8 ()Ljava/lang/String;
+	public final fun component9 ()Ljava/lang/Double;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/shared/Market;DDLjava/util/Map;Ljava/util/Map;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ldrewcarlson/coingecko/models/shared/Ticker;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/shared/Ticker;Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/shared/Market;DDLjava/util/Map;Ljava/util/Map;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/shared/Ticker;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBase ()Ljava/lang/String;
+	public final fun getBidAskSpreadPercentage ()Ljava/lang/Double;
+	public final fun getCoinId ()Ljava/lang/String;
+	public final fun getConvertedLast ()Ljava/util/Map;
+	public final fun getConvertedVolume ()Ljava/util/Map;
+	public final fun getLast ()D
+	public final fun getLastFetchAt ()Ljava/lang/String;
+	public final fun getLastTradedAt ()Ljava/lang/String;
+	public final fun getMarket ()Ldrewcarlson/coingecko/models/shared/Market;
+	public final fun getTarget ()Ljava/lang/String;
+	public final fun getTargetCoinId ()Ljava/lang/String;
+	public final fun getTimestamp ()Ljava/lang/String;
+	public final fun getTokenInfoUrl ()Ljava/lang/String;
+	public final fun getTradeUrl ()Ljava/lang/String;
+	public final fun getTrustScore ()Ljava/lang/String;
+	public final fun getVolume ()D
+	public fun hashCode ()I
+	public final fun isAnomaly ()Z
+	public final fun isStale ()Z
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/shared/Ticker;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/shared/Ticker$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/shared/Ticker$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/shared/Ticker;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/shared/Ticker;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/shared/Ticker$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/status/Project {
+	public static final field Companion Ldrewcarlson/coingecko/models/status/Project$Companion;
+	public fun <init> ()V
+	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/shared/Image;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/shared/Image;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/shared/Image;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Ldrewcarlson/coingecko/models/shared/Image;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/shared/Image;)Ldrewcarlson/coingecko/models/status/Project;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/status/Project;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldrewcarlson/coingecko/models/shared/Image;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/status/Project;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getId ()Ljava/lang/String;
+	public final fun getImage ()Ldrewcarlson/coingecko/models/shared/Image;
+	public final fun getName ()Ljava/lang/String;
+	public final fun getSymbol ()Ljava/lang/String;
+	public final fun getType ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/status/Project;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/status/Project$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/status/Project$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/status/Project;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/status/Project;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/status/Project$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/status/StatusUpdates : drewcarlson/coingecko/models/Page {
+	public static final field Companion Ldrewcarlson/coingecko/models/status/StatusUpdates$Companion;
+	public synthetic fun <init> (ILjava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;)V
+	public synthetic fun <init> (Ljava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun component2 ()I
+	public final fun component3 ()I
+	public final fun component4 ()Ljava/lang/Integer;
+	public final fun component5 ()Ljava/lang/Integer;
+	public final fun copy (Ljava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;)Ldrewcarlson/coingecko/models/status/StatusUpdates;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/status/StatusUpdates;Ljava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/status/StatusUpdates;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getNextPage ()Ljava/lang/Integer;
+	public fun getPerPage ()I
+	public fun getPreviousPage ()Ljava/lang/Integer;
+	public fun getTotal ()I
+	public final fun getUpdates ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/status/StatusUpdates;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/status/StatusUpdates$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/status/StatusUpdates$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/status/StatusUpdates;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/status/StatusUpdates;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/status/StatusUpdates$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/status/Update {
+	public static final field Companion Ldrewcarlson/coingecko/models/status/Update$Companion;
+	public fun <init> ()V
+	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLdrewcarlson/coingecko/models/status/Project;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLdrewcarlson/coingecko/models/status/Project;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLdrewcarlson/coingecko/models/status/Project;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Ljava/lang/String;
+	public final fun component6 ()Z
+	public final fun component7 ()Ldrewcarlson/coingecko/models/status/Project;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLdrewcarlson/coingecko/models/status/Project;)Ldrewcarlson/coingecko/models/status/Update;
+	public static synthetic fun copy$default (Ldrewcarlson/coingecko/models/status/Update;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLdrewcarlson/coingecko/models/status/Project;ILjava/lang/Object;)Ldrewcarlson/coingecko/models/status/Update;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCategory ()Ljava/lang/String;
+	public final fun getCreatedAt ()Ljava/lang/String;
+	public final fun getDescription ()Ljava/lang/String;
+	public final fun getPin ()Z
+	public final fun getProject ()Ldrewcarlson/coingecko/models/status/Project;
+	public final fun getUser ()Ljava/lang/String;
+	public final fun getUserTitle ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Ldrewcarlson/coingecko/models/status/Update;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class drewcarlson/coingecko/models/status/Update$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldrewcarlson/coingecko/models/status/Update$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldrewcarlson/coingecko/models/status/Update;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldrewcarlson/coingecko/models/status/Update;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class drewcarlson/coingecko/models/status/Update$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+

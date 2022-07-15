@@ -4,9 +4,7 @@
 
 
 ![Maven Central](https://img.shields.io/maven-central/v/org.drewcarlson/coingecko-jvm?label=maven&color=blue)
-![](https://github.com/DrewCarlson/CoinGecko-Kotlin/workflows/Jvm/badge.svg)
-![](https://github.com/DrewCarlson/CoinGecko-Kotlin/workflows/Js/badge.svg)
-![](https://github.com/DrewCarlson/CoinGecko-Kotlin/workflows/Native/badge.svg)
+![](https://github.com/DrewCarlson/CoinGecko-Kotlin/workflows/Tests/badge.svg)
 
 Multiplatform Kotlin wrapper for the [CoinGecko API](https://www.coingecko.com/en/api) using [Ktor](https://ktor.io).
 

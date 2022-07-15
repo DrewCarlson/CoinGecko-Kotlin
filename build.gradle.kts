@@ -1,11 +1,12 @@
 import org.jetbrains.kotlin.gradle.targets.js.yarn.yarn
 
-@Suppress("DSL_SCOPE_VIOLATION", "UnstableApiUsage")
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     alias(libs.plugins.multiplatform)
     alias(libs.plugins.serialization)
     alias(libs.plugins.dokka)
-    `maven-publish`
+    alias(libs.plugins.binaryCompat)
+    alias(libs.plugins.spotless)
 }
 
 allprojects {
@@ -140,5 +141,16 @@ kotlin {
         configure(listOf(tvosTest, watchosArm32Test, watchosArm64Test, watchosX86Test)) {
             dependsOn(iosTest)
         }
+    }
+}
+
+spotless {
+    kotlin {
+        target("**/**.kt")
+        ktlint(libs.versions.ktlint.get())
+            .setUseExperimental(true)
+            .editorConfigOverride(mapOf(
+                "disabled_rules" to "no-wildcard-imports,no-unused-imports,trailing-comma"
+            ))
     }
 }
