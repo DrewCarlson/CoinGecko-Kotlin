@@ -1,7 +1,8 @@
 package coingecko
 
-import coingecko.constant.*
-import coingecko.error.*
+import coingecko.error.CoinGeckoApiError
+import coingecko.error.CoinGeckoApiException
+import coingecko.internal.PagingTransformer
 import coingecko.models.*
 import coingecko.models.coins.*
 import coingecko.models.events.EventCountries
@@ -14,25 +15,119 @@ import coingecko.models.global.Global
 import coingecko.models.rates.ExchangeRates
 import coingecko.models.search.TrendingCoinList
 import coingecko.models.status.StatusUpdates
-import io.ktor.client.HttpClient
-import kotlin.coroutines.cancellation.*
+import io.ktor.client.*
+import io.ktor.client.call.*
+import io.ktor.client.plugins.*
+import io.ktor.client.plugins.contentnegotiation.*
+import io.ktor.client.request.*
+import io.ktor.client.statement.*
+import io.ktor.http.*
+import io.ktor.serialization.kotlinx.json.*
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.SerializationException
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.json.Json
+import kotlin.jvm.JvmStatic
+import kotlin.native.concurrent.SharedImmutable
 
-interface CoinGeckoClient {
+private const val IDS = "ids"
+private const val PAGE = "page"
+private const val PER_PAGE = "per_page"
+private const val VS_CURRENCIES = "vs_currencies"
+private const val VS_CURRENCY = "vs_currency"
+private const val INCLUDE_MARKET_CAP = "include_market_cap"
+private const val INCLUDE_24HR_VOL = "include_24hr_vol"
+private const val INCLUDE_24HR_CHANGE = "include_24hr_change"
+private const val INCLUDE_LAST_UPDATED_AT = "include_last_updated_at"
+private const val CONTRACT_ADDRESS = "contract_address"
+private const val PRICE_CHANGE_PERCENTAGE = "price_change_percentage"
+private const val SPARKLINE = "sparkline"
+private const val MARKET_DATA = "market_data"
+private const val COMMUNITY_DATA = "community_data"
+private const val DEVELOPER_DATA = "developer_data"
+private const val LOCALIZATION = "localization"
+private const val TICKERS = "tickers"
+private const val ORDER = "order"
+private const val EXCHANGE_IDS = "exchange_ids"
+private const val DATE = "date"
+private const val FROM = "from"
+private const val TO = "to"
+private const val DAYS = "days"
+private const val COUNTRY_CODE = "country_code"
+private const val TYPE = "type"
+private const val FROM_DATE = "from_date"
+private const val TO_DATE = "to_date"
+private const val PROJECT_TYPE = "project_type"
+private const val UPCOMING_EVENTS_ONLY = "upcoming_events_only"
+private const val COIN_IDS = "COIN_IDS"
 
-    companion object {
-        fun create(): CoinGeckoClient {
-            return CoinGeckoClientImpl()
+private const val API_HOST = "api.coingecko.com"
+private const val API_BASE_PATH = "/api/v3"
+
+typealias RawPriceMap = Map<String, Map<String, String?>>
+
+@SharedImmutable
+internal val json = Json {
+    isLenient = true
+    ignoreUnknownKeys = true
+    coerceInputValues = true
+    useAlternativeNames = false
+}
+
+class CoinGeckoClient(httpClient: HttpClient) {
+
+    constructor() : this(HttpClient())
+
+    private val httpClient = httpClient.config {
+        defaultRequest {
+            url.protocol = URLProtocol.HTTPS
+            url.host = API_HOST
+            url.path(API_BASE_PATH, url.encodedPath)
         }
-
-        fun create(httpClient: HttpClient): CoinGeckoClient {
-            return CoinGeckoClientImpl(httpClient)
+        install(PagingTransformer)
+        install(ContentNegotiation) {
+            json(json)
+        }
+    }.apply {
+        sendPipeline.intercept(HttpSendPipeline.Before) {
+            try {
+                proceed()
+            } catch (e: Throwable) {
+                throw CoinGeckoApiException(e)
+            }
         }
     }
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
-    suspend fun ping(): Ping
+    companion object {
+        @JvmStatic
+        @Deprecated("Use the CoinGeckoClient constructor instead", ReplaceWith("CoinGeckoClient()"))
+        fun create(): CoinGeckoClient {
+            return CoinGeckoClient()
+        }
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
+        @JvmStatic
+        @Deprecated("Use the CoinGeckoClient constructor instead", ReplaceWith("CoinGeckoClient(httpClient)"))
+        fun create(httpClient: HttpClient): CoinGeckoClient {
+            return CoinGeckoClient(httpClient)
+        }
+    }
+
+    private suspend inline fun <reified T> HttpResponse.bodyOrThrow(): T {
+        return if (status == HttpStatusCode.OK) {
+            body()
+        } else {
+            val bodyText = bodyAsText()
+            val bodyError = try {
+                json.decodeFromString<ErrorBody>(bodyText).error
+            } catch (e: SerializationException) {
+                null
+            }
+            throw CoinGeckoApiException(CoinGeckoApiError(status.value, bodyError))
+        }
+    }
+
+    suspend fun ping(): Ping = httpClient.get("ping").bodyOrThrow()
+
     suspend fun getPrice(
         ids: String,
         vsCurrencies: String,
@@ -40,9 +135,16 @@ interface CoinGeckoClient {
         include24hrVol: Boolean = false,
         include24hrChange: Boolean = false,
         includeLastUpdatedAt: Boolean = false
-    ): Map<String, CoinPrice>
+    ): Map<String, CoinPrice> =
+        httpClient.get("simple/price") {
+            parameter(IDS, ids)
+            parameter(VS_CURRENCIES, vsCurrencies)
+            parameter(INCLUDE_MARKET_CAP, includeMarketCap)
+            parameter(INCLUDE_24HR_VOL, include24hrVol)
+            parameter(INCLUDE_24HR_CHANGE, include24hrChange)
+            parameter(INCLUDE_LAST_UPDATED_AT, includeLastUpdatedAt)
+        }.body<RawPriceMap>().mapValues { (_, v) -> CoinPrice(v) }
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
     suspend fun getTokenPrice(
         id: String,
         contractAddress: String,
@@ -51,15 +153,24 @@ interface CoinGeckoClient {
         include24hrVol: Boolean = false,
         include24hrChange: Boolean = false,
         includeLastUpdatedAt: Boolean = false
-    ): Map<String, Map<String, Double>>
+    ): Map<String, Map<String, Double>> =
+        httpClient.get("simple/token_price/$id") {
+            parameter(VS_CURRENCIES, vsCurrencies)
+            parameter(CONTRACT_ADDRESS, contractAddress)
+            parameter(INCLUDE_MARKET_CAP, includeMarketCap)
+            parameter(INCLUDE_24HR_VOL, include24hrVol)
+            parameter(INCLUDE_24HR_CHANGE, include24hrChange)
+            parameter(INCLUDE_LAST_UPDATED_AT, includeLastUpdatedAt)
+        }.bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
-    suspend fun getSupportedVsCurrencies(): List<String>
+    suspend fun getSupportedVsCurrencies(): List<String> =
+        httpClient.get("simple/supported_vs_currencies").bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
-    suspend fun getCoinList(includePlatform: Boolean = false): List<CoinList>
+    suspend fun getCoinList(includePlatform: Boolean = false): List<CoinList> =
+        httpClient.get("coins/list") {
+            parameter("include_platform", includePlatform)
+        }.bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
     suspend fun getCoinMarkets(
         vsCurrency: String,
         ids: String? = null,
@@ -68,9 +179,17 @@ interface CoinGeckoClient {
         page: Int? = null,
         sparkline: Boolean = false,
         priceChangePercentage: String? = null
-    ): CoinMarketsList
+    ): CoinMarketsList =
+        httpClient.get("coins/markets") {
+            parameter(IDS, ids)
+            parameter(VS_CURRENCY, vsCurrency)
+            parameter(ORDER, order)
+            parameter(PER_PAGE, perPage)
+            parameter(PAGE, page ?: 1)
+            parameter(SPARKLINE, sparkline)
+            parameter(PRICE_CHANGE_PERCENTAGE, priceChangePercentage)
+        }.bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
     suspend fun getCoinById(
         id: String,
         localization: Boolean = true,
@@ -79,108 +198,134 @@ interface CoinGeckoClient {
         communityData: Boolean = false,
         developerData: Boolean = false,
         sparkline: Boolean = false
-    ): CoinFullData
+    ): CoinFullData =
+        httpClient.get("coins/$id") {
+            parameter(LOCALIZATION, localization)
+            parameter(TICKERS, tickers)
+            parameter(MARKET_DATA, marketData)
+            parameter(COMMUNITY_DATA, communityData)
+            parameter(DEVELOPER_DATA, developerData)
+            parameter(SPARKLINE, sparkline)
+        }.bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
     suspend fun getCoinTickerById(
         id: String,
         exchangeIds: String? = null,
         page: Int? = null,
         order: String? = null
-    ): CoinTickerById
+    ): CoinTickerById =
+        httpClient.get("coins/$id/tickers") {
+            parameter(EXCHANGE_IDS, exchangeIds)
+            parameter(PAGE, page)
+            parameter(ORDER, order)
+        }.bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
     suspend fun getCoinHistoryById(
         id: String,
         date: String,
         localization: Boolean = false
-    ): CoinHistoryById
+    ): CoinHistoryById =
+        httpClient.get("coins/$id/history") {
+            parameter(DATE, date)
+            parameter(LOCALIZATION, localization)
+        }.bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
-    suspend fun getCoinMarketChartById(
-        id: String,
-        vsCurrency: String,
-        days: Double
-    ): MarketChart
-
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
     suspend fun getCoinMarketChartRangeById(
         id: String,
         vsCurrency: String,
         from: String,
         to: String
-    ): MarketChart
+    ): MarketChart =
+        httpClient.get("coins/$id/market_chart/range") {
+            parameter(VS_CURRENCY, vsCurrency)
+            parameter(FROM, from)
+            parameter(TO, to)
+        }.bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
-    suspend fun getCoinStatusUpdateById(
-        id: String,
-        perPage: Int? = null,
-        page: Int? = null
-    ): StatusUpdates
-
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
-    suspend fun getCoinInfoByContractAddress(
-        id: String,
-        contractAddress: String
-    ): CoinFullData
-
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
-    suspend fun getCoinOhlc(
+    suspend fun getCoinMarketChartById(
         id: String,
         vsCurrency: String,
-        days: Int,
-    ): List<CoinOhlc>
+        days: Double
+    ): MarketChart =
+        httpClient.get("coins/$id/market_chart") {
+            parameter(VS_CURRENCY, vsCurrency)
+            parameter(DAYS, days)
+        }.bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
-    suspend fun getAssetPlatforms(): List<AssetPlatform>
+    suspend fun getCoinStatusUpdateById(id: String, perPage: Int? = null, page: Int? = null): StatusUpdates =
+        httpClient.get("coins/$id/status_updates") {
+            parameter(PAGE, page)
+            parameter(PER_PAGE, perPage)
+        }.bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
-    suspend fun getCoinCategoriesList(): List<CoinCategory>
+    suspend fun getCoinInfoByContractAddress(id: String, contractAddress: String): CoinFullData =
+        httpClient.get("coins/$id/contract/$contractAddress").bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
-    suspend fun getCoinCategories(
-        order: String = Order.MARKET_CAP_DESC
-    ): List<CoinCategoryAndData>
+    suspend fun getCoinOhlc(id: String, vsCurrency: String, days: Int): List<CoinOhlc> =
+        httpClient.get("coins/$id/ohlc") {
+            parameter(VS_CURRENCY, vsCurrency)
+            parameter(DAYS, days)
+        }.bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
-    suspend fun getExchanges(): List<Exchanges>
+    suspend fun getAssetPlatforms(): List<AssetPlatform> =
+        httpClient.get("asset_platforms").bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
-    suspend fun getExchangesList(): List<ExchangesList>
+    suspend fun getCoinCategoriesList(): List<CoinCategory> =
+        httpClient.get("coins/categories/list").bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
-    suspend fun getExchangesById(id: String): Exchanges
+    suspend fun getCoinCategories(order: String): List<CoinCategoryAndData> =
+        httpClient.get("coins/categories") {
+            parameter(ORDER, order)
+        }.bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
+    suspend fun getExchanges(): List<Exchanges> =
+        httpClient.get("exchanges").bodyOrThrow()
+
+    suspend fun getExchangesList(): List<ExchangesList> =
+        httpClient.get("exchanges/list").bodyOrThrow()
+
+    suspend fun getExchangesById(id: String): Exchanges =
+        httpClient.get("exchanges/$id").bodyOrThrow()
+
     suspend fun getExchangesTickersById(
         id: String,
         coinIds: String? = null,
         page: Int? = null,
         order: String? = null
-    ): ExchangesTickersById
+    ): ExchangesTickersById =
+        httpClient.get("exchanges/$id/tickers") {
+            parameter(COIN_IDS, coinIds)
+            parameter(PAGE, page)
+            parameter(ORDER, order)
+        }.bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
     suspend fun getExchangesStatusUpdatesById(
         id: String,
         perPage: Int? = null,
         page: Int? = null
-    ): StatusUpdates
+    ): StatusUpdates =
+        httpClient.get("exchanges/$id/status_updates") {
+            parameter(PER_PAGE, perPage)
+            parameter(PAGE, page)
+        }.bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
-    suspend fun getExchangesVolumeChart(
-        id: String,
-        days: Int
-    ): List<List<String>>
+    suspend fun getExchangesVolumeChart(id: String, days: Int): List<List<String>> =
+        httpClient.get("exchanges/$id/volume_chart") {
+            parameter(DAYS, days)
+        }.bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
     suspend fun getStatusUpdates(
         category: String? = null,
         projectType: String? = null,
         perPage: Int? = null,
         page: Int? = null
-    ): StatusUpdates
+    ): StatusUpdates =
+        httpClient.get("status_updates") {
+            parameter(PAGE, page)
+            parameter(PER_PAGE, perPage)
+            parameter(PROJECT_TYPE, projectType)
+        }.bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
     suspend fun getEvents(
         countryCode: String? = null,
         type: String? = null,
@@ -188,20 +333,31 @@ interface CoinGeckoClient {
         upcomingEventsOnly: Boolean = false,
         fromDate: String? = null,
         toDate: String? = null
-    ): Events
+    ): Events =
+        httpClient.get("events") {
+            parameter(COUNTRY_CODE, countryCode)
+            parameter(TYPE, type)
+            parameter(PAGE, page)
+            parameter(UPCOMING_EVENTS_ONLY, upcomingEventsOnly)
+            parameter(FROM_DATE, fromDate)
+            parameter(TO_DATE, toDate)
+        }.bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
-    suspend fun getEventsCountries(): EventCountries
+    suspend fun getEventsCountries(): EventCountries =
+        httpClient.get("events/countries").bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
-    suspend fun getEventsTypes(): EventTypes
+    suspend fun getEventsTypes(): EventTypes =
+        httpClient.get("events/types").bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
-    suspend fun getExchangeRates(): ExchangeRates
+    suspend fun getExchangeRates(): ExchangeRates =
+        httpClient.get("exchange_rates").bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
-    suspend fun getGlobal(): Global
+    suspend fun getGlobal(): Global =
+        httpClient.get("global").bodyOrThrow()
 
-    @Throws(CoinGeckoApiException::class, CancellationException::class)
-    suspend fun getTrending(): TrendingCoinList
+    suspend fun getTrending(): TrendingCoinList =
+        httpClient.get("search/trending").bodyOrThrow()
+
+    @Serializable
+    private data class ErrorBody(val error: String?)
 }
