@@ -80,7 +80,7 @@ jobs:
       - uses: gradle/gradle-build-action@v2
         name: Build Docs
         with:
-          arguments: clean dokkaHtmlMultiModule
+          arguments: clean dokkaHtml
 
       - name: Publish Docs
         uses: JamesIves/github-pages-deploy-action@v4.3.4
