@@ -1,7 +1,7 @@
-package drewcarlson.coingecko
+package coingecko
 
-import drewcarlson.coingecko.constant.*
-import drewcarlson.coingecko.error.*
+import coingecko.constant.*
+import coingecko.error.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import kotlin.test.*
