@@ -18,7 +18,7 @@ class CoinGeckoTests {
 
     @Test
     fun testCoin() = runTest {
-        val btc = coinGecko.getCoinById("bitcoin")
+        val btc = coinGecko.getCoinById("bitcoin", localization = false)
         assertEquals("Bitcoin", btc.name)
 
         val eth = coinGecko.getCoinById("ethereum")

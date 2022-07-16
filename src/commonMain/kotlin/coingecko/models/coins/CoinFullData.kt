@@ -18,9 +18,9 @@ data class CoinFullData(
     @SerialName("block_time_in_minutes")
     val blockTimeInMinutes: Long = 0,
     @Serializable(NullValueOmittingListSerializer::class)
-    val categories: List<String>,
-    val localization: Map<String, String>,
-    val description: Map<String, String>,
+    val categories: List<String> = emptyList(),
+    val localization: Map<String, String> = emptyMap(),
+    val description: Map<String, String> = emptyMap(),
     val links: Links,
     val image: Image,
     @SerialName("country_origin")
