@@ -1,5 +1,6 @@
 package coingecko
 
+import coingecko.constant.Order
 import coingecko.error.CoinGeckoApiError
 import coingecko.error.CoinGeckoApiException
 import coingecko.internal.PagingTransformer
@@ -264,7 +265,7 @@ class CoinGeckoClient(httpClient: HttpClient) {
     suspend fun getCoinCategoriesList(): List<CoinCategory> =
         httpClient.get("coins/categories/list").bodyOrThrow()
 
-    suspend fun getCoinCategories(order: String): List<CoinCategoryAndData> =
+    suspend fun getCoinCategories(order: String = Order.MARKET_CAP_DESC): List<CoinCategoryAndData> =
         httpClient.get("coins/categories") {
             parameter(ORDER, order)
         }.bodyOrThrow()

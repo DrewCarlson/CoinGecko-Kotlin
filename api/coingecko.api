@@ -8,6 +8,7 @@ public final class coingecko/CoinGeckoClient {
 	public final fun getCoinById (Ljava/lang/String;ZZZZZZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public static synthetic fun getCoinById$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;ZZZZZZLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
 	public final fun getCoinCategories (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun getCoinCategories$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
 	public final fun getCoinCategoriesList (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public final fun getCoinHistoryById (Ljava/lang/String;Ljava/lang/String;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public static synthetic fun getCoinHistoryById$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;ZLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
