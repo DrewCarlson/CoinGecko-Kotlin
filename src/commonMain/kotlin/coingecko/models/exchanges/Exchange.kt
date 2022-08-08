@@ -6,7 +6,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-open class Exchange(
+data class Exchange(
     val id: String,
     val name: String,
     @SerialName("year_established")
