@@ -5,8 +5,8 @@ import coingecko.error.CoinGeckoApiException
 import coingecko.internal.PagingTransformer
 import coingecko.models.*
 import coingecko.models.coins.*
-import coingecko.models.exchanges.Exchanges
-import coingecko.models.exchanges.ExchangesList
+import coingecko.models.exchanges.Exchange
+import coingecko.models.exchanges.ExchangeId
 import coingecko.models.exchanges.ExchangesTickersById
 import coingecko.models.global.Global
 import coingecko.models.rates.ExchangeRates
@@ -269,13 +269,16 @@ class CoinGeckoClient(httpClient: HttpClient) {
             parameter(ORDER, order)
         }.bodyOrThrow()
 
-    suspend fun getExchanges(): List<Exchanges> =
-        httpClient.get("exchanges").bodyOrThrow()
+    suspend fun getExchanges(page: Int? = null, perPage: Int? = null): ExchangeList =
+        httpClient.get("exchanges") {
+            parameter(PAGE, page)
+            parameter(PER_PAGE, perPage)
+        }.bodyOrThrow()
 
-    suspend fun getExchangesList(): List<ExchangesList> =
+    suspend fun getExchangesList(): List<ExchangeId> =
         httpClient.get("exchanges/list").bodyOrThrow()
 
-    suspend fun getExchangesById(id: String): Exchanges =
+    suspend fun getExchangesById(id: String): Exchange =
         httpClient.get("exchanges/$id").bodyOrThrow()
 
     suspend fun getExchangesTickersById(
