@@ -40,6 +40,7 @@ public final class coingecko/CoinGeckoClient {
 	public static synthetic fun getTokenPrice$default (Lcoingecko/CoinGeckoClient;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZZLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
 	public final fun getTrending (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public final fun ping (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun search (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
 public final class coingecko/CoinGeckoClient$Companion {
@@ -1541,6 +1542,40 @@ public final class coingecko/models/rates/Rate$$serializer : kotlinx/serializati
 }
 
 public final class coingecko/models/rates/Rate$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class coingecko/models/search/SearchResults {
+	public static final field Companion Lcoingecko/models/search/SearchResults$Companion;
+	public synthetic fun <init> (ILjava/util/List;Ljava/util/List;Ljava/util/List;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun component2 ()Ljava/util/List;
+	public final fun component3 ()Ljava/util/List;
+	public final fun copy (Ljava/util/List;Ljava/util/List;Ljava/util/List;)Lcoingecko/models/search/SearchResults;
+	public static synthetic fun copy$default (Lcoingecko/models/search/SearchResults;Ljava/util/List;Ljava/util/List;Ljava/util/List;ILjava/lang/Object;)Lcoingecko/models/search/SearchResults;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCategories ()Ljava/util/List;
+	public final fun getCoins ()Ljava/util/List;
+	public final fun getExchanges ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Lcoingecko/models/search/SearchResults;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class coingecko/models/search/SearchResults$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Lcoingecko/models/search/SearchResults$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/search/SearchResults;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcoingecko/models/search/SearchResults;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class coingecko/models/search/SearchResults$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 

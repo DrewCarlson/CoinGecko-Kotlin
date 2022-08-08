@@ -11,6 +11,7 @@ import coingecko.models.exchanges.ExchangeId
 import coingecko.models.exchanges.ExchangesTickersById
 import coingecko.models.global.Global
 import coingecko.models.rates.ExchangeRates
+import coingecko.models.search.SearchResults
 import coingecko.models.search.TrendingCoinList
 import coingecko.models.status.StatusUpdates
 import io.ktor.client.*
@@ -63,7 +64,7 @@ internal val json = Json {
     isLenient = true
     ignoreUnknownKeys = true
     coerceInputValues = true
-    useAlternativeNames = false
+    useAlternativeNames = true
 }
 
 class CoinGeckoClient(httpClient: HttpClient) {
@@ -304,6 +305,11 @@ class CoinGeckoClient(httpClient: HttpClient) {
 
     suspend fun getGlobal(): Global =
         httpClient.get("global").bodyOrThrow()
+
+    suspend fun search(query: String): SearchResults =
+        httpClient.get("search") {
+            parameter("query", query)
+        }.bodyOrThrow()
 
     suspend fun getTrending(): TrendingCoinList =
         httpClient.get("search/trending").bodyOrThrow()

@@ -1,10 +1,12 @@
 package coingecko.models.coins
 
 import kotlinx.serialization.*
+import kotlinx.serialization.json.JsonNames
 
+@OptIn(ExperimentalSerializationApi::class)
 @Serializable
 data class CoinCategory(
-    @SerialName("category_id")
+    @JsonNames("category_id", "id")
     val categoryId: String,
     val name: String,
 )
