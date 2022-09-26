@@ -80,7 +80,7 @@ jobs:
         name: Test Js Targets
         if: startsWith(matrix.os, 'ubuntu')
         with:
-          arguments: jsTest
+          arguments: jsBrowserTest
 
       - uses: gradle/gradle-build-action@v2
         name: Test Windows Target
