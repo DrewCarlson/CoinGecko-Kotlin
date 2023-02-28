@@ -2,7 +2,7 @@
 kotlin = "1.7.22"
 coroutines = "1.6.4"
 serialization = "1.4.1"
-ktorio = "2.2.3"
+ktorio = "2.2.4"
 dokka = "1.7.20"
 binary_compat = "0.12.1"
 
