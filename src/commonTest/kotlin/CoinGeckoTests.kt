@@ -118,7 +118,7 @@ class CoinGeckoTests {
             "Expected CoinGeckoApiException but was ${exception::class}"
         )
         assertEquals(404, exception.error?.code)
-        assertEquals("Could not find coin with the given id", exception.error?.message)
+        assertEquals("coin not found", exception.error?.message)
     }
 
     @Test
