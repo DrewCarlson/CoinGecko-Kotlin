@@ -202,7 +202,6 @@ public final class coingecko/models/Ping {
 
 public final class coingecko/models/Ping$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/Ping$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/Ping;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -234,7 +233,6 @@ public final class coingecko/models/coins/CoinCategory {
 
 public final class coingecko/models/coins/CoinCategory$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/coins/CoinCategory$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/coins/CoinCategory;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -272,7 +270,6 @@ public final class coingecko/models/coins/CoinCategoryAndData {
 
 public final class coingecko/models/coins/CoinCategoryAndData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/coins/CoinCategoryAndData$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/coins/CoinCategoryAndData;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -369,7 +366,6 @@ public final class coingecko/models/coins/CoinFullData {
 
 public final class coingecko/models/coins/CoinFullData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/coins/CoinFullData$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/coins/CoinFullData;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -416,7 +412,6 @@ public final class coingecko/models/coins/CoinHistoryById {
 
 public final class coingecko/models/coins/CoinHistoryById$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/coins/CoinHistoryById$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/coins/CoinHistoryById;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -453,7 +448,6 @@ public final class coingecko/models/coins/CoinList {
 
 public final class coingecko/models/coins/CoinList$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/coins/CoinList$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/coins/CoinList;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -538,7 +532,6 @@ public final class coingecko/models/coins/CoinMarkets {
 
 public final class coingecko/models/coins/CoinMarkets$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/coins/CoinMarkets$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/coins/CoinMarkets;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -576,7 +569,6 @@ public final class coingecko/models/coins/CoinMarketsList : coingecko/models/Pag
 
 public final class coingecko/models/coins/CoinMarketsList$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/coins/CoinMarketsList$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/coins/CoinMarketsList;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -659,7 +651,6 @@ public final class coingecko/models/coins/CoinTickerById : coingecko/models/Page
 
 public final class coingecko/models/coins/CoinTickerById$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/coins/CoinTickerById$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/coins/CoinTickerById;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -697,7 +688,6 @@ public final class coingecko/models/coins/ExchangeList : coingecko/models/Page {
 
 public final class coingecko/models/coins/ExchangeList$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/coins/ExchangeList$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/coins/ExchangeList;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -731,7 +721,6 @@ public final class coingecko/models/coins/MarketChart {
 
 public final class coingecko/models/coins/MarketChart$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/coins/MarketChart$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/coins/MarketChart;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -835,7 +824,6 @@ public final class coingecko/models/coins/MarketData {
 
 public final class coingecko/models/coins/MarketData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/coins/MarketData$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/coins/MarketData;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -869,7 +857,6 @@ public final class coingecko/models/coins/data/CodeAdditionsDeletions4Weeks {
 
 public final class coingecko/models/coins/data/CodeAdditionsDeletions4Weeks$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/coins/data/CodeAdditionsDeletions4Weeks$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/coins/data/CodeAdditionsDeletions4Weeks;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -913,7 +900,6 @@ public final class coingecko/models/coins/data/CommunityData {
 
 public final class coingecko/models/coins/data/CommunityData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/coins/data/CommunityData$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/coins/data/CommunityData;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -963,7 +949,6 @@ public final class coingecko/models/coins/data/DeveloperData {
 
 public final class coingecko/models/coins/data/DeveloperData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/coins/data/DeveloperData$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/coins/data/DeveloperData;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1052,7 +1037,6 @@ public final class coingecko/models/coins/data/IcoData {
 
 public final class coingecko/models/coins/data/IcoData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/coins/data/IcoData$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/coins/data/IcoData;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1085,7 +1069,6 @@ public final class coingecko/models/coins/data/IcoLinks {
 
 public final class coingecko/models/coins/data/IcoLinks$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/coins/data/IcoLinks$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/coins/data/IcoLinks;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1137,7 +1120,6 @@ public final class coingecko/models/coins/data/Links {
 
 public final class coingecko/models/coins/data/Links$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/coins/data/Links$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/coins/data/Links;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1171,7 +1153,6 @@ public final class coingecko/models/coins/data/PublicInterestStats {
 
 public final class coingecko/models/coins/data/PublicInterestStats$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/coins/data/PublicInterestStats$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/coins/data/PublicInterestStats;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1203,7 +1184,6 @@ public final class coingecko/models/coins/data/ReposUrl {
 
 public final class coingecko/models/coins/data/ReposUrl$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/coins/data/ReposUrl$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/coins/data/ReposUrl;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1239,7 +1219,6 @@ public final class coingecko/models/coins/data/Roi {
 
 public final class coingecko/models/coins/data/Roi$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/coins/data/Roi$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/coins/data/Roi;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1271,7 +1250,6 @@ public final class coingecko/models/coins/data/SparklineIn7d {
 
 public final class coingecko/models/coins/data/SparklineIn7d$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/coins/data/SparklineIn7d$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/coins/data/SparklineIn7d;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1322,7 +1300,6 @@ public final class coingecko/models/exchanges/Exchange {
 
 public final class coingecko/models/exchanges/Exchange$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/exchanges/Exchange$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/exchanges/Exchange;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1354,7 +1331,6 @@ public final class coingecko/models/exchanges/ExchangeId {
 
 public final class coingecko/models/exchanges/ExchangeId$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/exchanges/ExchangeId$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/exchanges/ExchangeId;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1384,7 +1360,6 @@ public final class coingecko/models/exchanges/ExchangesTickersById : coingecko/m
 
 public final class coingecko/models/exchanges/ExchangesTickersById$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/exchanges/ExchangesTickersById$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/exchanges/ExchangesTickersById;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1414,7 +1389,6 @@ public final class coingecko/models/global/Global {
 
 public final class coingecko/models/global/Global$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/global/Global$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/global/Global;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1464,7 +1438,6 @@ public final class coingecko/models/global/GlobalData {
 
 public final class coingecko/models/global/GlobalData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/global/GlobalData$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/global/GlobalData;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1494,7 +1467,6 @@ public final class coingecko/models/rates/ExchangeRates {
 
 public final class coingecko/models/rates/ExchangeRates$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/rates/ExchangeRates$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/rates/ExchangeRates;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1531,7 +1503,6 @@ public final class coingecko/models/rates/Rate {
 
 public final class coingecko/models/rates/Rate$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/rates/Rate$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/rates/Rate;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1565,7 +1536,6 @@ public final class coingecko/models/search/SearchResults {
 
 public final class coingecko/models/search/SearchResults$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/search/SearchResults$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/search/SearchResults;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1595,7 +1565,6 @@ public final class coingecko/models/search/TrendingCoin {
 
 public final class coingecko/models/search/TrendingCoin$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/search/TrendingCoin$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/search/TrendingCoin;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1645,7 +1614,6 @@ public final class coingecko/models/search/TrendingCoinItem {
 
 public final class coingecko/models/search/TrendingCoinItem$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/search/TrendingCoinItem$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/search/TrendingCoinItem;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1675,7 +1643,6 @@ public final class coingecko/models/search/TrendingCoinList {
 
 public final class coingecko/models/search/TrendingCoinList$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/search/TrendingCoinList$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/search/TrendingCoinList;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1710,7 +1677,6 @@ public final class coingecko/models/shared/Image {
 
 public final class coingecko/models/shared/Image$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/shared/Image$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/shared/Image;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1745,7 +1711,6 @@ public final class coingecko/models/shared/Market {
 
 public final class coingecko/models/shared/Market$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/shared/Market$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/shared/Market;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1810,7 +1775,6 @@ public final class coingecko/models/shared/Ticker {
 
 public final class coingecko/models/shared/Ticker$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/shared/Ticker$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/shared/Ticker;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1850,7 +1814,6 @@ public final class coingecko/models/status/Project {
 
 public final class coingecko/models/status/Project$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/status/Project$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/status/Project;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1889,7 +1852,6 @@ public final class coingecko/models/status/StatusUpdates : coingecko/models/Page
 
 public final class coingecko/models/status/StatusUpdates$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/status/StatusUpdates$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/status/StatusUpdates;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
@@ -1933,7 +1895,6 @@ public final class coingecko/models/status/Update {
 
 public final class coingecko/models/status/Update$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
 	public static final field INSTANCE Lcoingecko/models/status/Update$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
 	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
 	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcoingecko/models/status/Update;
 	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
