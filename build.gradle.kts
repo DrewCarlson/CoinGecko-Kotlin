@@ -10,12 +10,23 @@ plugins {
     alias(libs.plugins.spotless)
 }
 
+buildscript {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath(libs.atomicfu.plugin)
+    }
+}
+
 allprojects {
     repositories {
         mavenCentral()
     }
 }
 
+apply(plugin = "kotlinx-atomicfu")
 apply(from = "gradle/publishing.gradle.kts")
 
 plugins.withType<NodeJsRootPlugin> {
@@ -61,6 +72,7 @@ kotlin {
                 implementation(libs.ktor.client.core)
                 implementation(libs.ktor.client.contentNegotiation)
                 implementation(libs.ktor.serialization)
+                implementation(libs.atomicfu)
             }
         }
         val commonTest by getting {
@@ -125,8 +137,8 @@ kotlin {
         sourceSets.filter { sourceSet ->
             sourceSet.name.run {
                 startsWith("iosX64") ||
-                    startsWith("iosArm") ||
-                    startsWith("iosSimulator")
+                        startsWith("iosArm") ||
+                        startsWith("iosSimulator")
             }
         }.forEach { sourceSet ->
             if (sourceSet.name.endsWith("Main")) {
@@ -152,8 +164,10 @@ spotless {
         target("**/**.kt")
         ktlint(libs.versions.ktlint.get())
             .setUseExperimental(true)
-            .editorConfigOverride(mapOf(
-                "disabled_rules" to "no-wildcard-imports,no-unused-imports,trailing-comma"
-            ))
+            .editorConfigOverride(
+                mapOf(
+                    "disabled_rules" to "no-wildcard-imports,no-unused-imports,trailing-comma"
+                )
+            )
     }
 }

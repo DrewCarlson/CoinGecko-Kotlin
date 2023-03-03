@@ -2,34 +2,49 @@ package coingecko
 
 import coingecko.constant.*
 import coingecko.error.*
-import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.*
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
+import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.runTest
 import kotlin.test.*
+import kotlin.time.Duration.Companion.seconds
 
-@OptIn(ExperimentalCoroutinesApi::class)
+@OptIn(ExperimentalCoroutinesApi::class, DelicateCoroutinesApi::class)
 class CoinGeckoTests {
 
     private val coinGecko = CoinGeckoClient()
+    private val testLock = Mutex()
+
+    init {
+        GlobalScope.launch {
+            while (true) {
+                testLock.withLock { delay(5.seconds) }
+            }
+        }
+    }
 
     @Test
-    fun testPing() = runTest {
+    fun testPing() = runApiTest {
         assertEquals("(V3) To the Moon!", coinGecko.ping().geckoSays)
     }
 
     @Test
-    fun testCoin() = runTest {
+    fun testCoin() = runApiTest { await ->
         val btc = coinGecko.getCoinById("bitcoin", localization = false)
         assertEquals("Bitcoin", btc.name)
 
+        await()
         val eth = coinGecko.getCoinById("ethereum")
         assertEquals("Ethereum", eth.name)
 
+        await()
         val brd = coinGecko.getCoinById("bread")
         assertEquals("Bread", brd.name)
     }
 
     @Test
-    fun testMarketData() = runTest {
+    fun testMarketData() = runApiTest {
         val btcData = coinGecko.getCoinMarketChartById("bitcoin", "usd", 3.0)
         assertTrue(btcData.prices.isNotEmpty())
         assertTrue(btcData.prices.first().isNotEmpty())
@@ -40,7 +55,7 @@ class CoinGeckoTests {
     }
 
     @Test
-    fun testGetCoinMarkets() = runTest {
+    fun testGetCoinMarkets() = runApiTest {
         val ids = arrayOf("bitcoin", "ethereum", "bread", "zcash")
         val response = coinGecko.getCoinMarkets("usd", ids.joinToString(","))
 
@@ -55,13 +70,14 @@ class CoinGeckoTests {
     }
 
     @Test
-    fun testCoinPrice() = runTest {
+    fun testCoinPrice() = runApiTest { await ->
         val btcPrices = coinGecko.getPrice("bitcoin", "usd,cad")
         val btc = assertNotNull(btcPrices["bitcoin"])
         assertNotNull(btc.getPrice("usd"))
         assertNotNull(btc.getPrice("cad"))
         assertNull(btc.lastUpdatedAt)
 
+        await()
         val ethPrices = coinGecko.getPrice(
             "ethereum",
             "usd,eur",
@@ -83,32 +99,34 @@ class CoinGeckoTests {
     }
 
     @Test
-    fun testCoinTickers() = runTest {
+    fun testCoinTickers() = runApiTest { await ->
         val coinPage1 = coinGecko.getCoinTickerById("tether", "binance")
         assertEquals(100, coinPage1.perPage)
         assertEquals(2, coinPage1.nextPage)
         assertTrue(coinPage1.total > 100)
         assertNull(coinPage1.previousPage)
 
+        await()
         val coinPage2 = coinGecko.getCoinTickerById("tether", "binance", page = 2)
         assertEquals(100, coinPage2.perPage)
         assertEquals(1, coinPage2.previousPage)
         assertTrue(coinPage2.total > 100)
         assertNotNull(coinPage2.nextPage)
 
+        await()
         val coinPage500 = coinGecko.getCoinTickerById("tether", "binance", page = 500)
         assertNull(coinPage500.nextPage)
     }
 
     @Test
-    fun testCoinHistory() = runTest {
+    fun testCoinHistory() = runApiTest {
         val bitcoin = coinGecko.getCoinHistoryById("bitcoin", "23-10-2018")
         val image = assertNotNull(bitcoin.image)
         assertTrue(image.small.isNotBlank())
     }
 
     @Test
-    fun testNonExistentCoin() = runTest {
+    fun testNonExistentCoin() = runApiTest {
         val exception = assertFails {
             coinGecko.getCoinById("not-a-real-coin")
         }
@@ -122,7 +140,7 @@ class CoinGeckoTests {
     }
 
     @Test
-    fun testCoinOhlc() = runTest {
+    fun testCoinOhlc() = runApiTest {
         val ohlc = coinGecko.getCoinOhlc("tezos", Currency.USD, 1).firstOrNull()
 
         assertNotNull(ohlc?.time)
@@ -133,7 +151,7 @@ class CoinGeckoTests {
     }
 
     @Test
-    fun testTrending() = runTest {
+    fun testTrending() = runApiTest {
         val trending = coinGecko.getTrending()
 
         assertNotNull(trending)
@@ -154,7 +172,7 @@ class CoinGeckoTests {
     }
 
     @Test
-    fun testAssetPlatforms() = runTest {
+    fun testAssetPlatforms() = runApiTest { await ->
         val assetPlatforms = coinGecko.getAssetPlatforms()
 
         val withoutId = assetPlatforms.filter { it.id.isEmpty() }
@@ -169,5 +187,12 @@ class CoinGeckoTests {
         assertEquals("Polygon POS", poly?.name)
         assertEquals(137, poly?.chainIdentifier)
         assertEquals("MATIC", poly?.shortname)
+    }
+
+    private fun runApiTest(
+        testBody: suspend TestScope.(await: suspend () -> Unit) -> Unit
+    ) = runTest {
+        testLock.withLock { }
+        testBody { testLock.withLock { } }
     }
 }

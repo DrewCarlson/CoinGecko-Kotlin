@@ -8,6 +8,7 @@ binary_compat = "0.12.1"
 
 spotless = "6.16.0"
 ktlint = "0.48.2"
+atomicfu = "0.20.0"
 
 [plugins]
 multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
@@ -17,6 +18,8 @@ binaryCompat = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", ve
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 
 [libraries]
+atomicfu = { module = "org.jetbrains.kotlinx:atomicfu", version.ref = "atomicfu" }
+atomicfu-plugin = { module = "org.jetbrains.kotlinx:atomicfu-gradle-plugin", version.ref = "atomicfu" }
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
