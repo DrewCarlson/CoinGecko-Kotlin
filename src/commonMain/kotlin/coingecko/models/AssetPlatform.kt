@@ -9,5 +9,5 @@ data class AssetPlatform(
     @SerialName("chain_identifier")
     val chainIdentifier: Long? = null,
     val name: String,
-    val shortname: String
+    val shortname: String,
 )

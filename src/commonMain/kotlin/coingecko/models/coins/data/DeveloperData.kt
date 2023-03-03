@@ -21,5 +21,5 @@ data class DeveloperData(
     @SerialName("commit_count_4_weeks")
     val commitCount4Weeks: Long = 0,
     @SerialName("last_4_weeks_commit_activity_series")
-    val last4WeeksCommitActivitySeries: List<Long>? = null
+    val last4WeeksCommitActivitySeries: List<Long>? = null,
 )

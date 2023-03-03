@@ -4,5 +4,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class TrendingCoinList(
-    val coins: List<TrendingCoin>
+    val coins: List<TrendingCoin>,
 )

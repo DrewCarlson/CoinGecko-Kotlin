@@ -62,5 +62,5 @@ data class IcoData(
     @SerialName("pre_sale_available")
     val preSaleAvailable: Boolean?,
     @SerialName("pre_sale_ended")
-    val preSaleEnded: Boolean = false
+    val preSaleEnded: Boolean = false,
 )

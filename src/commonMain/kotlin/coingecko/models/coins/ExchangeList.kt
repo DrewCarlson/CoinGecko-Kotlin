@@ -12,5 +12,5 @@ data class ExchangeList(
     override val total: Int,
     override val perPage: Int,
     override val nextPage: Int?,
-    override val previousPage: Int?
+    override val previousPage: Int?,
 ) : Page

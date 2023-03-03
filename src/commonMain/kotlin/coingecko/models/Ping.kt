@@ -6,5 +6,5 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Ping(
     @SerialName("gecko_says")
-    val geckoSays: String
+    val geckoSays: String,
 )

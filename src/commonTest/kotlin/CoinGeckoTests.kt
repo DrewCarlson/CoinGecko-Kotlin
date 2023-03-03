@@ -84,7 +84,7 @@ class CoinGeckoTests {
             includeMarketCap = true,
             include24hrVol = true,
             include24hrChange = true,
-            includeLastUpdatedAt = true
+            includeLastUpdatedAt = true,
         )
         val eth = assertNotNull(ethPrices["ethereum"])
         assertNotNull(eth.getPrice("usd"))
@@ -133,7 +133,7 @@ class CoinGeckoTests {
 
         assertTrue(
             exception is CoinGeckoApiException,
-            "Expected CoinGeckoApiException but was ${exception::class}"
+            "Expected CoinGeckoApiException but was ${exception::class}",
         )
         assertEquals(404, exception.error?.code)
         assertEquals("coin not found", exception.error?.message)
@@ -190,7 +190,7 @@ class CoinGeckoTests {
     }
 
     private fun runApiTest(
-        testBody: suspend TestScope.(await: suspend () -> Unit) -> Unit
+        testBody: suspend TestScope.(await: suspend () -> Unit) -> Unit,
     ) = runTest {
         testLock.withLock { }
         testBody { testLock.withLock { } }

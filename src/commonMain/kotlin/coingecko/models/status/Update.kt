@@ -13,5 +13,5 @@ data class Update(
     @SerialName("user_title")
     val userTitle: String? = null,
     val pin: Boolean = false,
-    val project: Project? = null
+    val project: Project? = null,
 )

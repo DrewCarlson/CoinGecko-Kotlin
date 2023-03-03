@@ -4,5 +4,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class ExchangeRates(
-    val rates: Map<String, Rate>
+    val rates: Map<String, Rate>,
 )

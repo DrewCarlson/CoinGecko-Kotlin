@@ -127,7 +127,7 @@ class CoinGeckoClient(httpClient: HttpClient) {
         includeMarketCap: Boolean = false,
         include24hrVol: Boolean = false,
         include24hrChange: Boolean = false,
-        includeLastUpdatedAt: Boolean = false
+        includeLastUpdatedAt: Boolean = false,
     ): Map<String, CoinPrice> =
         httpClient.get("simple/price") {
             parameter(IDS, ids)
@@ -145,7 +145,7 @@ class CoinGeckoClient(httpClient: HttpClient) {
         includeMarketCap: Boolean = false,
         include24hrVol: Boolean = false,
         include24hrChange: Boolean = false,
-        includeLastUpdatedAt: Boolean = false
+        includeLastUpdatedAt: Boolean = false,
     ): Map<String, Map<String, Double>> =
         httpClient.get("simple/token_price/$id") {
             parameter(VS_CURRENCIES, vsCurrencies)
@@ -171,7 +171,7 @@ class CoinGeckoClient(httpClient: HttpClient) {
         perPage: Int? = null,
         page: Int? = null,
         sparkline: Boolean = false,
-        priceChangePercentage: String? = null
+        priceChangePercentage: String? = null,
     ): CoinMarketsList =
         httpClient.get("coins/markets") {
             parameter(IDS, ids)
@@ -190,7 +190,7 @@ class CoinGeckoClient(httpClient: HttpClient) {
         marketData: Boolean = false,
         communityData: Boolean = false,
         developerData: Boolean = false,
-        sparkline: Boolean = false
+        sparkline: Boolean = false,
     ): CoinFullData =
         httpClient.get("coins/$id") {
             parameter(LOCALIZATION, localization)
@@ -205,7 +205,7 @@ class CoinGeckoClient(httpClient: HttpClient) {
         id: String,
         exchangeIds: String? = null,
         page: Int? = null,
-        order: String? = null
+        order: String? = null,
     ): CoinTickerById =
         httpClient.get("coins/$id/tickers") {
             parameter(EXCHANGE_IDS, exchangeIds)
@@ -216,7 +216,7 @@ class CoinGeckoClient(httpClient: HttpClient) {
     suspend fun getCoinHistoryById(
         id: String,
         date: String,
-        localization: Boolean = false
+        localization: Boolean = false,
     ): CoinHistoryById =
         httpClient.get("coins/$id/history") {
             parameter(DATE, date)
@@ -227,7 +227,7 @@ class CoinGeckoClient(httpClient: HttpClient) {
         id: String,
         vsCurrency: String,
         from: String,
-        to: String
+        to: String,
     ): MarketChart =
         httpClient.get("coins/$id/market_chart/range") {
             parameter(VS_CURRENCY, vsCurrency)
@@ -238,7 +238,7 @@ class CoinGeckoClient(httpClient: HttpClient) {
     suspend fun getCoinMarketChartById(
         id: String,
         vsCurrency: String,
-        days: Double
+        days: Double,
     ): MarketChart =
         httpClient.get("coins/$id/market_chart") {
             parameter(VS_CURRENCY, vsCurrency)
@@ -287,7 +287,7 @@ class CoinGeckoClient(httpClient: HttpClient) {
         id: String,
         coinIds: String? = null,
         page: Int? = null,
-        order: String? = null
+        order: String? = null,
     ): ExchangesTickersById =
         httpClient.get("exchanges/$id/tickers") {
             parameter(COIN_IDS, coinIds)

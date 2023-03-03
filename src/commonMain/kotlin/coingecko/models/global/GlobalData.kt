@@ -24,5 +24,5 @@ data class GlobalData(
     @SerialName("market_cap_change_percentage_24h_usd")
     val marketCapChangePercentage24hUsd: Double = 0.0,
     @SerialName("updated_at")
-    val updatedAt: Long = 0
+    val updatedAt: Long = 0,
 )

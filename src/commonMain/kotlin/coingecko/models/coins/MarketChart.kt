@@ -9,5 +9,5 @@ data class MarketChart(
     @SerialName("market_caps")
     val marketCaps: List<List<String>>,
     @SerialName("total_volumes")
-    val totalVolumes: List<List<String>>
+    val totalVolumes: List<List<String>>,
 )

@@ -1,7 +1,7 @@
 package coingecko.models.coins
 
 data class CoinPrice(
-    private val rawFields: Map<String, String?>
+    private val rawFields: Map<String, String?>,
 ) {
     val lastUpdatedAt: Long? = rawFields["last_updated_at"]?.toLongOrNull()
 

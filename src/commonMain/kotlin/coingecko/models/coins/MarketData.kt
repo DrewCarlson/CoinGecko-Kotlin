@@ -79,5 +79,5 @@ data class MarketData(
     @SerialName("circulating_supply")
     val circulatingSupply: Double = 0.0,
     @SerialName("last_updated")
-    val lastUpdated: String? = null
+    val lastUpdated: String? = null,
 )

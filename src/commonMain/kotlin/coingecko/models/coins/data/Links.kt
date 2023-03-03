@@ -25,5 +25,5 @@ data class Links(
     @SerialName("subreddit_url")
     val subredditUrl: String? = null,
     @SerialName("repos_url")
-    val reposUrl: ReposUrl? = null
+    val reposUrl: ReposUrl? = null,
 )

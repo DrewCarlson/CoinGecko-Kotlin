@@ -9,5 +9,5 @@ data class Project(
     val id: String? = null,
     val name: String? = null,
     val symbol: String? = null,
-    val image: Image? = null
+    val image: Image? = null,
 )

@@ -18,5 +18,5 @@ data class TrendingCoinItem(
     val slug: String,
     @SerialName("price_btc")
     val priceBtc: Double,
-    val score: Int
+    val score: Int,
 )

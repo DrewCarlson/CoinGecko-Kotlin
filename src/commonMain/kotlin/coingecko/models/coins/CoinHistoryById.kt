@@ -21,5 +21,5 @@ data class CoinHistoryById(
     @SerialName("developer_data")
     val developerData: DeveloperData? = null,
     @SerialName("public_interest_stats")
-    val publicInterestStats: PublicInterestStats? = null
+    val publicInterestStats: PublicInterestStats? = null,
 )

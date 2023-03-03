@@ -22,5 +22,5 @@ data class Exchange(
     @SerialName("tickers")
     val tickers: List<Ticker> = emptyList(),
     @SerialName("status_updates")
-    val statusUpdates: List<Update> = emptyList()
+    val statusUpdates: List<Update> = emptyList(),
 )
