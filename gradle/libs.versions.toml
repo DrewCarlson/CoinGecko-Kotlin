@@ -3,7 +3,7 @@ kotlin = "1.8.10"
 coroutines = "1.6.4"
 serialization = "1.5.0"
 ktorio = "2.2.4"
-dokka = "1.7.20"
+dokka = "1.8.10"
 binary_compat = "0.12.1"
 
 spotless = "6.16.0"
@@ -16,6 +16,7 @@ serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref 
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 binaryCompat = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version.ref = "binary_compat" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+mavenPublish = { id = "com.vanniktech.maven.publish", version = "0.24.0" }
 
 [libraries]
 atomicfu = { module = "org.jetbrains.kotlinx:atomicfu", version.ref = "atomicfu" }

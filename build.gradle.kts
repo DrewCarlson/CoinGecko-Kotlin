@@ -8,6 +8,7 @@ plugins {
     alias(libs.plugins.dokka)
     alias(libs.plugins.binaryCompat)
     alias(libs.plugins.spotless)
+    alias(libs.plugins.mavenPublish)
 }
 
 buildscript {
@@ -27,11 +28,12 @@ allprojects {
 }
 
 apply(plugin = "kotlinx-atomicfu")
-apply(from = "gradle/publishing.gradle.kts")
 
 plugins.withType<NodeJsRootPlugin> {
     the<YarnRootExtension>().lockFileDirectory = rootDir.resolve("gradle/kotlin-js-store")
 }
+
+version = System.getenv("GITHUB_REF")?.substringAfter("refs/tags/v", version.toString()) ?: version
 
 kotlin {
     jvm()
