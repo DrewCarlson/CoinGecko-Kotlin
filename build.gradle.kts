@@ -153,8 +153,7 @@ kotlin {
         val tvosTest by getting
         val watchosArm32Test by getting
         val watchosArm64Test by getting
-        val watchosX86Test by getting
-        configure(listOf(tvosTest, watchosArm32Test, watchosArm64Test, watchosX86Test)) {
+        configure(listOf(tvosTest, watchosArm32Test, watchosArm64Test)) {
             dependsOn(iosTest)
         }
     }
