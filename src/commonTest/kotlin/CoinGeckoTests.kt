@@ -191,7 +191,7 @@ class CoinGeckoTests {
 
     private fun runApiTest(
         testBody: suspend TestScope.(await: suspend () -> Unit) -> Unit,
-    ) = runTest {
+    ) = runTest(timeout = 30.seconds) {
         testLock.withLock { }
         testBody { testLock.withLock { } }
     }

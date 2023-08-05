@@ -1,5 +1,6 @@
 import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin
 import org.jetbrains.kotlin.gradle.targets.js.yarn.YarnRootExtension
+import java.time.Duration
 
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
@@ -40,15 +41,16 @@ kotlin {
     js(IR) {
         browser {
             testTask {
-                useMocha {
-                    timeout = "15000"
+                useKarma {
+                    useFirefoxHeadless()
+                    timeout.set(Duration.ofSeconds(30))
                 }
             }
         }
         nodejs {
             testTask {
                 useMocha {
-                    timeout = "15000"
+                    timeout = "30000"
                 }
             }
         }
