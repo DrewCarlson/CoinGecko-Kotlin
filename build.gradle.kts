@@ -62,7 +62,6 @@ kotlin {
     iosSimulatorArm64()
     watchosArm32()
     watchosArm64()
-    watchosX86()
     tvos()
 
     sourceSets {
