@@ -11,10 +11,10 @@ import kotlinx.coroutines.test.runTest
 import kotlin.test.*
 import kotlin.time.Duration.Companion.seconds
 
-class CoinGeckoTests {
 
+class CoinGeckoTests {
     private val lockScope = CoroutineScope(Dispatchers.Default + SupervisorJob())
-    private val coinGecko = CoinGeckoClient()
+    private lateinit var coinGecko: CoinGeckoClient
     private val testLock = Mutex()
 
     init {
@@ -23,6 +23,11 @@ class CoinGeckoTests {
                 testLock.withLock { delay(5.seconds) }
             }
         }
+    }
+
+    @BeforeTest
+    fun setup() {
+        coinGecko = CoinGeckoClient()
     }
 
     @AfterTest
