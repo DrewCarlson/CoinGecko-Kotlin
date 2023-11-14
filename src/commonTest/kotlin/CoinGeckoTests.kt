@@ -34,7 +34,7 @@ class CoinGeckoTests {
         httpClient = HttpClient {
             if (DEMO_API_KEY.isNotBlank()) {
                 defaultRequest {
-                    headers["x-cg-demo-api-key"] = DEMO_API_KEY
+                    headers["x-cg-demo-api-key"] = "CG-${DEMO_API_KEY}"
                 }
             }
         }
