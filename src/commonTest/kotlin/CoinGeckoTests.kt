@@ -13,17 +13,19 @@ import kotlin.time.Duration.Companion.seconds
 
 
 class CoinGeckoTests {
-    private val lockScope = CoroutineScope(Dispatchers.Default + SupervisorJob())
-    private lateinit var coinGecko: CoinGeckoClient
-    private val testLock = Mutex()
-
-    init {
-        lockScope.launch {
-            while (true) {
-                testLock.withLock { delay(5.seconds) }
+    companion object {
+        private val testLock = Mutex()
+        private val lockScope = CoroutineScope(Dispatchers.Default + SupervisorJob())
+        init {
+            lockScope.launch {
+                while (true) {
+                    testLock.withLock { delay(5.seconds) }
+                }
             }
         }
     }
+
+    private lateinit var coinGecko: CoinGeckoClient
 
     @BeforeTest
     fun setup() {
