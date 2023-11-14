@@ -2,6 +2,7 @@ public final class coingecko/CoinGeckoClient {
 	public static final field Companion Lcoingecko/CoinGeckoClient$Companion;
 	public fun <init> ()V
 	public fun <init> (Lio/ktor/client/HttpClient;)V
+	public final fun close ()V
 	public static final fun create ()Lcoingecko/CoinGeckoClient;
 	public static final fun create (Lio/ktor/client/HttpClient;)Lcoingecko/CoinGeckoClient;
 	public final fun getAssetPlatforms (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -188,7 +189,6 @@ public abstract interface class coingecko/models/Page {
 
 public final class coingecko/models/Ping {
 	public static final field Companion Lcoingecko/models/Ping$Companion;
-	public synthetic fun <init> (ILjava/lang/String;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/lang/String;)V
 	public final fun component1 ()Ljava/lang/String;
 	public final fun copy (Ljava/lang/String;)Lcoingecko/models/Ping;
@@ -197,7 +197,6 @@ public final class coingecko/models/Ping {
 	public final fun getGeckoSays ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/Ping;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/Ping$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -217,7 +216,6 @@ public final class coingecko/models/Ping$Companion {
 
 public final class coingecko/models/coins/CoinCategory {
 	public static final field Companion Lcoingecko/models/coins/CoinCategory$Companion;
-	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
 	public final fun component1 ()Ljava/lang/String;
 	public final fun component2 ()Ljava/lang/String;
@@ -228,7 +226,6 @@ public final class coingecko/models/coins/CoinCategory {
 	public final fun getName ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/coins/CoinCategory;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/coins/CoinCategory$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -248,7 +245,6 @@ public final class coingecko/models/coins/CoinCategory$Companion {
 
 public final class coingecko/models/coins/CoinCategoryAndData {
 	public static final field Companion Lcoingecko/models/coins/CoinCategoryAndData$Companion;
-	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;DDLjava/lang/String;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;DDLjava/lang/String;)V
 	public final fun component1 ()Ljava/lang/String;
 	public final fun component2 ()Ljava/lang/String;
@@ -265,7 +261,6 @@ public final class coingecko/models/coins/CoinCategoryAndData {
 	public final fun getUpdatedAt ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/coins/CoinCategoryAndData;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/coins/CoinCategoryAndData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -285,7 +280,6 @@ public final class coingecko/models/coins/CoinCategoryAndData$Companion {
 
 public final class coingecko/models/coins/CoinFullData {
 	public static final field Companion Lcoingecko/models/coins/CoinFullData$Companion;
-	public synthetic fun <init> (IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/util/List;Ljava/util/Map;Ljava/util/Map;Lcoingecko/models/coins/data/Links;Lcoingecko/models/shared/Image;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcoingecko/models/coins/data/IcoData;JJDDDDDLcoingecko/models/coins/MarketData;Lcoingecko/models/coins/data/CommunityData;Lcoingecko/models/coins/data/DeveloperData;Lcoingecko/models/coins/data/PublicInterestStats;Ljava/util/List;Ljava/lang/String;Ljava/util/List;FFLjava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/util/List;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/util/List;Ljava/util/Map;Ljava/util/Map;Lcoingecko/models/coins/data/Links;Lcoingecko/models/shared/Image;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcoingecko/models/coins/data/IcoData;JJDDDDDLcoingecko/models/coins/MarketData;Lcoingecko/models/coins/data/CommunityData;Lcoingecko/models/coins/data/DeveloperData;Lcoingecko/models/coins/data/PublicInterestStats;Ljava/util/List;Ljava/lang/String;Ljava/util/List;FFLjava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/util/List;)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/util/List;Ljava/util/Map;Ljava/util/Map;Lcoingecko/models/coins/data/Links;Lcoingecko/models/shared/Image;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcoingecko/models/coins/data/IcoData;JJDDDDDLcoingecko/models/coins/MarketData;Lcoingecko/models/coins/data/CommunityData;Lcoingecko/models/coins/data/DeveloperData;Lcoingecko/models/coins/data/PublicInterestStats;Ljava/util/List;Ljava/lang/String;Ljava/util/List;FFLjava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/util/List;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
@@ -361,7 +355,6 @@ public final class coingecko/models/coins/CoinFullData {
 	public final fun getTickers ()Ljava/util/List;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/coins/CoinFullData;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/coins/CoinFullData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -381,7 +374,6 @@ public final class coingecko/models/coins/CoinFullData$Companion {
 
 public final class coingecko/models/coins/CoinHistoryById {
 	public static final field Companion Lcoingecko/models/coins/CoinHistoryById$Companion;
-	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Lcoingecko/models/shared/Image;Lcoingecko/models/coins/MarketData;Lcoingecko/models/coins/data/CommunityData;Lcoingecko/models/coins/data/DeveloperData;Lcoingecko/models/coins/data/PublicInterestStats;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Lcoingecko/models/shared/Image;Lcoingecko/models/coins/MarketData;Lcoingecko/models/coins/data/CommunityData;Lcoingecko/models/coins/data/DeveloperData;Lcoingecko/models/coins/data/PublicInterestStats;)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Lcoingecko/models/shared/Image;Lcoingecko/models/coins/MarketData;Lcoingecko/models/coins/data/CommunityData;Lcoingecko/models/coins/data/DeveloperData;Lcoingecko/models/coins/data/PublicInterestStats;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
@@ -407,7 +399,6 @@ public final class coingecko/models/coins/CoinHistoryById {
 	public final fun getSymbol ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/coins/CoinHistoryById;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/coins/CoinHistoryById$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -427,7 +418,6 @@ public final class coingecko/models/coins/CoinHistoryById$Companion {
 
 public final class coingecko/models/coins/CoinList {
 	public static final field Companion Lcoingecko/models/coins/CoinList$Companion;
-	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
@@ -443,7 +433,6 @@ public final class coingecko/models/coins/CoinList {
 	public final fun getSymbol ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/coins/CoinList;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/coins/CoinList$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -463,7 +452,6 @@ public final class coingecko/models/coins/CoinList$Companion {
 
 public final class coingecko/models/coins/CoinMarkets {
 	public static final field Companion Lcoingecko/models/coins/CoinMarkets$Companion;
-	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;DDJDDDDDDDDLjava/lang/Double;DDDDLjava/lang/String;Ljava/lang/String;Lcoingecko/models/coins/data/Roi;Ljava/lang/String;Lcoingecko/models/coins/data/SparklineIn7d;DLjava/lang/Double;DLkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;DDJDDDDDDDDLjava/lang/Double;DDDDLjava/lang/String;Ljava/lang/String;Lcoingecko/models/coins/data/Roi;Ljava/lang/String;Lcoingecko/models/coins/data/SparklineIn7d;DLjava/lang/Double;D)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;DDJDDDDDDDDLjava/lang/Double;DDDDLjava/lang/String;Ljava/lang/String;Lcoingecko/models/coins/data/Roi;Ljava/lang/String;Lcoingecko/models/coins/data/SparklineIn7d;DLjava/lang/Double;DILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
@@ -527,7 +515,6 @@ public final class coingecko/models/coins/CoinMarkets {
 	public final fun getTotalVolume ()D
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/coins/CoinMarkets;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/coins/CoinMarkets$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -547,7 +534,6 @@ public final class coingecko/models/coins/CoinMarkets$Companion {
 
 public final class coingecko/models/coins/CoinMarketsList : coingecko/models/Page {
 	public static final field Companion Lcoingecko/models/coins/CoinMarketsList$Companion;
-	public synthetic fun <init> (ILjava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;)V
 	public final fun component1 ()Ljava/util/List;
 	public final fun component2 ()I
@@ -564,7 +550,6 @@ public final class coingecko/models/coins/CoinMarketsList : coingecko/models/Pag
 	public fun getTotal ()I
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/coins/CoinMarketsList;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/coins/CoinMarketsList$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -627,7 +612,6 @@ public final class coingecko/models/coins/CoinPrice {
 
 public final class coingecko/models/coins/CoinTickerById : coingecko/models/Page {
 	public static final field Companion Lcoingecko/models/coins/CoinTickerById$Companion;
-	public synthetic fun <init> (ILjava/lang/String;Ljava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/lang/String;Ljava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;)V
 	public final fun component1 ()Ljava/lang/String;
 	public final fun component2 ()Ljava/util/List;
@@ -646,7 +630,6 @@ public final class coingecko/models/coins/CoinTickerById : coingecko/models/Page
 	public fun getTotal ()I
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/coins/CoinTickerById;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/coins/CoinTickerById$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -666,7 +649,6 @@ public final class coingecko/models/coins/CoinTickerById$Companion {
 
 public final class coingecko/models/coins/ExchangeList : coingecko/models/Page {
 	public static final field Companion Lcoingecko/models/coins/ExchangeList$Companion;
-	public synthetic fun <init> (ILjava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;)V
 	public final fun component1 ()Ljava/util/List;
 	public final fun component2 ()I
@@ -683,7 +665,6 @@ public final class coingecko/models/coins/ExchangeList : coingecko/models/Page {
 	public fun getTotal ()I
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/coins/ExchangeList;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/coins/ExchangeList$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -703,7 +684,6 @@ public final class coingecko/models/coins/ExchangeList$Companion {
 
 public final class coingecko/models/coins/MarketChart {
 	public static final field Companion Lcoingecko/models/coins/MarketChart$Companion;
-	public synthetic fun <init> (ILjava/util/List;Ljava/util/List;Ljava/util/List;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
 	public final fun component1 ()Ljava/util/List;
 	public final fun component2 ()Ljava/util/List;
@@ -716,7 +696,6 @@ public final class coingecko/models/coins/MarketChart {
 	public final fun getTotalVolumes ()Ljava/util/List;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/coins/MarketChart;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/coins/MarketChart$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -737,7 +716,6 @@ public final class coingecko/models/coins/MarketChart$Companion {
 public final class coingecko/models/coins/MarketData {
 	public static final field Companion Lcoingecko/models/coins/MarketData$Companion;
 	public fun <init> ()V
-	public synthetic fun <init> (IILjava/util/Map;Lcoingecko/models/coins/data/Roi;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;JLjava/util/Map;Ljava/util/Map;Ljava/util/Map;DDDDDDDDDDLjava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Double;DLjava/lang/String;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/util/Map;Lcoingecko/models/coins/data/Roi;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;JLjava/util/Map;Ljava/util/Map;Ljava/util/Map;DDDDDDDDDDLjava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Double;DLjava/lang/String;)V
 	public synthetic fun <init> (Ljava/util/Map;Lcoingecko/models/coins/data/Roi;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;JLjava/util/Map;Ljava/util/Map;Ljava/util/Map;DDDDDDDDDDLjava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Double;DLjava/lang/String;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/util/Map;
@@ -819,7 +797,6 @@ public final class coingecko/models/coins/MarketData {
 	public final fun getTotalVolume ()Ljava/util/Map;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/coins/MarketData;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/coins/MarketData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -840,7 +817,6 @@ public final class coingecko/models/coins/MarketData$Companion {
 public final class coingecko/models/coins/data/CodeAdditionsDeletions4Weeks {
 	public static final field Companion Lcoingecko/models/coins/data/CodeAdditionsDeletions4Weeks$Companion;
 	public fun <init> ()V
-	public synthetic fun <init> (IJJLkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (JJ)V
 	public synthetic fun <init> (JJILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()J
@@ -852,7 +828,6 @@ public final class coingecko/models/coins/data/CodeAdditionsDeletions4Weeks {
 	public final fun getDeletions ()J
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/coins/data/CodeAdditionsDeletions4Weeks;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/coins/data/CodeAdditionsDeletions4Weeks$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -875,7 +850,6 @@ public final class coingecko/models/coins/data/CommunityData {
 	public fun <init> ()V
 	public fun <init> (DDDDDDLjava/lang/Double;)V
 	public synthetic fun <init> (DDDDDDLjava/lang/Double;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public synthetic fun <init> (IDDDDDDLjava/lang/Double;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public final fun component1 ()D
 	public final fun component2 ()D
 	public final fun component3 ()D
@@ -895,7 +869,6 @@ public final class coingecko/models/coins/data/CommunityData {
 	public final fun getTwitterFollowers ()D
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/coins/data/CommunityData;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/coins/data/CommunityData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -916,7 +889,6 @@ public final class coingecko/models/coins/data/CommunityData$Companion {
 public final class coingecko/models/coins/data/DeveloperData {
 	public static final field Companion Lcoingecko/models/coins/data/DeveloperData$Companion;
 	public fun <init> ()V
-	public synthetic fun <init> (IJJJJJJJLcoingecko/models/coins/data/CodeAdditionsDeletions4Weeks;JLjava/util/List;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (JJJJJJJLcoingecko/models/coins/data/CodeAdditionsDeletions4Weeks;JLjava/util/List;)V
 	public synthetic fun <init> (JJJJJJJLcoingecko/models/coins/data/CodeAdditionsDeletions4Weeks;JLjava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()J
@@ -944,7 +916,6 @@ public final class coingecko/models/coins/data/DeveloperData {
 	public final fun getTotalIssues ()J
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/coins/data/DeveloperData;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/coins/data/DeveloperData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -964,7 +935,6 @@ public final class coingecko/models/coins/data/DeveloperData$Companion {
 
 public final class coingecko/models/coins/data/IcoData {
 	public static final field Companion Lcoingecko/models/coins/data/IcoData$Companion;
-	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcoingecko/models/coins/data/IcoLinks;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Double;ZLjava/lang/Boolean;Ljava/lang/Boolean;ZLkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcoingecko/models/coins/data/IcoLinks;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Double;ZLjava/lang/Boolean;Ljava/lang/Boolean;Z)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcoingecko/models/coins/data/IcoLinks;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Double;ZLjava/lang/Boolean;Ljava/lang/Boolean;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
@@ -1032,7 +1002,6 @@ public final class coingecko/models/coins/data/IcoData {
 	public final fun getWhitelistUrl ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/coins/data/IcoData;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/coins/data/IcoData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -1053,7 +1022,6 @@ public final class coingecko/models/coins/data/IcoData$Companion {
 public final class coingecko/models/coins/data/IcoLinks {
 	public static final field Companion Lcoingecko/models/coins/data/IcoLinks$Companion;
 	public fun <init> ()V
-	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun getBlog ()Ljava/lang/String;
@@ -1064,7 +1032,6 @@ public final class coingecko/models/coins/data/IcoLinks {
 	public final fun getTwitter ()Ljava/lang/String;
 	public final fun getWeb ()Ljava/lang/String;
 	public final fun getWhitepaper ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/coins/data/IcoLinks;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/coins/data/IcoLinks$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -1085,7 +1052,6 @@ public final class coingecko/models/coins/data/IcoLinks$Companion {
 public final class coingecko/models/coins/data/Links {
 	public static final field Companion Lcoingecko/models/coins/data/Links$Companion;
 	public fun <init> ()V
-	public synthetic fun <init> (ILjava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcoingecko/models/coins/data/ReposUrl;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcoingecko/models/coins/data/ReposUrl;)V
 	public synthetic fun <init> (Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcoingecko/models/coins/data/ReposUrl;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/util/List;
@@ -1115,7 +1081,6 @@ public final class coingecko/models/coins/data/Links {
 	public final fun getTwitterScreenName ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/coins/data/Links;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/coins/data/Links$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -1136,7 +1101,6 @@ public final class coingecko/models/coins/data/Links$Companion {
 public final class coingecko/models/coins/data/PublicInterestStats {
 	public static final field Companion Lcoingecko/models/coins/data/PublicInterestStats$Companion;
 	public fun <init> ()V
-	public synthetic fun <init> (ILjava/lang/Long;Ljava/lang/Long;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/lang/Long;Ljava/lang/Long;)V
 	public synthetic fun <init> (Ljava/lang/Long;Ljava/lang/Long;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/Long;
@@ -1148,7 +1112,6 @@ public final class coingecko/models/coins/data/PublicInterestStats {
 	public final fun getBingMatches ()Ljava/lang/Long;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/coins/data/PublicInterestStats;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/coins/data/PublicInterestStats$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -1168,7 +1131,6 @@ public final class coingecko/models/coins/data/PublicInterestStats$Companion {
 
 public final class coingecko/models/coins/data/ReposUrl {
 	public static final field Companion Lcoingecko/models/coins/data/ReposUrl$Companion;
-	public synthetic fun <init> (ILjava/util/List;Ljava/util/List;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/util/List;Ljava/util/List;)V
 	public final fun component1 ()Ljava/util/List;
 	public final fun component2 ()Ljava/util/List;
@@ -1179,7 +1141,6 @@ public final class coingecko/models/coins/data/ReposUrl {
 	public final fun getGithub ()Ljava/util/List;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/coins/data/ReposUrl;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/coins/data/ReposUrl$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -1202,7 +1163,6 @@ public final class coingecko/models/coins/data/Roi {
 	public fun <init> ()V
 	public fun <init> (FLjava/lang/String;F)V
 	public synthetic fun <init> (FLjava/lang/String;FILkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public synthetic fun <init> (IFLjava/lang/String;FLkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public final fun component1 ()F
 	public final fun component2 ()Ljava/lang/String;
 	public final fun component3 ()F
@@ -1214,7 +1174,6 @@ public final class coingecko/models/coins/data/Roi {
 	public final fun getTimes ()F
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/coins/data/Roi;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/coins/data/Roi$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -1235,7 +1194,6 @@ public final class coingecko/models/coins/data/Roi$Companion {
 public final class coingecko/models/coins/data/SparklineIn7d {
 	public static final field Companion Lcoingecko/models/coins/data/SparklineIn7d$Companion;
 	public fun <init> ()V
-	public synthetic fun <init> (ILjava/util/List;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/util/List;)V
 	public synthetic fun <init> (Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/util/List;
@@ -1245,7 +1203,6 @@ public final class coingecko/models/coins/data/SparklineIn7d {
 	public final fun getPrice ()Ljava/util/List;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/coins/data/SparklineIn7d;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/coins/data/SparklineIn7d$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -1265,7 +1222,6 @@ public final class coingecko/models/coins/data/SparklineIn7d$Companion {
 
 public final class coingecko/models/exchanges/Exchange {
 	public static final field Companion Lcoingecko/models/exchanges/Exchange$Companion;
-	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZDLjava/util/List;Ljava/util/List;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZDLjava/util/List;Ljava/util/List;)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZDLjava/util/List;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
@@ -1295,7 +1251,6 @@ public final class coingecko/models/exchanges/Exchange {
 	public final fun getYearEstablished ()J
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/exchanges/Exchange;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/exchanges/Exchange$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -1315,7 +1270,6 @@ public final class coingecko/models/exchanges/Exchange$Companion {
 
 public final class coingecko/models/exchanges/ExchangeId {
 	public static final field Companion Lcoingecko/models/exchanges/ExchangeId$Companion;
-	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
 	public final fun component1 ()Ljava/lang/String;
 	public final fun component2 ()Ljava/lang/String;
@@ -1326,7 +1280,6 @@ public final class coingecko/models/exchanges/ExchangeId {
 	public final fun getName ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/exchanges/ExchangeId;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/exchanges/ExchangeId$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -1346,7 +1299,6 @@ public final class coingecko/models/exchanges/ExchangeId$Companion {
 
 public final class coingecko/models/exchanges/ExchangesTickersById : coingecko/models/Page {
 	public static final field Companion Lcoingecko/models/exchanges/ExchangesTickersById$Companion;
-	public synthetic fun <init> (ILjava/lang/String;Ljava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/lang/String;Ljava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun getName ()Ljava/lang/String;
@@ -1355,7 +1307,6 @@ public final class coingecko/models/exchanges/ExchangesTickersById : coingecko/m
 	public fun getPreviousPage ()Ljava/lang/Integer;
 	public final fun getTickers ()Ljava/util/List;
 	public fun getTotal ()I
-	public static final synthetic fun write$Self (Lcoingecko/models/exchanges/ExchangesTickersById;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/exchanges/ExchangesTickersById$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -1375,7 +1326,6 @@ public final class coingecko/models/exchanges/ExchangesTickersById$Companion {
 
 public final class coingecko/models/global/Global {
 	public static final field Companion Lcoingecko/models/global/Global$Companion;
-	public synthetic fun <init> (ILcoingecko/models/global/GlobalData;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Lcoingecko/models/global/GlobalData;)V
 	public final fun component1 ()Lcoingecko/models/global/GlobalData;
 	public final fun copy (Lcoingecko/models/global/GlobalData;)Lcoingecko/models/global/Global;
@@ -1384,7 +1334,6 @@ public final class coingecko/models/global/Global {
 	public final fun getData ()Lcoingecko/models/global/GlobalData;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/global/Global;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/global/Global$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -1405,7 +1354,6 @@ public final class coingecko/models/global/Global$Companion {
 public final class coingecko/models/global/GlobalData {
 	public static final field Companion Lcoingecko/models/global/GlobalData$Companion;
 	public fun <init> ()V
-	public synthetic fun <init> (IJJJJJLjava/util/Map;Ljava/util/Map;Ljava/util/Map;DJLkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (JJJJJLjava/util/Map;Ljava/util/Map;Ljava/util/Map;DJ)V
 	public synthetic fun <init> (JJJJJLjava/util/Map;Ljava/util/Map;Ljava/util/Map;DJILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()J
@@ -1433,7 +1381,6 @@ public final class coingecko/models/global/GlobalData {
 	public final fun getUpdatedAt ()J
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/global/GlobalData;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/global/GlobalData$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -1453,7 +1400,6 @@ public final class coingecko/models/global/GlobalData$Companion {
 
 public final class coingecko/models/rates/ExchangeRates {
 	public static final field Companion Lcoingecko/models/rates/ExchangeRates$Companion;
-	public synthetic fun <init> (ILjava/util/Map;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/util/Map;)V
 	public final fun component1 ()Ljava/util/Map;
 	public final fun copy (Ljava/util/Map;)Lcoingecko/models/rates/ExchangeRates;
@@ -1462,7 +1408,6 @@ public final class coingecko/models/rates/ExchangeRates {
 	public final fun getRates ()Ljava/util/Map;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/rates/ExchangeRates;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/rates/ExchangeRates$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -1482,7 +1427,6 @@ public final class coingecko/models/rates/ExchangeRates$Companion {
 
 public final class coingecko/models/rates/Rate {
 	public static final field Companion Lcoingecko/models/rates/Rate$Companion;
-	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;JLjava/lang/String;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
@@ -1498,7 +1442,6 @@ public final class coingecko/models/rates/Rate {
 	public final fun getValue ()J
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/rates/Rate;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/rates/Rate$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -1518,7 +1461,6 @@ public final class coingecko/models/rates/Rate$Companion {
 
 public final class coingecko/models/search/SearchResults {
 	public static final field Companion Lcoingecko/models/search/SearchResults$Companion;
-	public synthetic fun <init> (ILjava/util/List;Ljava/util/List;Ljava/util/List;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
 	public final fun component1 ()Ljava/util/List;
 	public final fun component2 ()Ljava/util/List;
@@ -1531,7 +1473,6 @@ public final class coingecko/models/search/SearchResults {
 	public final fun getExchanges ()Ljava/util/List;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/search/SearchResults;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/search/SearchResults$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -1551,7 +1492,6 @@ public final class coingecko/models/search/SearchResults$Companion {
 
 public final class coingecko/models/search/TrendingCoin {
 	public static final field Companion Lcoingecko/models/search/TrendingCoin$Companion;
-	public synthetic fun <init> (ILcoingecko/models/search/TrendingCoinItem;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Lcoingecko/models/search/TrendingCoinItem;)V
 	public final fun component1 ()Lcoingecko/models/search/TrendingCoinItem;
 	public final fun copy (Lcoingecko/models/search/TrendingCoinItem;)Lcoingecko/models/search/TrendingCoin;
@@ -1560,7 +1500,6 @@ public final class coingecko/models/search/TrendingCoin {
 	public final fun getItem ()Lcoingecko/models/search/TrendingCoinItem;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/search/TrendingCoin;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/search/TrendingCoin$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -1580,7 +1519,6 @@ public final class coingecko/models/search/TrendingCoin$Companion {
 
 public final class coingecko/models/search/TrendingCoinItem {
 	public static final field Companion Lcoingecko/models/search/TrendingCoinItem$Companion;
-	public synthetic fun <init> (ILjava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;DILkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;DI)V
 	public final fun component1 ()Ljava/lang/String;
 	public final fun component10 ()D
@@ -1609,7 +1547,6 @@ public final class coingecko/models/search/TrendingCoinItem {
 	public final fun getThumb ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/search/TrendingCoinItem;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/search/TrendingCoinItem$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -1629,7 +1566,6 @@ public final class coingecko/models/search/TrendingCoinItem$Companion {
 
 public final class coingecko/models/search/TrendingCoinList {
 	public static final field Companion Lcoingecko/models/search/TrendingCoinList$Companion;
-	public synthetic fun <init> (ILjava/util/List;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/util/List;)V
 	public final fun component1 ()Ljava/util/List;
 	public final fun copy (Ljava/util/List;)Lcoingecko/models/search/TrendingCoinList;
@@ -1638,7 +1574,6 @@ public final class coingecko/models/search/TrendingCoinList {
 	public final fun getCoins ()Ljava/util/List;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/search/TrendingCoinList;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/search/TrendingCoinList$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -1658,7 +1593,6 @@ public final class coingecko/models/search/TrendingCoinList$Companion {
 
 public final class coingecko/models/shared/Image {
 	public static final field Companion Lcoingecko/models/shared/Image$Companion;
-	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
@@ -1672,7 +1606,6 @@ public final class coingecko/models/shared/Image {
 	public final fun getThumb ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/shared/Image;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/shared/Image$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -1692,7 +1625,6 @@ public final class coingecko/models/shared/Image$Companion {
 
 public final class coingecko/models/shared/Market {
 	public static final field Companion Lcoingecko/models/shared/Market$Companion;
-	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;ZLkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;Z)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
@@ -1706,7 +1638,6 @@ public final class coingecko/models/shared/Market {
 	public final fun getName ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/shared/Market;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/shared/Market$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -1726,7 +1657,6 @@ public final class coingecko/models/shared/Market$Companion {
 
 public final class coingecko/models/shared/Ticker {
 	public static final field Companion Lcoingecko/models/shared/Ticker$Companion;
-	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Lcoingecko/models/shared/Market;DDLjava/util/Map;Ljava/util/Map;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;Lcoingecko/models/shared/Market;DDLjava/util/Map;Ljava/util/Map;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Lcoingecko/models/shared/Market;DDLjava/util/Map;Ljava/util/Map;Ljava/lang/String;Ljava/lang/Double;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
@@ -1770,7 +1700,6 @@ public final class coingecko/models/shared/Ticker {
 	public final fun isAnomaly ()Z
 	public final fun isStale ()Z
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/shared/Ticker;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/shared/Ticker$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -1791,7 +1720,6 @@ public final class coingecko/models/shared/Ticker$Companion {
 public final class coingecko/models/status/Project {
 	public static final field Companion Lcoingecko/models/status/Project$Companion;
 	public fun <init> ()V
-	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcoingecko/models/shared/Image;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcoingecko/models/shared/Image;)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcoingecko/models/shared/Image;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
@@ -1809,7 +1737,6 @@ public final class coingecko/models/status/Project {
 	public final fun getType ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/status/Project;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/status/Project$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -1829,7 +1756,6 @@ public final class coingecko/models/status/Project$Companion {
 
 public final class coingecko/models/status/StatusUpdates : coingecko/models/Page {
 	public static final field Companion Lcoingecko/models/status/StatusUpdates$Companion;
-	public synthetic fun <init> (ILjava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;)V
 	public synthetic fun <init> (Ljava/util/List;IILjava/lang/Integer;Ljava/lang/Integer;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/util/List;
@@ -1847,7 +1773,6 @@ public final class coingecko/models/status/StatusUpdates : coingecko/models/Page
 	public final fun getUpdates ()Ljava/util/List;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/status/StatusUpdates;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/status/StatusUpdates$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
@@ -1868,7 +1793,6 @@ public final class coingecko/models/status/StatusUpdates$Companion {
 public final class coingecko/models/status/Update {
 	public static final field Companion Lcoingecko/models/status/Update$Companion;
 	public fun <init> ()V
-	public synthetic fun <init> (ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLcoingecko/models/status/Project;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLcoingecko/models/status/Project;)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLcoingecko/models/status/Project;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Ljava/lang/String;
@@ -1890,7 +1814,6 @@ public final class coingecko/models/status/Update {
 	public final fun getUserTitle ()Ljava/lang/String;
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public static final synthetic fun write$Self (Lcoingecko/models/status/Update;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
 }
 
 public final class coingecko/models/status/Update$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
