@@ -55,7 +55,8 @@ kotlin {
             }
         }
     }
-    macosX64("macos")
+    macosX64()
+    macosArm64()
     mingwX64("win64")
     linuxX64()
 
@@ -64,7 +65,10 @@ kotlin {
     iosSimulatorArm64()
     watchosArm32()
     watchosArm64()
-    tvos()
+    tvosArm64()
+    tvosSimulatorArm64()
+    tvosX64()
+    applyDefaultHierarchyTemplate()
 
     sourceSets {
         val commonMain by getting {
@@ -127,27 +131,10 @@ kotlin {
             dependsOn(desktopCommonTest)
         }
 
-        val iosMain by creating {
-            dependsOn(commonMain)
-        }
-        val iosTest by creating {
+        val iosTest by getting {
             dependencies {
                 implementation(libs.coroutines.core)
                 implementation(libs.ktor.client.darwin)
-            }
-        }
-
-        sourceSets.filter { sourceSet ->
-            sourceSet.name.run {
-                startsWith("iosX64") ||
-                        startsWith("iosArm") ||
-                        startsWith("iosSimulator")
-            }
-        }.forEach { sourceSet ->
-            if (sourceSet.name.endsWith("Main")) {
-                sourceSet.dependsOn(iosMain)
-            } else {
-                sourceSet.dependsOn(iosTest)
             }
         }
 
