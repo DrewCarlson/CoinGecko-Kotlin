@@ -3,6 +3,7 @@ package coingecko
 import coingecko.constant.*
 import coingecko.error.*
 import io.ktor.client.*
+import io.ktor.client.plugins.*
 import kotlinx.coroutines.*
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
@@ -26,15 +27,23 @@ class CoinGeckoTests {
     }
 
     private lateinit var coinGecko: CoinGeckoClient
+    private lateinit var httpClient: HttpClient
 
     @BeforeTest
     fun setup() {
-        coinGecko = CoinGeckoClient()
+        httpClient = HttpClient {
+            if (DEMO_API_KEY.isNotBlank()) {
+                defaultRequest {
+                    headers["x-cg-demo-api-key"] = DEMO_API_KEY
+                }
+            }
+        }
+        coinGecko = CoinGeckoClient(httpClient)
     }
 
     @AfterTest
     fun cleanup() {
-        coinGecko.close()
+        httpClient.close()
     }
 
     @Test

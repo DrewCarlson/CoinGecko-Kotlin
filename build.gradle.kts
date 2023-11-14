@@ -36,6 +36,24 @@ plugins.withType<NodeJsRootPlugin> {
 
 version = System.getenv("GITHUB_REF")?.substringAfter("refs/tags/v", version.toString()) ?: version
 
+val testGenSrcPath = "build/test-gen/config"
+val installTestConfig by tasks.creating {
+    val configFile = file("${testGenSrcPath}/config.kt")
+    onlyIf { !configFile.exists() || gradle.startParameter.taskNames.contains("publish") }
+    doFirst {
+        file(testGenSrcPath).mkdirs()
+        if (!configFile.exists()) {
+            val demoKey = System.getProperty("demoApiKey")?.toString().orEmpty()
+            configFile.writeText(
+                """|package coingecko
+                   |
+                   |val DEMO_API_KEY = "$demoKey"
+                   |""".trimMargin(),
+            )
+        }
+    }
+}
+
 kotlin {
     jvm()
     js(IR) {
@@ -70,6 +88,16 @@ kotlin {
     tvosX64()
     applyDefaultHierarchyTemplate()
 
+    targets.all {
+        compilations
+            .filter { it.name.endsWith("test", ignoreCase = true) }
+            .forEach {
+                it.compileTaskProvider.configure {
+                    dependsOn(installTestConfig)
+                }
+            }
+    }
+
     sourceSets {
         val commonMain by getting {
             dependencies {
@@ -83,6 +111,7 @@ kotlin {
             }
         }
         val commonTest by getting {
+            kotlin.srcDirs(testGenSrcPath)
             dependencies {
                 implementation(libs.coroutines.test)
                 implementation(kotlin("test-common"))
@@ -124,10 +153,14 @@ kotlin {
             }
         }
 
-        val win64Test by getting
+        val win64Test by getting {
+            dependencies {
+                implementation(libs.ktor.client.winhttp)
+            }
+        }
         val macosTest by getting
         val linuxX64Test by getting
-        configure(listOf(win64Test, macosTest, linuxX64Test)) {
+        configure(listOf(macosTest, linuxX64Test)) {
             dependsOn(desktopCommonTest)
         }
 

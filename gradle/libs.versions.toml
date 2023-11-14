@@ -33,4 +33,5 @@ ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "kto
 ktor-client-js = { module = "io.ktor:ktor-client-js", version.ref = "ktorio" }
 ktor-client-curl = { module = "io.ktor:ktor-client-curl", version.ref = "ktorio" }
 ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktorio" }
+ktor-client-winhttp = { module = "io.ktor:ktor-client-winhttp", version.ref = "ktorio" }
 ktor-client-contentNegotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktorio" }
