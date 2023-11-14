@@ -99,6 +99,7 @@ jobs:
   upload-junit-results:
     runs-on: ubuntu-latest
     needs: [ tests ]
+    if: ${{ always() }}
     steps:
       - uses: actions/checkout@master
       - name: Download test results
@@ -107,6 +108,5 @@ jobs:
           name: test-reports
       - name: Publish Unit Test Results
         uses: mikepenz/action-junit-report@v4
-        if: ${{ always() }}
         with:
           report_paths: '**/TEST-*.xml'
