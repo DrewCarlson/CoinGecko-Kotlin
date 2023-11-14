@@ -24,10 +24,8 @@ import io.ktor.http.*
 import io.ktor.serialization.kotlinx.json.*
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerializationException
-import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import kotlin.jvm.JvmStatic
-import kotlin.native.concurrent.SharedImmutable
 
 private const val IDS = "ids"
 private const val PAGE = "page"
@@ -59,7 +57,6 @@ private const val API_BASE_PATH = "/api/v3"
 
 typealias RawPriceMap = Map<String, Map<String, String?>>
 
-@SharedImmutable
 internal val json = Json {
     isLenient = true
     ignoreUnknownKeys = true
