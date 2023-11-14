@@ -2,6 +2,7 @@ package coingecko
 
 import coingecko.constant.*
 import coingecko.error.*
+import io.ktor.client.*
 import kotlinx.coroutines.*
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
@@ -10,18 +11,23 @@ import kotlinx.coroutines.test.runTest
 import kotlin.test.*
 import kotlin.time.Duration.Companion.seconds
 
-@OptIn(ExperimentalCoroutinesApi::class, DelicateCoroutinesApi::class)
 class CoinGeckoTests {
 
+    private val lockScope = CoroutineScope(Dispatchers.Default + SupervisorJob())
     private val coinGecko = CoinGeckoClient()
     private val testLock = Mutex()
 
     init {
-        GlobalScope.launch {
+        lockScope.launch {
             while (true) {
                 testLock.withLock { delay(5.seconds) }
             }
         }
+    }
+
+    @AfterTest
+    fun cleanup() {
+        coinGecko.close()
     }
 
     @Test
@@ -180,13 +186,32 @@ class CoinGeckoTests {
 
         val hbar = assetPlatforms.singleOrNull { it.id == "hedera-hashgraph" }
         assertEquals("Hedera Hashgraph", hbar?.name)
-        assertEquals(null, hbar?.chainIdentifier)
+        assertEquals(295, hbar?.chainIdentifier)
         assertEquals("hashgraph", hbar?.shortname)
 
         val poly = assetPlatforms.singleOrNull { it.id == "polygon-pos" }
         assertEquals("Polygon POS", poly?.name)
         assertEquals(137, poly?.chainIdentifier)
         assertEquals("MATIC", poly?.shortname)
+    }
+
+    @Test
+    fun testDefaultHttpClient() {
+        val externalClient = HttpClient()
+        val withExternal = CoinGeckoClient(externalClient)
+        val withDefault = CoinGeckoClient()
+
+        // Test that default closes
+        withDefault.close()
+        assertFalse(withDefault.httpClient.isActive)
+
+        // Test that external does not close
+        withExternal.close()
+        assertTrue(externalClient.isActive)
+
+        // Test that external can be closed
+        externalClient.close()
+        assertFalse(externalClient.isActive)
     }
 
     private fun runApiTest(

@@ -64,11 +64,25 @@ internal val json = Json {
     useAlternativeNames = true
 }
 
+/**
+ * @constructor Create a [CoinGeckoClient] with an externally managed [HttpClient] instance,
+ * [close] will **NOT** close the [httpClient].
+ */
 class CoinGeckoClient(httpClient: HttpClient) {
 
-    constructor() : this(HttpClient())
+    private var isDefaultClient = false
 
-    private val httpClient = httpClient.config {
+    /**
+     * Create a [CoinGeckoClient] with a new [HttpClient] instance with the default engine.
+     * **NOTE:** Call [close] to close the [HttpClient].
+     *
+     * See the Ktor.io [Default Engine](https://ktor.io/docs/http-client-engines.html#default) docs.
+     */
+    constructor() : this(HttpClient()) {
+        isDefaultClient = true
+    }
+
+    internal val httpClient = httpClient.config {
         defaultRequest {
             url.protocol = URLProtocol.HTTPS
             url.host = API_HOST
@@ -310,6 +324,16 @@ class CoinGeckoClient(httpClient: HttpClient) {
 
     suspend fun getTrending(): TrendingCoinList =
         httpClient.get("search/trending").bodyOrThrow()
+
+    /**
+     * If this instance uses a default [HttpClient], this will close it.
+     * When an [HttpClient] is provided, it must be closed directly.
+     */
+    fun close() {
+        if (isDefaultClient) {
+            httpClient.close()
+        }
+    }
 
     @Serializable
     private data class ErrorBody(val error: String?)
