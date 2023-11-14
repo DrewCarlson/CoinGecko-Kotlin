@@ -94,3 +94,19 @@ jobs:
         with:
           name: test-reports
           path: build/reports/tests/**/**
+
+
+  upload-junit-results:
+    runs-on: ubuntu-latest
+    needs: [ tests ]
+    steps:
+      - uses: actions/checkout@master
+      - name: Download test results
+        uses: actions/download-artifact@v3
+        with:
+          name: test-reports
+      - name: Publish Unit Test Results
+        uses: mikepenz/action-junit-report@v4
+        if: ${{ always() }}
+        with:
+          report_paths: '**/TEST-*.xml'
