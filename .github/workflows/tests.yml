@@ -99,7 +99,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Download test results
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: test-reports
       - name: Publish Unit Test Results
