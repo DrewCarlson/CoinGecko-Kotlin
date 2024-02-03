@@ -6,7 +6,7 @@ ktorio = "2.3.6"
 dokka = "1.9.10"
 binary_compat = "0.13.2"
 
-spotless = "6.16.0"
+spotless = "6.25.0"
 ktlint = "0.48.2"
 atomicfu = "0.22.0"
 
