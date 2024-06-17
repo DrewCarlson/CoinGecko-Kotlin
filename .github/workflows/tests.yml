@@ -54,25 +54,25 @@ jobs:
             %USERPROFILE%\.konan
           key: ${{ runner.os }}-${{ hashFiles('gradle.properties') }}
 
-      - uses: gradle/gradle-build-action@v2
+      - uses: gradle/gradle-build-action@v3
         name: Test Apple Targets
         if: startsWith(matrix.os, 'macos')
         with:
           arguments: macosX64Test -DdemoApiKey="${{ secrets.DEMO_API_KEY }}" # iosTest tvosTest watchosX86Test
 
-      - uses: gradle/gradle-build-action@v2
+      - uses: gradle/gradle-build-action@v3
         name: Test Jvm Target
         if: startsWith(matrix.os, 'ubuntu')
         with:
           arguments: jvmTest -DdemoApiKey="${{ secrets.DEMO_API_KEY }}"
 
-      - uses: gradle/gradle-build-action@v2
+      - uses: gradle/gradle-build-action@v3
         name: Test Linux Target
         if: startsWith(matrix.os, 'ubuntu')
         with:
           arguments: linuxX64Test -DdemoApiKey="${{ secrets.DEMO_API_KEY }}"
 
-      - uses: gradle/gradle-build-action@v2
+      - uses: gradle/gradle-build-action@v3
         name: Test Windows Target
         if: startsWith(matrix.os, 'windows')
         with:
